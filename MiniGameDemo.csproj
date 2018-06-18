@@ -307,6 +307,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Camera\AutoCamera.cs" />
+    <Compile Include="Assets\Scripts\Character\CharacterContoller.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />

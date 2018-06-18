@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AutoCamera
+namespace Camera
 {
 
     public class AutoCamera : MonoBehaviour
