@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
-namespace Character
-{
+namespace HaruScene {
     public class CharacterContoller : MonoBehaviour
     {
         public GameObject character;
@@ -20,10 +18,17 @@ namespace Character
         {
             if (!Input.GetMouseButtonDown(0))
                 return;
-            Vector3 mousePosition = Input.mousePosition;
-
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            print(ray);
+            RaycastHit hit;
+            if (!Physics.Raycast(ray, out hit))
+            {
+                return;
+            }
+            Vector3 hitPosition = hit.point;
+            Vector3 dir = hitPosition - character.transform.position;
+            character.transform.position += speed * Time.deltaTime * dir;
         }
-
 
     }
 }

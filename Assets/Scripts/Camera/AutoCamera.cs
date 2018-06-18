@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Camera
+namespace HaruScene
 {
 
     public class AutoCamera : MonoBehaviour
     {
 
         public Transform target;
-        public float damping = 1;
-        public float lookAheadFactor = 3;
+        public float damping = 0.1f;
+        public float lookAheadFactor = 1;
         public float lookAheadReturnSpeed = 0.5f;
         public float lookAheadMoveThreshold = 0.1f;
 
