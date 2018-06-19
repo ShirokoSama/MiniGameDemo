@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2018.1.1f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -312,15 +314,15 @@
     <None Include="Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
     <None Include="Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
-    <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
-    <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Light.uss" />
-    <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\Alert.uxml" />
-    <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\PackageDetails.uxml" />
-    <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\PackageGroup.uxml" />
-    <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\PackageItem.uxml" />
-    <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\PackageList.uxml" />
-    <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\PackageManagerWindow.uxml" />
-    <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\PackageSearchFilterTabs.uxml" />
+    <None Include="C:\Users\nice-\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Styles\Main_Dark.uss" />
+    <None Include="C:\Users\nice-\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Styles\Main_Light.uss" />
+    <None Include="C:\Users\nice-\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Templates\Alert.uxml" />
+    <None Include="C:\Users\nice-\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Templates\PackageDetails.uxml" />
+    <None Include="C:\Users\nice-\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Templates\PackageGroup.uxml" />
+    <None Include="C:\Users\nice-\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Templates\PackageItem.uxml" />
+    <None Include="C:\Users\nice-\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Templates\PackageList.uxml" />
+    <None Include="C:\Users\nice-\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Templates\PackageManagerWindow.uxml" />
+    <None Include="C:\Users\nice-\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Templates\PackageSearchFilterTabs.uxml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
