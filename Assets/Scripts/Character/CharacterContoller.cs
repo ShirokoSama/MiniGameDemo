@@ -5,29 +5,31 @@ namespace HaruScene {
     public class CharacterContoller : MonoBehaviour
     {
         public GameObject character;
-        public float speed = 100f;
+        public float accelaration = 1;
+        public float resistance = 0.2f;
+        private Vector3 speed;
 
         // Use this for initialization
         private void Start()
         {
-
+            character.transform.position.Set(
+                Camera.main.transform.position.x,
+                Camera.main.transform.position.y,
+                0
+                );
+            speed = new Vector3(0f, 0f, 0f);
         }
 
         // Update is called once per frame
-        private void FixedUpdate()
+        private void Update()
         {
-            if (!Input.GetMouseButtonDown(0))
+            speed -= speed.normalized * resistance * Time.deltaTime;
+            if (!Input.GetMouseButton(0))
                 return;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            print(ray);
-            RaycastHit hit;
-            if (!Physics.Raycast(ray, out hit))
-            {
-                return;
-            }
-            Vector3 hitPosition = hit.point;
-            Vector3 dir = hitPosition - character.transform.position;
-            character.transform.position += speed * Time.deltaTime * dir;
+            Vector3 mousePostion = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 dir = mousePostion - character.transform.position;
+            speed += dir.normalized * accelaration * Time.deltaTime;
+            character.transform.position += speed;
         }
 
     }
