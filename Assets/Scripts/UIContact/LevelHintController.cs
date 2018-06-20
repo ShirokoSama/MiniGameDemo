@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 这个类控制如春之海这样的文字提示的渐入渐出，它必须依附于一个有CanvasGroup组件的实例上，相应的Canvas作为其子对象被控制透明度
+/// </summary>
+/// <remarks>
+/// 2018.6.20: NAiveD创建
+/// </remarks>
+
 public class LevelHintController : MonoBehaviour {
 
     private CanvasGroup canvasGroup;

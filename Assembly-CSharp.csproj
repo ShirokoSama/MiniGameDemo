@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Camera\AutoCamera.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterContoller.cs" />
+    <Compile Include="Assets\Scripts\UIContact\HealthPointUIController.cs" />
     <Compile Include="Assets\Scripts\UIContact\LevelHintController.cs" />
     <Compile Include="Assets\Scripts\UIContact\PauseButtonListener.cs" />
     <None Include="Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />

@@ -600,7 +600,7 @@ GameObject:
   - component: {fileID: 376223536}
   m_Layer: 5
   m_Name: HealthFlowerImage
-  m_TagString: Untagged
+  m_TagString: UIFlowerImage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1415,7 +1415,7 @@ GameObject:
   - component: {fileID: 878997429}
   m_Layer: 5
   m_Name: HealthFlowerImage
-  m_TagString: Untagged
+  m_TagString: UIFlowerImage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1681,7 +1681,7 @@ GameObject:
   - component: {fileID: 1077337394}
   m_Layer: 5
   m_Name: HealthFlowerImage
-  m_TagString: Untagged
+  m_TagString: UIFlowerImage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1922,7 +1922,7 @@ GameObject:
   - component: {fileID: 1272025446}
   m_Layer: 5
   m_Name: HealthFlowerImage
-  m_TagString: Untagged
+  m_TagString: UIFlowerImage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2057,6 +2057,7 @@ GameObject:
   - component: {fileID: 1406577985}
   - component: {fileID: 1406577984}
   - component: {fileID: 1406577983}
+  - component: {fileID: 1406577986}
   m_Layer: 5
   m_Name: HealthCanvas
   m_TagString: Untagged
@@ -2143,6 +2144,24 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1406577986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1406577981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d0e26bdfb469704898a6908a0ab6cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthFlower:
+  - {fileID: 57730696}
+  - {fileID: 479829494}
+  - {fileID: 1555044453}
+  - {fileID: 783859840}
+  flowerFilled: {fileID: 21300000, guid: 371fce6a0f1c8c54f99c0b38a7dd4122, type: 3}
+  flowerUnfilled: {fileID: 21300000, guid: da7723c5b4b35a64dbfdac95f095280a, type: 3}
 --- !u!1 &1443592445
 GameObject:
   m_ObjectHideFlags: 0
