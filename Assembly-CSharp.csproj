@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\UIContact\HealthPointUIController.cs" />
     <Compile Include="Assets\Scripts\UIContact\LevelHintController.cs" />
     <Compile Include="Assets\Scripts\UIContact\PauseButtonListener.cs" />
+    <Compile Include="Assets\Scripts\UIContact\PauseMenuListener.cs" />
     <None Include="Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
     <None Include="Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
