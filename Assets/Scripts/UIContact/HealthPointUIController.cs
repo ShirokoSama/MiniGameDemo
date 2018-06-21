@@ -14,34 +14,15 @@ using UnityEngine.UI;
 public class HealthPointUIController : MonoBehaviour {
 
     public GameObject[] healthFlower;
-    public Sprite flowerFilled;
-    public Sprite flowerUnfilled;
-
+    
     private int maxHealth;
     private int healthPoint;
-    private GameObject[] flowerImage;
-    private GameObject[] particle;
 
 	// Use this for initialization
 	void Start () {
         maxHealth = healthFlower.Length;
-        flowerImage = new GameObject[maxHealth];
-        particle = new GameObject[maxHealth];
+        
 
-        for (int i = 0; i < maxHealth; i++)
-        {
-            foreach (Transform child in healthFlower[i].transform)
-            {
-                if (child.CompareTag("UIFlowerImage"))
-                {
-                    flowerImage[i] = child.gameObject;
-                }
-                else
-                {
-                    particle[i] = child.gameObject;
-                }
-            }
-        }
         SetHealthPoint(2);
 	}
 	
@@ -67,15 +48,35 @@ public class HealthPointUIController : MonoBehaviour {
 
         for (int i = 0; i < this.healthPoint; i++)
         {
-            flowerImage[i].GetComponent<Image>().sprite = flowerFilled;
-            particle[i].SetActive(true);
+            healthFlower[i].GetComponent<Animator>().SetTrigger("Fill");
         }
 
         for (int i = this.healthPoint; i < maxHealth; i++)
         {
-            flowerImage[i].GetComponent<Image>().sprite = flowerUnfilled;
-            particle[i].SetActive(false);
+            healthFlower[i].GetComponent<Animator>().SetTrigger("Unfill");
         }
 
+    }
+
+    public void Heal(int healPoint)
+    {
+        if (healPoint > maxHealth - healthPoint) healthPoint = maxHealth - healthPoint;
+
+        for (int i = healthPoint; i < healthPoint + healPoint; i++)
+        {
+            healthFlower[i].GetComponent<Animator>().SetTrigger("Heal");
+        }
+        healthPoint += healPoint;
+    }
+
+    public void Fade(int fadePoint)
+    {
+        if (fadePoint > healthPoint) fadePoint = healthPoint;
+
+        for (int i = healthPoint - fadePoint; i < healthPoint; i++)
+        {
+            healthFlower[i].GetComponent<Animator>().SetTrigger("Fade");
+        }
+        healthPoint -= fadePoint;
     }
 }
