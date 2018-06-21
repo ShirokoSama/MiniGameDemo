@@ -68,11 +68,13 @@ public class HealthPointUIController : MonoBehaviour {
         for (int i = 0; i < this.healthPoint; i++)
         {
             flowerImage[i].GetComponent<Image>().sprite = flowerFilled;
+            particle[i].SetActive(true);
         }
 
         for (int i = this.healthPoint; i < maxHealth; i++)
         {
             flowerImage[i].GetComponent<Image>().sprite = flowerUnfilled;
+            particle[i].SetActive(false);
         }
 
     }

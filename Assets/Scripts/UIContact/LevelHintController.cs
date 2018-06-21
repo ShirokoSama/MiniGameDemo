@@ -15,6 +15,7 @@ public class LevelHintController : MonoBehaviour {
     public float fadeInSpeed = 2.0f;
     public float fadeOutSpeed = 2.0f;
     public float floatTime = 2.0f;
+    [Range(0, 1)]
     public float targetAlpha = 1.0f;
     private bool fadeIn = false;
     private bool fadeOut = false;
