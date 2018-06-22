@@ -44,26 +44,26 @@ public class PauseMenuListener : MonoBehaviour {
     {
         rectTransform.localPosition = posCall;
 
-        float delta = 1.0f / fadeTime;
-        float degree = 0.0f;
-        while (degree < 1.0f)
-        {
-            canvasGroup.alpha = Mathf.Lerp(0.0f, targetAlpha, degree);
-            degree += Time.unscaledDeltaTime * delta;
-        }
-        canvasGroup.alpha = targetAlpha;
+        StartCoroutine(Fade(0.0f, targetAlpha, fadeTime, canvasGroup));
     }
 
     public void Disappear()
+    {
+        StartCoroutine(Fade(targetAlpha, 0.0f, fadeTime, canvasGroup));
+        StartCoroutine(DisappearMove());
+    }
+
+    IEnumerator Fade(float fromAlpha, float targetAlpha, float fadeTime, CanvasGroup canvasGroup)
     {
         float delta = 1.0f / fadeTime;
         float degree = 0.0f;
         while (degree < 1.0f)
         {
-            canvasGroup.alpha = Mathf.Lerp(targetAlpha, 0.0f, degree);
+            canvasGroup.alpha = Mathf.Lerp(fromAlpha, targetAlpha, degree);
             degree += Time.unscaledDeltaTime * delta;
+            yield return null;
         }
-        canvasGroup.alpha = 0.0f;
+        canvasGroup.alpha = targetAlpha;
     }
 
     IEnumerator DisappearMove()
