@@ -40,7 +40,6 @@ public class LevelHintController : MonoBehaviour {
         }
         if (fadeOut)
         {
-            Debug.Log("fadeOut");
             canvasGroup.alpha = Mathf.Lerp(canvasGroup.alpha, 0.0f, fadeInSpeed * Time.deltaTime);
             if (Mathf.Abs(canvasGroup.alpha) < 0.01)
             {
