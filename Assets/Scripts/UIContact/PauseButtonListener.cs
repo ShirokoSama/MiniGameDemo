@@ -13,7 +13,7 @@ public class PauseButtonListener : MonoBehaviour {
 
 	public void ButtonClick()
     {
-        PauseMenuListener.instance.Show();
+        PauseMenuListener.instance.MenuOn();
         Debug.Log("Button clicked!");
     }
 }

@@ -14,9 +14,9 @@ namespace HaruScene {
         }
 
         public GameObject character;
-        public float accelaration = 1;
-        public float resistance = 0.2f;
-        private Vector3 speed;
+        //public float accelaration = 1;
+        //public float resistance = 0.2f;
+        //private Vector3 speed;
 
         //当触控屏幕时手指最初的位置
         private Vector2 touchStartPos;
@@ -53,7 +53,7 @@ namespace HaruScene {
                 Camera.main.transform.position.y,
                 0
                 );
-            speed = new Vector3(0f, 0f, 0f);
+            //speed = new Vector3(0f, 0f, 0f);
 
             energy = maxEnergy;
             energyUIManager.maxEnergy = maxEnergy;

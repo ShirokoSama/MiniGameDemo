@@ -13,10 +13,14 @@ public class PauseMenuListener : MonoBehaviour {
     private Vector3 posStandby;
     private Vector3 posCall;
     public static PauseMenuListener instance;
+    private bool isMenuOn;
+
+    private float m_TimeSacleRef = 1.0f;
 
     public void Awake()
     {
         instance = this;
+        isMenuOn = false;
 
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
@@ -37,20 +41,34 @@ public class PauseMenuListener : MonoBehaviour {
 
     public void OnResumeClicked()
     {
-        Disappear();
+        // resume
+        Time.timeScale = m_TimeSacleRef;
+
+        MenuOff();
     }
 
-    public void Show()
+    public void MenuOn()
     {
-        rectTransform.localPosition = posCall;
+        if (!isMenuOn)
+        {
+            isMenuOn = true;
+            // pause
+            m_TimeSacleRef = Time.timeScale;
+            Time.timeScale = 0.0f;
 
-        StartCoroutine(Fade(0.0f, targetAlpha, fadeTime, canvasGroup));
+            rectTransform.localPosition = posCall;
+            StartCoroutine(Fade(0.0f, targetAlpha, fadeTime, canvasGroup));
+        }
     }
 
-    public void Disappear()
+    public void MenuOff()
     {
-        StartCoroutine(Fade(targetAlpha, 0.0f, fadeTime, canvasGroup));
-        StartCoroutine(DisappearMove());
+        if (isMenuOn)
+        {
+            isMenuOn = false;
+            StartCoroutine(Fade(targetAlpha, 0.0f, fadeTime, canvasGroup));
+            StartCoroutine(DisappearMove());
+        }
     }
 
     IEnumerator Fade(float fromAlpha, float targetAlpha, float fadeTime, CanvasGroup canvasGroup)
