@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Xml.Serialization;
 using System.Xml;
 using System.IO;
 
 public class BackgroundManager : MonoBehaviour {
-
+    
     public Transform cameraTransform;
     public Vector2 cameraSize;
     public GameObject bgSprite;
     private GameObject[] bgObjects;
     private Stack<GameObject> availableBackground;
     private BackgroundPieceCollection collection;
+    private int backgroundWidth = 8640;
+    private int backgroundHeight = 19200;
 
     // Use this for initialization
     void Start () {
@@ -47,11 +50,24 @@ public class BackgroundManager : MonoBehaviour {
             cameraTransform.position.x * 100 + cameraSize.x / 2 + 256,
             cameraTransform.position.y * 100 - cameraSize.y / 2 - 256,
             cameraTransform.position.y * 100 + cameraSize.y / 2 + 256);
+
+        string streamingAssetsPath =
+#if UNITY_ANDROID
+        Application.dataPath + "!/assets/";
+#elif UNITY_IPHONE
+        Application.dataPath + "/Raw/";
+#elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+        Application.streamingAssetsPath + "/";
+#else
+        string.Empty;
+#endif
+        
+
         foreach (BackgroundPiece piece in piecesToLoad)
         {
             if (piece.shown != true)
             {
-                var bundle = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "backgroundsplit-" + piece.x + "-" + piece.y + ".normal"));
+                var bundle = AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/backgroundsplit-" + piece.x + "-" + piece.y + ".normal");
                 if (bundle == null)
                 {
                     Debug.Log("Fail to Load Bundle");
@@ -61,7 +77,13 @@ public class BackgroundManager : MonoBehaviour {
                 Sprite sprite = Sprite.Create(backgroundTexture, new Rect(0, 0, backgroundTexture.width, backgroundTexture.height), new Vector2(0.5f, 0.5f));
                 GameObject backgroundObject = availableBackground.Pop();
                 backgroundObject.GetComponent<SpriteRenderer>().sprite = sprite;
-                backgroundObject.transform.position = new Vector3(piece.initialX / 100.0f, piece.initialY / 100.0f, 0);
+
+                float initPosX = piece.initialX / 100.0f;
+                int xCount = Mathf.FloorToInt((cameraTransform.position.x + backgroundWidth / 200.0f) * 100 / backgroundWidth);
+                initPosX = initPosX + backgroundWidth / 100.0f * xCount;
+                if (initPosX < cameraTransform.position.x - cameraSize.x / 100.0f) initPosX += backgroundWidth / 100.0f;
+                if (initPosX > cameraTransform.position.x + cameraSize.x / 100.0f) initPosX -= backgroundWidth / 100.0f;
+                backgroundObject.transform.position = new Vector3(initPosX, piece.initialY / 100.0f, 0);
                 bundle.Unload(false);
                 piece.shown = true;
             }
@@ -96,15 +118,24 @@ public class BackgroundManager : MonoBehaviour {
 [XmlRoot("BackgroundPieces")]
 public class BackgroundPieceCollection
 {
+    
     [XmlArray("Collection"), XmlArrayItem("BackgroundPiece")]
     public List<BackgroundPiece> collection = new List<BackgroundPiece>();
+
+    private int backgroundWidth = 8640;
+    private int backgroundHeight = 19200;
 
     public List<BackgroundPiece> FindWithin(float startX, float endX, float startY, float endY)
     {
         List<BackgroundPiece> result = new List<BackgroundPiece>();
         foreach (BackgroundPiece piece in collection)
         {
-            if (piece.initialX > startX && piece.initialX < endX && piece.initialY > startY && piece.initialY < endY)
+            float X = piece.initialX;
+            float Y = piece.initialY;
+            int xCount = Mathf.FloorToInt((startX + backgroundWidth / 2) / backgroundWidth);
+            X = X + xCount * backgroundWidth;
+            if (X < startX) X += backgroundWidth;
+            if (X > startX && X < endX && Y > startY && Y < endY)
             {
                 result.Add(piece);
             }

@@ -338,6 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54008bc7ac5067248a068ea55a93f290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 346587537}
   cameraTransform: {fileID: 282840814}
   cameraSize: {x: 1080, y: 1920}
   bgSprite: {fileID: 1795879545}
