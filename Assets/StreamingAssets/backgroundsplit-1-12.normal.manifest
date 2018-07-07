@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 1610795095
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d227e450b9c140a5c34f155142a9b71c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b474380d27eb4bc856799e9c585c4864
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Assets/Images/Background/BackgroundSplit-1-12.png
+Dependencies: []

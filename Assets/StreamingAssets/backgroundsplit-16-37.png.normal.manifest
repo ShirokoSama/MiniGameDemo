@@ -1,0 +1,37 @@
+ManifestFileVersion: 0
+CRC: 3899654435
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: facba1b6134045f2bb7c281e8a9b37bd
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 158e0789dfbb0d05727de01bc3af815a
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Assets/Animations/HealthFlowerFilled.anim
+- Assets/Assets/Images/MainUIContent/PauseUI.png
+- Assets/Assets/Images/MainUIContent/TwoLinesOnBottom.png
+- Assets/Assets/Images/MainUIContent/RoundRectBehindPause.png
+- Assets/Assets/Images/MainUIContent/FlowerUnfilled.png
+- Assets/Assets/Images/Kun.png
+- Assets/Assets/Animations/HealthFlower.controller
+- Assets/Assets/Images/LevelHint/SeaOfSpringText.png
+- Assets/Assets/Images/MainUIContent/FlowerFilled.png
+- Assets/Assets/Images/LevelHint/TwoLines.png
+- Assets/Assets/Animations/HealthFlowerUnfilled.anim
+- Assets/Assets/Images/MainUIContent/TwoLinesUnderText.png
+- Assets/Assets/Images/LevelHint/Particale.png
+- Assets/Assets/Images/MainUIContent/FlowerParticle.png
+Dependencies: []
