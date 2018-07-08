@@ -19,9 +19,13 @@ public class BackgroundManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        TextAsset asset = Resources.Load<TextAsset>("BackgroundSplit");
+        MemoryStream stream = new MemoryStream(asset.bytes);
 
         XmlSerializer serializer = new XmlSerializer(typeof(BackgroundPieceCollection));
-        collection = (BackgroundPieceCollection)serializer.Deserialize(XmlReader.Create(Application.dataPath + @"/Resources" + @"/BackgroundSplit.xml"));
+        collection = (BackgroundPieceCollection)serializer.Deserialize(XmlReader.Create(stream));
+
+        Debug.Log("Unity :" + Application.dataPath + "!/assets/BackgroundSplit.xml");
 
         //var bundle = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "backgroundsplit-0-0.normal"));
         //if (bundle == null)
@@ -50,18 +54,6 @@ public class BackgroundManager : MonoBehaviour {
             cameraTransform.position.x * 100 + cameraSize.x / 2 + 256,
             cameraTransform.position.y * 100 - cameraSize.y / 2 - 256,
             cameraTransform.position.y * 100 + cameraSize.y / 2 + 256);
-
-        string streamingAssetsPath =
-#if UNITY_ANDROID
-        Application.dataPath + "!/assets/";
-#elif UNITY_IPHONE
-        Application.dataPath + "/Raw/";
-#elif UNITY_STANDALONE_WIN || UNITY_EDITOR
-        Application.streamingAssetsPath + "/";
-#else
-        string.Empty;
-#endif
-        
 
         foreach (BackgroundPiece piece in piecesToLoad)
         {
