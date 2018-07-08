@@ -31,7 +31,7 @@ public class BackgroundXmlGenerate : MonoBehaviour {
             {
                 int width = Mathf.Min(splitWidth, backgroundWidth - i * splitWidth);
                 int height = Mathf.Min(splitHeight, backgroundHeight - j * splitHeight);
-                AddSplitNodeToXml(xml, i, j, width, height, "BackgroundSplit-" + i + "-" + j, i * splitWidth + width / 2 - backgroundWidth / 2, -j * splitHeight - height / 2 + 9 * backgroundHeight / 10);
+                AddSplitNodeToXml(xml, i, j, width, height, "BackgroundSplit-" + i + "-" + j, i * splitWidth + width / 2, -j * splitHeight - height / 2 + backgroundHeight);
             }
         }
 

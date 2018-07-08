@@ -71,7 +71,7 @@ public class BackgroundManager : MonoBehaviour {
                 backgroundObject.GetComponent<SpriteRenderer>().sprite = sprite;
 
                 float initPosX = piece.initialX / 100.0f;
-                int xCount = Mathf.FloorToInt((cameraTransform.position.x + backgroundWidth / 200.0f) * 100 / backgroundWidth);
+                int xCount = Mathf.FloorToInt(cameraTransform.position.x * 100 / backgroundWidth);
                 initPosX = initPosX + backgroundWidth / 100.0f * xCount;
                 if (initPosX < cameraTransform.position.x - cameraSize.x / 100.0f) initPosX += backgroundWidth / 100.0f;
                 if (initPosX > cameraTransform.position.x + cameraSize.x / 100.0f) initPosX -= backgroundWidth / 100.0f;
@@ -124,7 +124,7 @@ public class BackgroundPieceCollection
         {
             float X = piece.initialX;
             float Y = piece.initialY;
-            int xCount = Mathf.FloorToInt((startX + backgroundWidth / 2) / backgroundWidth);
+            int xCount = Mathf.FloorToInt(startX / backgroundWidth);
             X = X + xCount * backgroundWidth;
             if (X < startX) X += backgroundWidth;
             if (X > startX && X < endX && Y > startY && Y < endY)
