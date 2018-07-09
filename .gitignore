@@ -13,3 +13,8 @@ Plugins
 Assets/AssetBundleBrowser
 *.csproj
 Assets/AssetBundleBrowser.meta
+
+Assets/codeandweb.com
+Assets/codeandweb.com.meta
+Assets/Editor/BuildAnimationEditor.cs
+Assets/Editor/BuildAnimationEditor.cs.meta
