@@ -61,17 +61,22 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Background\BackgroundManager.cs" />
     <Compile Include="Assets\Scripts\Camera\AutoCamera.cs" />
-    <Compile Include="Assets\Scripts\Character\CharacterContoller.cs" />
+    <Compile Include="Assets\Scripts\Character\KunController.cs" />
+    <Compile Include="Assets\Scripts\Map\MapGenerator.cs" />
+    <Compile Include="Assets\Scripts\SimpleJSON.cs" />
     <Compile Include="Assets\Scripts\UIContact\EnergyUIManager.cs" />
     <Compile Include="Assets\Scripts\UIContact\HealthPointUIController.cs" />
     <Compile Include="Assets\Scripts\UIContact\LevelHintController.cs" />
+    <Compile Include="Assets\Scripts\UIContact\MonitorGraphic.cs" />
     <Compile Include="Assets\Scripts\UIContact\PauseButtonListener.cs" />
     <Compile Include="Assets\Scripts\UIContact\PauseMenuListener.cs" />
+    <Compile Include="Assets\Scripts\UIContact\RaycastClickTarget.cs" />
     <None Include="Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
     <None Include="Assets\Resources\BackgroundSplit.xml" />
     <None Include="Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
     <None Include="Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
+    <None Include="Assets\codeandweb.com\Readme.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>E:/NormalFiles/unity/GuMiniGame/UnityProject/MiniGameDemo/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

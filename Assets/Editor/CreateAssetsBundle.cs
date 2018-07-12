@@ -13,7 +13,7 @@ public class CreateAssetsBundle : MonoBehaviour {
         {
             for (int j = 0; j < 38; j++)
             {
-                AssetImporter importer = AssetImporter.GetAtPath("Assets/Assets/Images/Background/BackgroundSplit-" + i + "-" + j + ".png");
+                AssetImporter importer = AssetImporter.GetAtPath("Assets/Sprites/Background/BackgroundSplit-" + i + "-" + j + ".png");
                 importer.assetBundleName = "BackgroundSplit-" + i + "-" + j;
                 importer.assetBundleVariant = "normal";
 

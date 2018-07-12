@@ -24,7 +24,7 @@ public class BackgroundManager : MonoBehaviour {
         XmlSerializer serializer = new XmlSerializer(typeof(BackgroundPieceCollection));
         collection = (BackgroundPieceCollection)serializer.Deserialize(XmlReader.Create(stream));
 
-        Debug.Log("Unity :" + Application.dataPath + "!/assets/BackgroundSplit.xml");
+        //Debug.Log("Unity :" + Application.dataPath + "!/assets/BackgroundSplit.xml");
 
         //var bundle = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "backgroundsplit-0-0.normal"));
         //if (bundle == null)
