@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PauseMenuListener : MonoBehaviour {
@@ -43,7 +42,6 @@ public class PauseMenuListener : MonoBehaviour {
     {
         // resume
         Time.timeScale = m_TimeSacleRef;
-
         MenuOff();
     }
 

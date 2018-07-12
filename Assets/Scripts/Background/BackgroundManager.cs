@@ -15,7 +15,6 @@ public class BackgroundManager : MonoBehaviour {
     private Stack<GameObject> availableBackground;
     private BackgroundPieceCollection collection;
     private int backgroundWidth = 8640;
-    private int backgroundHeight = 19200;
 
     // Use this for initialization
     void Start () {
@@ -115,7 +114,6 @@ public class BackgroundPieceCollection
     public List<BackgroundPiece> collection = new List<BackgroundPiece>();
 
     private int backgroundWidth = 8640;
-    private int backgroundHeight = 19200;
 
     public List<BackgroundPiece> FindWithin(float startX, float endX, float startY, float endY)
     {

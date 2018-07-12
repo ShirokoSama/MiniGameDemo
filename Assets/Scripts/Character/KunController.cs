@@ -1,9 +1,13 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace HaruScene {
-    public class CharacterContoller : MonoBehaviour
+namespace HaruScene
+{
+    public class KunController : MonoBehaviour
     {
+
+        //玩家输入状态控制
+        private bool isTouch = false;
+        private Vector2 touchPosition;
 
         enum KunMoveState
         {
@@ -18,8 +22,7 @@ namespace HaruScene {
         //public float resistance = 0.2f;
         //private Vector3 speed;
 
-        //当触控屏幕时手指最初的位置
-        private Vector2 touchStartPos;
+        
         //手指与最初触控屏幕的位置的偏移
         private Vector2 touchOffset;
         //鲲浮起（向上游）的速度
@@ -48,6 +51,7 @@ namespace HaruScene {
         // Use this for initialization
         private void Start()
         {
+
             character.transform.position.Set(
                 Camera.main.transform.position.x,
                 Camera.main.transform.position.y,
@@ -63,19 +67,6 @@ namespace HaruScene {
         // Update is called once per frame
         private void Update()
         {
-
-            /*
-             * 包包原来的
-            speed -= speed.normalized * resistance * Time.deltaTime;
-            if (!Input.GetMouseButton(0))
-                return;
-            Vector3 mousePostion = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 dir = mousePostion - character.transform.position;
-
-            speed += dir.normalized * accelaration * Time.deltaTime;
-            character.transform.position += speed;
-            */
-
             /*
              * 仅适用于触控类似于摇杆
             if (Input.touchCount <= 0)
@@ -110,16 +101,14 @@ namespace HaruScene {
             }
             */
 
+
             //当点击结束，将鲲的运动状态恢复为待命
-            if (!Input.GetMouseButton(0))
-            {
-                moveState = KunMoveState.Idle;
-            }
+            if (!isTouch) moveState = KunMoveState.Idle;
 
             //当鲲得到移动指令且仍有精力时
-            if (Input.GetMouseButton(0) && moveState != KunMoveState.Tired)
+            if (isTouch && moveState != KunMoveState.Tired)
             {
-                Vector3 mousePostion = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector3 mousePostion = Camera.main.ScreenToWorldPoint(touchPosition);
                 Vector3 dir = mousePostion - character.transform.position;
                 touchOffset = (Vector2)dir;
                 if (touchOffset.magnitude <= floatJudge)
@@ -152,5 +141,15 @@ namespace HaruScene {
             energyUIManager.SetUIEnergy(energy);
         }
 
+        private void PlayerTouchDown(Vector2 position)
+        {
+            isTouch = true;
+            touchPosition = position;
+        }
+
+        private void PlayerTouchUp()
+        {
+            isTouch = false;
+        }
     }
 }

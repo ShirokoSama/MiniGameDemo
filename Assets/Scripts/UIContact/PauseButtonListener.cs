@@ -14,6 +14,5 @@ public class PauseButtonListener : MonoBehaviour {
 	public void ButtonClick()
     {
         PauseMenuListener.instance.MenuOn();
-        Debug.Log("Button clicked!");
     }
 }
