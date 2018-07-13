@@ -347,10 +347,7 @@
     <Compile Include="C:\Users\37111\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.standardevents@1.0.13\Editor\Importer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
-    <None Include="Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
-    <None Include="Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
-    <None Include="Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
+    <None Include="Assets\Effects\Shaders\GaussShader.shader" />
     <None Include="Assets\Resources\BackgroundSplit.xml" />
     <None Include="C:\Users\37111\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="C:\Users\37111\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Styles\Main_Light.uss" />

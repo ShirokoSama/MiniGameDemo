@@ -103,7 +103,11 @@ namespace HaruScene
 
 
             //当点击结束，将鲲的运动状态恢复为待命
-            if (!isTouch) moveState = KunMoveState.Idle;
+            if (!isTouch)
+            {
+                moveState = KunMoveState.Idle;
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
 
             //当鲲得到移动指令且仍有精力时
             if (isTouch && moveState != KunMoveState.Tired)
@@ -114,20 +118,24 @@ namespace HaruScene
                 if (touchOffset.magnitude <= floatJudge)
                 {
                     moveState = KunMoveState.Float;
-                    transform.Translate(0.0f, floatingSpeed * Time.deltaTime, 0.0f);
-                    
+                    transform.eulerAngles = new Vector3(0, 0, 90);
+                    transform.position += new Vector3(0.0f, floatingSpeed * Time.deltaTime, 0.0f);
                 }
                 else
                 {
                     moveState = KunMoveState.Swim;
                     touchOffset.y = Mathf.Clamp(touchOffset.y, -Mathf.Abs(touchOffset.x), Mathf.Abs(touchOffset.x));
-                    transform.Translate(touchOffset.normalized * swimSpeed * Time.deltaTime);
+                    touchOffset = touchOffset.normalized;
+                    float eulerZ = Mathf.Acos(touchOffset.x / 1f) * Mathf.Rad2Deg;
+                    transform.eulerAngles = new Vector3(0, 0, touchOffset.y > 0 ? eulerZ : 360f - eulerZ);
+                    transform.position += new Vector3(touchOffset.x, touchOffset.y, 0) * swimSpeed * Time.deltaTime;
                 }
                 energy -= energyFadeSpeed * Time.deltaTime;
             }
             else
             {
-                transform.Translate(new Vector3(0.0f, -sinkSpeed * Time.deltaTime, 0.0f));
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                transform.position += new Vector3(0.0f, -sinkSpeed * Time.deltaTime, 0.0f);
                 energy += energyRecoverSpeed * Time.deltaTime;
             }
 

@@ -300,22 +300,21 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Effects\Scripts\GaussShader.cs" />
     <Compile Include="Assets\Scripts\Background\BackgroundManager.cs" />
     <Compile Include="Assets\Scripts\Camera\AutoCamera.cs" />
     <Compile Include="Assets\Scripts\Character\KunController.cs" />
+    <Compile Include="Assets\Scripts\Map\MapGenerator.cs" />
+    <Compile Include="Assets\Scripts\SimpleJSON.cs" />
     <Compile Include="Assets\Scripts\UIContact\EnergyUIManager.cs" />
     <Compile Include="Assets\Scripts\UIContact\HealthPointUIController.cs" />
     <Compile Include="Assets\Scripts\UIContact\LevelHintController.cs" />
     <Compile Include="Assets\Scripts\UIContact\MonitorGraphic.cs" />
     <Compile Include="Assets\Scripts\UIContact\PauseButtonListener.cs" />
     <Compile Include="Assets\Scripts\UIContact\PauseMenuListener.cs" />
-    <Compile Include="Assets\Scripts\UIContact\RaycastClickTarget.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
-    <None Include="Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
-    <None Include="Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
-    <None Include="Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
+    <None Include="Assets\Effects\Shaders\GaussShader.shader" />
     <None Include="Assets\Resources\BackgroundSplit.xml" />
     <None Include="C:\Users\37111\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="C:\Users\37111\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Styles\Main_Light.uss" />
