@@ -306,8 +306,8 @@
     <Compile Include="Assets\Scripts\Character\KunController.cs" />
     <Compile Include="Assets\Scripts\Map\MapGenerator.cs" />
     <Compile Include="Assets\Scripts\SimpleJSON.cs" />
+    <Compile Include="Assets\Scripts\UIContact\CollectionUIController.cs" />
     <Compile Include="Assets\Scripts\UIContact\EnergyUIManager.cs" />
-    <Compile Include="Assets\Scripts\UIContact\HealthPointUIController.cs" />
     <Compile Include="Assets\Scripts\UIContact\LevelHintController.cs" />
     <Compile Include="Assets\Scripts\UIContact\MonitorGraphic.cs" />
     <Compile Include="Assets\Scripts\UIContact\PauseButtonListener.cs" />
