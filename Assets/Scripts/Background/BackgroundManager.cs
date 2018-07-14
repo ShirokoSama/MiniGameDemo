@@ -42,7 +42,7 @@ public class BackgroundManager : MonoBehaviour {
         {
             bgObjects[i] = new GameObject();
             bgObjects[i].AddComponent<SpriteRenderer>();
-            //bgObjects[i].GetComponent<SpriteRenderer>().sprite = sprite;
+            bgObjects[i].GetComponent<SpriteRenderer>().sortingLayerName = "Background";
             availableBackground.Push(bgObjects[i]);
         }
 	}

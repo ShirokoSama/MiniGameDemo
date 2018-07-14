@@ -1,1 +1,60 @@
-{"MapInfo":[ {"Index":"0", "FileName":"YellowGrass", "Position":[ "0", "0" ], "Rotation":"0", "Scale":"0.5"} ]}
+{
+"MapInfo": [
+	{
+		"Index": 0,
+		"FileName": "Platform_Haru_Obstacle2",
+		"Position": [1128, 1116],
+		"Rotation": 0.0,
+		"Scale": 1.0
+	},
+	{
+		"Index": 1,
+		"FileName": "Platform_Haru_Obstacle8",
+		"Position": [2548, 1337],
+		"Rotation": 0.0,
+		"Scale": 1.0
+	},
+	{
+		"Index": 2,
+		"FileName": "Platform_Haru_Obstacle3",
+		"Position": [4550, 439],
+		"Rotation": 0.0,
+		"Scale": 1.0
+	},
+	{
+		"Index": 3,
+		"FileName": "Platform_Haru_Obstacle4",
+		"Position": [4550, 1266],
+		"Rotation": -102.85,
+		"Scale": 1.0
+	},
+	{
+		"Index": 4,
+		"FileName": "Platform_Haru_Obstacle6",
+		"Position": [4183, 2091],
+		"Rotation": 0,
+		"Scale": 1.0
+	},
+	{
+		"Index": 5,
+		"FileName": "Platform_Haru_Obstacle10",
+		"Position": [5567, 2093],
+		"Rotation": 0,
+		"Scale": 1.0
+	},
+	{
+		"Index": 6,
+		"FileName": "Platform_Haru_Obstacle11",
+		"Position": [6716, 1036],
+		"Rotation": -8.6,
+		"Scale": 1.0
+	},
+	{
+		"Index": 7,
+		"FileName": "Platform_Haru_Obstacle7",
+		"Position": [7961, 667],
+		"Rotation": 0,
+		"Scale": 1.0
+	}
+]
+}
