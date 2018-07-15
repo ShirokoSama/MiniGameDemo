@@ -136,7 +136,7 @@ namespace HaruScene
                 if (currentEulerZ != 0f && currentEulerZ != 180f && rotateCoroutine == null)
                 {
                     float targetEulerZ = SinkEulerZJudge(currentEulerZ);
-                    rotateCoroutine = StartCoroutine(RotateAnimation(currentEulerZ, targetEulerZ, 1f));
+                    rotateCoroutine = StartCoroutine(RotateAnimation(currentEulerZ, targetEulerZ, 0.3f));
                 }
                 transform.position += new Vector3(0.0f, -sinkSpeed * Time.deltaTime, 0.0f);
                 energy += energyRecoverSpeed * Time.deltaTime;
