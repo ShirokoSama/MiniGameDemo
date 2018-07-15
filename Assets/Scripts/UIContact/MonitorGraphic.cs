@@ -2,7 +2,7 @@
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class MonitorGraphic : Graphic, IPointerDownHandler, IPointerUpHandler
+public class MonitorGraphic : Graphic, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
     private GameObject player;
 
@@ -24,5 +24,10 @@ public class MonitorGraphic : Graphic, IPointerDownHandler, IPointerUpHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         player.SendMessage("PlayerTouchUp");
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        player.SendMessage("PlayerDrag", eventData.position);
     }
 }

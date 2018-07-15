@@ -159,5 +159,10 @@ namespace HaruScene
         {
             isTouch = false;
         }
+
+        private void PlayerDrag(Vector2 position)
+        {
+            touchPosition = position;
+        }
     }
 }
