@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace HaruScene
 {
@@ -6,7 +7,7 @@ namespace HaruScene
     {
 
         //玩家输入状态控制
-        private bool isTouch = false;
+        private bool isTouch;
         private Vector2 touchPosition;
 
         enum KunMoveState
@@ -32,8 +33,6 @@ namespace HaruScene
         //鲲下沉速度
         public float sinkSpeed = 1.0f;
 
-        //采用相对鲲点击位置确认移动方式时，判断如果为点击在鲲身上则上浮，其中的判定范围
-        public float floatJudge = 1.0f;
         public EnergyUIManager energyUIManager;
 
         //鲲的最大精力
@@ -48,10 +47,14 @@ namespace HaruScene
         //当前鲲的状态
         private KunMoveState moveState = KunMoveState.Idle;
 
+        //鲲的旋转动画协程
+        private Coroutine rotateCoroutine = null;
+
         // Use this for initialization
         private void Start()
         {
-
+            isTouch = false;
+            
             character.transform.position.Set(
                 Camera.main.transform.position.x,
                 Camera.main.transform.position.y,
@@ -103,38 +106,38 @@ namespace HaruScene
 
 
             //当点击结束，将鲲的运动状态恢复为待命
-            if (!isTouch)
+            if (!isTouch && energy > 0)
             {
                 moveState = KunMoveState.Idle;
-                transform.eulerAngles = new Vector3(0, 0, 0);
             }
-
+            
             //当鲲得到移动指令且仍有精力时
             if (isTouch && moveState != KunMoveState.Tired)
             {
+                if (rotateCoroutine != null)
+                {
+                    StopCoroutine(rotateCoroutine);
+                    rotateCoroutine = null;
+                }
                 Vector3 mousePostion = Camera.main.ScreenToWorldPoint(touchPosition);
                 Vector3 dir = mousePostion - character.transform.position;
                 touchOffset = (Vector2)dir;
-                if (touchOffset.magnitude <= floatJudge)
-                {
-                    moveState = KunMoveState.Float;
-                    transform.eulerAngles = new Vector3(0, 0, 90);
-                    transform.position += new Vector3(0.0f, floatingSpeed * Time.deltaTime, 0.0f);
-                }
-                else
-                {
-                    moveState = KunMoveState.Swim;
-                    touchOffset.y = Mathf.Clamp(touchOffset.y, -Mathf.Abs(touchOffset.x), Mathf.Abs(touchOffset.x));
-                    touchOffset = touchOffset.normalized;
-                    float eulerZ = Mathf.Acos(touchOffset.x / 1f) * Mathf.Rad2Deg;
-                    transform.eulerAngles = new Vector3(0, 0, touchOffset.y > 0 ? eulerZ : 360f - eulerZ);
-                    transform.position += new Vector3(touchOffset.x, touchOffset.y, 0) * swimSpeed * Time.deltaTime;
-                }
+                moveState = KunMoveState.Swim;
+                touchOffset = touchOffset.normalized;
+                float eulerZ = Mathf.Acos(touchOffset.x / 1f) * Mathf.Rad2Deg;
+                transform.eulerAngles = new Vector3(0, 0, touchOffset.y > 0 ? eulerZ : 360f - eulerZ);
+                transform.position += new Vector3(touchOffset.x, touchOffset.y, 0) * swimSpeed * Time.deltaTime;
                 energy -= energyFadeSpeed * Time.deltaTime;
             }
             else
             {
-                transform.eulerAngles = new Vector3(0, 0, 0);
+                float currentEulerZ = transform.eulerAngles.z;
+                // 这里对coroutine是否为null的设置和判断很重要，否则会每帧开一个协程
+                if (currentEulerZ != 0f && currentEulerZ != 180f && rotateCoroutine == null)
+                {
+                    float targetEulerZ = SinkEulerZJudge(currentEulerZ);
+                    rotateCoroutine = StartCoroutine(RotateAnimation(currentEulerZ, targetEulerZ, 1f));
+                }
                 transform.position += new Vector3(0.0f, -sinkSpeed * Time.deltaTime, 0.0f);
                 energy += energyRecoverSpeed * Time.deltaTime;
             }
@@ -147,6 +150,27 @@ namespace HaruScene
             energy = Mathf.Min(energy, maxEnergy);
 
             energyUIManager.SetUIEnergy(energy);
+        }
+
+        private IEnumerator RotateAnimation(float startEuler, float endEuler, float costTime)
+        {
+            float degree = 0f;
+            float delta = 1f / costTime;
+            while (degree < 1f)
+            {
+                transform.eulerAngles = new Vector3(0, 0, Mathfx.Hermite(startEuler, endEuler, degree));
+                degree += Time.deltaTime * delta;
+                yield return null;
+            }
+            transform.eulerAngles = new Vector3(0, 0, endEuler);
+        }
+
+        private float SinkEulerZJudge(float originEulerZ)
+        {
+            if (originEulerZ > 90 && originEulerZ <= 270)
+                return 180;
+            else
+                return 0;
         }
 
         private void PlayerTouchDown(Vector2 position)

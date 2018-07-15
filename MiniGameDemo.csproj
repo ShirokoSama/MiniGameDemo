@@ -305,6 +305,7 @@
     <Compile Include="Assets\Scripts\Camera\AutoCamera.cs" />
     <Compile Include="Assets\Scripts\Character\KunController.cs" />
     <Compile Include="Assets\Scripts\Map\MapGenerator.cs" />
+    <Compile Include="Assets\Scripts\Mathfx.cs" />
     <Compile Include="Assets\Scripts\SimpleJSON.cs" />
     <Compile Include="Assets\Scripts\UIContact\CollectionUIController.cs" />
     <Compile Include="Assets\Scripts\UIContact\EnergyUIManager.cs" />
