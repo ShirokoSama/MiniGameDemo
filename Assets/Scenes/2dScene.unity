@@ -961,7 +961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee649d4ec067154dae83d6116caf473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeTime: 1
+  fadeTime: 0.5
   targetAlpha: 1
   flowerRotateSpeed: -100
   flowerClicked: {fileID: 21300008, guid: 549871e65ece2db4a9109780b86dd69e, type: 3}
@@ -1991,7 +1991,7 @@ GameObject:
   - component: {fileID: 728569425}
   m_Layer: 5
   m_Name: ClickMonitor
-  m_TagString: Untagged
+  m_TagString: ClickMonitor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3601,7 +3601,6 @@ MonoBehaviour:
   floatingSpeed: 4
   swimSpeed: 8
   sinkSpeed: 1
-  floatJudge: 1
   energyUIManager: {fileID: 195143618}
   maxEnergy: 100
   energyFadeSpeed: 20

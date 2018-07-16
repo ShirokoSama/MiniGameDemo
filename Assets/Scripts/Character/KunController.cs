@@ -169,6 +169,8 @@ namespace HaruScene
         {
             if (originEulerZ > 90 && originEulerZ <= 270)
                 return 180;
+            else if (originEulerZ > 270)
+                return 360;
             else
                 return 0;
         }

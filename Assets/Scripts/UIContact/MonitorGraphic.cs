@@ -12,6 +12,7 @@ public class MonitorGraphic : Graphic, IPointerDownHandler, IPointerUpHandler, I
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
+    // a graphic class with no drawcall
     public override void SetMaterialDirty() { }
     public override void SetVerticesDirty() { }
     protected override void OnPopulateMesh(VertexHelper vh) { }

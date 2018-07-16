@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 public class PauseMenuListener : MonoBehaviour {
 
-    public float fadeTime = 1.0f;
+    public float fadeTime;
     [Range(0, 1)]
-    public float targetAlpha = 1.0f;
-    public float flowerRotateSpeed = 10.0f;
+    public float targetAlpha;
+    public float flowerRotateSpeed;
     public Sprite flowerClicked;
     public Sprite flowerUnclicked;
     public Image resumeFlower;
@@ -16,17 +16,23 @@ public class PauseMenuListener : MonoBehaviour {
     public Sprite musicOff;
     public Image musicImage;
 
+    public static PauseMenuListener instance;
+
+    private MonitorGraphic clickMonitorInstance;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private Vector3 posStandby;
     private Vector3 posCall;
-    public static PauseMenuListener instance;
     private bool isMenuOn;
-    private bool flowerRotate = false;
+    private bool isFlowerRotate = false;
     //音乐启用先这里随便写了，音乐的管理不应该在这里进行。
     private bool isMusicOn;
-
     private float m_TimeSacleRef = 1.0f;
+
+    //reference of coroutines
+    private Coroutine fadeCoroutine = null;
+    private Coroutine flowerButtonCoroutine = null;
+    private Coroutine disappearMoveCoroutine = null;
 
     public void Awake()
     {
@@ -34,6 +40,7 @@ public class PauseMenuListener : MonoBehaviour {
         isMenuOn = false;
         isMusicOn = true;
 
+        clickMonitorInstance = GameObject.FindGameObjectWithTag("ClickMonitor").GetComponent<MonitorGraphic>();
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
 
@@ -51,17 +58,12 @@ public class PauseMenuListener : MonoBehaviour {
 
     public void OnResumeClicked()
     {
-        // resume
-        StartCoroutine(FlowerButtonClicked(resumeFlower));
-        Time.timeScale = m_TimeSacleRef;
-        MenuOff();
+        MenuOff(resumeFlower);
     }
 
     public void OnRestartClicked()
     {
-        StartCoroutine(FlowerButtonClicked(restartFlower));
-        Time.timeScale = m_TimeSacleRef;
-        MenuOff();
+        MenuOff(restartFlower);
     }
 
     public void OnMusicClicked()
@@ -81,23 +83,34 @@ public class PauseMenuListener : MonoBehaviour {
     {
         if (!isMenuOn)
         {
+            // settings
             isMenuOn = true;
-            // pause
             m_TimeSacleRef = Time.timeScale;
-            Time.timeScale = 0.0f;
-
+            Time.timeScale = 0.0f; // pause
+            clickMonitorInstance.raycastTarget = false;
+            // animations
             rectTransform.localPosition = posCall;
-            StartCoroutine(Fade(0.0f, targetAlpha, fadeTime, canvasGroup));
+            if (fadeCoroutine == null)
+            {
+                fadeCoroutine = StartCoroutine(Fade(0.0f, targetAlpha, fadeTime, canvasGroup));
+            }
         }
     }
 
-    public void MenuOff()
+    public void MenuOff(Image rotateFlower)
     {
-        if (isMenuOn)
+        if (isMenuOn 
+            && fadeCoroutine == null 
+            && disappearMoveCoroutine == null 
+            && flowerButtonCoroutine == null)
         {
-            isMenuOn = false;
-            StartCoroutine(Fade(targetAlpha, 0.0f, fadeTime, canvasGroup));
-            StartCoroutine(DisappearMove());
+            // settings
+            Time.timeScale = m_TimeSacleRef;
+            clickMonitorInstance.raycastTarget = true;
+            // animations
+            flowerButtonCoroutine = StartCoroutine(FlowerButtonClicked(rotateFlower));
+            fadeCoroutine = StartCoroutine(Fade(targetAlpha, 0.0f, fadeTime, canvasGroup));
+            disappearMoveCoroutine = StartCoroutine(DisappearMove());
         }
     }
 
@@ -112,21 +125,24 @@ public class PauseMenuListener : MonoBehaviour {
             yield return null;
         }
         canvasGroup.alpha = targetAlpha;
+        fadeCoroutine = null;
     }
 
     IEnumerator DisappearMove()
     {
         yield return new WaitForSeconds(fadeTime);
         rectTransform.localPosition = posStandby;
+        isMenuOn = false;
+        disappearMoveCoroutine = null;
     }
 
 
     IEnumerator FlowerButtonClicked(Image flower)
     {
-        flowerRotate = true;
+        isFlowerRotate = true;
         flower.sprite = flowerClicked;
         StartCoroutine(FlowerRotateStop(flower));
-        while (flowerRotate)
+        while (isFlowerRotate)
         {
             flower.rectTransform.Rotate(new Vector3(0.0f, 0.0f, flowerRotateSpeed * Time.deltaTime));
             yield return null;
@@ -135,10 +151,11 @@ public class PauseMenuListener : MonoBehaviour {
 
     IEnumerator FlowerRotateStop(Image flower)
     {
-        yield return new WaitForSeconds(1.0f);
-        flowerRotate = false;
+        yield return new WaitForSeconds(fadeTime);
+        isFlowerRotate = false;
         flower.sprite = flowerUnclicked;
         flower.rectTransform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
+        flowerButtonCoroutine = null;
     }
 
     public void SwitchMusic()
