@@ -7,4 +7,4 @@ BUG LIST
 4. 鲲初始点需要确定 出生点(3800,1100)
 5. ui暂停后触摸屏幕还是会修改角色的旋转 fixed 解决了一系列关于重复的协程的BUG，然后现在点击菜单外的部分不做任何响应，但菜单消失动画期间时间已开始流动，把fadeTime改成了0.5s
 6. 地图加载旋转方向与ps不一致，要在Rotation上面加一个负号 -- grass.transform.eulerAngles = new Vector3(0.0f, 0.0f, -node["Rotation"].AsFloat);
-7. grass的旋转上面Z轴的缩放直接写成1.0f，不要用Scale的值修改
+7. grass的缩放上面Z轴的缩放直接写成1.0f，不要用Scale的值修改
