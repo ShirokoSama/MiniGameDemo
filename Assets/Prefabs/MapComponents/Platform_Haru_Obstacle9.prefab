@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4141086722200218}
   - component: {fileID: 212554110279195804}
   - component: {fileID: 60965922316760010}
+  - component: {fileID: 114958942583241414}
   m_Layer: 0
   m_Name: Platform_Haru_Obstacle9
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1127484396179226}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 85.3, y: 44.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,6 +81,23 @@ PolygonCollider2D:
       - {x: 0.48499998, y: -0.62}
       - {x: 1.2049999, y: -0.85999995}
       - {x: 2.235, y: -0.52}
+--- !u!114 &114958942583241414
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1127484396179226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae2fccd727f33e45822f1706c4c12d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  positionEnd: {x: 0, y: 0}
+  rotationEnd: 0
+  scaleEnd: 1
+  duration: 1
+  visible: 1
 --- !u!212 &212554110279195804
 SpriteRenderer:
   m_ObjectHideFlags: 1

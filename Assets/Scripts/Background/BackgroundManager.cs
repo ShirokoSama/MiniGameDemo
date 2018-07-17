@@ -58,7 +58,7 @@ public class BackgroundManager : MonoBehaviour {
         {
             if (piece.shown != true)
             {
-                var bundle = AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/backgroundsplit-" + piece.x + "-" + piece.y + ".normal");
+                var bundle = AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/background/backgroundsplit-" + piece.x + "-" + piece.y + ".normal");
                 if (bundle == null)
                 {
                     Debug.Log("Fail to Load Bundle");

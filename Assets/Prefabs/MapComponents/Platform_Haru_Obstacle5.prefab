@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4213105846806632}
   - component: {fileID: 212639727489197096}
   - component: {fileID: 60449590976046040}
+  - component: {fileID: 114859228389300088}
   m_Layer: 0
   m_Name: Platform_Haru_Obstacle5
   m_TagString: Untagged
@@ -86,6 +87,23 @@ PolygonCollider2D:
       - {x: 3.155, y: -0.755}
       - {x: 3.155, y: -0.575}
       - {x: 2.725, y: 0.105}
+--- !u!114 &114859228389300088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1075637286012710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae2fccd727f33e45822f1706c4c12d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  positionEnd: {x: 0, y: 0}
+  rotationEnd: 0
+  scaleEnd: 1
+  duration: 1
+  visible: 1
 --- !u!212 &212639727489197096
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4440216135392028}
   - component: {fileID: 212558937291594694}
   - component: {fileID: 60977963249701514}
+  - component: {fileID: 114340375272201838}
   m_Layer: 0
   m_Name: Platform_Haru_Obstacle3
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1191624878204866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.5, y: 4.39, z: 0}
+  m_LocalPosition: {x: 94.29, y: 29.87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -148,6 +149,23 @@ PolygonCollider2D:
       - {x: -5.075, y: 3.8249998}
       - {x: -5.075, y: 4.165}
       - {x: -5.435, y: 4.395}
+--- !u!114 &114340375272201838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1191624878204866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae2fccd727f33e45822f1706c4c12d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  positionEnd: {x: 0, y: 0}
+  rotationEnd: 0
+  scaleEnd: 0
+  duration: 1
+  visible: 1
 --- !u!212 &212558937291594694
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -182,7 +200,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 302950833
   m_SortingLayer: 1
-  m_SortingOrder: 6
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300004, guid: 5df91c39cd35a7540b53a2dd2f8dbebf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

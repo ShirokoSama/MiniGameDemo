@@ -1,0 +1,278 @@
+fileFormatVersion: 2
+guid: b56c98987484c5e41ac9a9f7f5aa9d5e
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: props
+    21300002: flower
+    21300004: key
+    21300006: shiftLeft
+    21300008: shiftRight
+    21300010: transfer
+    21300012: urchin
+  externalObjects: {}
+  serializedVersion: 5
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flower
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 24
+        width: 293
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 48.5, y: 21.5}
+        - {x: 21.5, y: 60.5}
+        - {x: -46.5, y: 60.5}
+        - {x: -60.5, y: 53.5}
+        - {x: -77.5, y: 20.5}
+        - {x: -103.5, y: 10.5}
+        - {x: -95.5, y: -19.5}
+        - {x: -80.5, y: -67.5}
+        - {x: -64.5, y: -79.5}
+        - {x: -30.5, y: -83.5}
+        - {x: 47.5, y: -84.5}
+        - {x: 94.5, y: -52.5}
+        - {x: 103.5, y: -13.5}
+        - {x: 83.5, y: 22.5}
+      tessellationDetail: 0.07
+      bones: []
+      spriteID: 8d14e1da571a7884cbc547b817b12ab3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: key
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 49
+        width: 139
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -6.5, y: 8}
+        - {x: 22.5, y: 25}
+        - {x: 4.5, y: 52}
+        - {x: -29.5, y: 59}
+        - {x: -55.5, y: 91}
+        - {x: -65.5, y: 90}
+        - {x: 11.5, y: -43}
+        - {x: -3.5, y: -94}
+        - {x: 44.5, y: -93}
+        - {x: 69.5, y: -57}
+        - {x: 21.5, y: -38}
+      tessellationDetail: 0.05
+      bones: []
+      spriteID: 542512273df6fd54288e2aebec8e8265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shiftLeft
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 287
+        width: 272
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -1, y: 122}
+        - {x: -95, y: -3}
+        - {x: -5, y: -137}
+        - {x: 86, y: -1}
+      tessellationDetail: 0.05
+      bones: []
+      spriteID: 145027c6fcf768e41aac75d1674cd233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shiftRight
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 285
+        width: 278
+        height: 360
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 4, y: 127}
+        - {x: -91, y: 1}
+        - {x: 2, y: -135}
+        - {x: 89, y: -3}
+      tessellationDetail: 0.03
+      bones: []
+      spriteID: 3a0dd7d378574714181bd90ec1f0a6c3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: transfer
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 647
+        width: 346
+        height: 376
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -59, y: 119}
+        - {x: -116, y: 30}
+        - {x: -41, y: -103}
+        - {x: 34, y: -103}
+        - {x: 111, y: 31}
+        - {x: 53, y: 119}
+      tessellationDetail: 0.02
+      bones: []
+      spriteID: 159346e0bf46ca8498712c09b595ec3b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: urchin
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 726
+        width: 291
+        height: 297
+      alignment: 9
+      pivot: {x: 0.5103093, y: 0.48653197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 105.5, y: 52.5}
+        - {x: 61.5, y: 49.5}
+        - {x: 59.5, y: 95.5}
+        - {x: 23.5, y: 75.5}
+        - {x: 4.5, y: 111.5}
+        - {x: -14.5, y: 75.5}
+        - {x: -41.5, y: 97.5}
+        - {x: -56.5, y: 66.5}
+        - {x: -92.5, y: 62.5}
+        - {x: -77.5, y: 28.5}
+        - {x: -106.5, y: 20.5}
+        - {x: -81.5, y: -2.5}
+        - {x: -105.5, y: -21.5}
+        - {x: -89.5, y: -41.5}
+        - {x: -97.5, y: -68.5}
+        - {x: -73.5, y: -60.5}
+        - {x: -75.5, y: -96.5}
+        - {x: -41.5, y: -91.5}
+        - {x: -39.5, y: -111.5}
+        - {x: -14.5, y: -101.5}
+        - {x: 5.5, y: -118.5}
+        - {x: 23.5, y: -91.5}
+        - {x: 53.5, y: -110.5}
+        - {x: 63.5, y: -70.5}
+        - {x: 100.5, y: -73.5}
+        - {x: 87.5, y: -31.5}
+        - {x: 116.5, y: -16.5}
+        - {x: 85.5, y: 14.5}
+      tessellationDetail: 0.07
+      bones: []
+      spriteID: f5b788dac40c1234e8c2ece01127d43b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b7ed58a0459e8384ba33c75968a9d894
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
