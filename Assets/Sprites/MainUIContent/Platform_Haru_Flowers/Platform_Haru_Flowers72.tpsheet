@@ -1,0 +1,19 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: Platform_Haru_Flowers72.png (2048 x 2048)
+# $TexturePacker:SmartUpdate:efd4cd45ff80c30cd0f5dba83107f76f:5f97d47eda47d8abf3922fa9920006a2:85ae849c502c144e13334b9ad4d17aed$
+#
+
+Platform_Haru_Flowers7_00000;2;1526;400;520;0.5;0.5
+Platform_Haru_Flowers7_00001;2;1004;400;520;0.5;0.5
+Platform_Haru_Flowers7_00002;2;482;400;520;0.5;0.5
+Platform_Haru_Flowers7_00003;404;1526;400;520;0.5;0.5
+Platform_Haru_Flowers7_00004;806;1526;400;520;0.5;0.5
+Platform_Haru_Flowers7_00005;1208;1526;400;520;0.5;0.5
+Platform_Haru_Flowers7_00006;1610;1526;400;520;0.5;0.5
+Platform_Haru_Flowers7_00007;404;1004;400;520;0.5;0.5
+Platform_Haru_Flowers7_00008;404;482;400;520;0.5;0.5

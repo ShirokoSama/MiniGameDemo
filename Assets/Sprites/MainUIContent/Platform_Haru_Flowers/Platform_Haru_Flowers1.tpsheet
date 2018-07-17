@@ -1,0 +1,34 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: Platform_Haru_Flowers11.png (2048 x 2048)
+# $TexturePacker:SmartUpdate:9da111cca13cfe4a0a96a248cd8442c8:9016891bd65bdd8ab75dd9b8a1086dba:504f716bc964c26d69958c97947a2988$
+#
+
+Platform_Haru_Flowers1_00000;2;1730;446;316;0.5;0.5
+Platform_Haru_Flowers1_00001;450;1730;446;316;0.5;0.5
+Platform_Haru_Flowers1_00002;898;1730;446;316;0.5;0.5
+Platform_Haru_Flowers1_00003;1346;1730;446;316;0.5;0.5
+Platform_Haru_Flowers1_00004;2;1412;446;316;0.5;0.5
+Platform_Haru_Flowers1_00005;2;1094;446;316;0.5;0.5
+Platform_Haru_Flowers1_00006;2;776;446;316;0.5;0.5
+Platform_Haru_Flowers1_00007;2;458;446;316;0.5;0.5
+Platform_Haru_Flowers1_00008;2;140;446;316;0.5;0.5
+Platform_Haru_Flowers1_00009;450;1412;446;316;0.5;0.5
+Platform_Haru_Flowers1_00010;898;1412;446;316;0.5;0.5
+Platform_Haru_Flowers1_00011;1346;1412;446;316;0.5;0.5
+Platform_Haru_Flowers1_00012;450;1094;446;316;0.5;0.5
+Platform_Haru_Flowers1_00013;898;1094;446;316;0.5;0.5
+Platform_Haru_Flowers1_00014;1346;1094;446;316;0.5;0.5
+Platform_Haru_Flowers1_00015;450;776;446;316;0.5;0.5
+Platform_Haru_Flowers1_00016;450;458;446;316;0.5;0.5
+Platform_Haru_Flowers1_00017;450;140;446;316;0.5;0.5
+Platform_Haru_Flowers1_00018;898;776;446;316;0.5;0.5
+Platform_Haru_Flowers1_00019;1346;776;446;316;0.5;0.5
+Platform_Haru_Flowers1_00020;898;458;446;316;0.5;0.5
+Platform_Haru_Flowers1_00021;898;140;446;316;0.5;0.5
+Platform_Haru_Flowers1_00022;1346;458;446;316;0.5;0.5
+Platform_Haru_Flowers1_00023;1346;140;446;316;0.5;0.5
