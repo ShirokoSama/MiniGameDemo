@@ -1,0 +1,18 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: ForeGround_Coral1_Fish4.png (2048 x 2048)
+# $TexturePacker:SmartUpdate:bd133b62f62b4518aae8f51840488482:3f8ec8621a726c576e55cb5aae055e55:1f0bd654de03bfb5290d27d1ef9ba6cb$
+#
+
+ForeGround_Coral_Fish_000;2;1446;600;600;0.5;0.5
+ForeGround_Coral_Fish_001;2;844;600;600;0.5;0.5
+ForeGround_Coral_Fish_002;2;242;600;600;0.5;0.5
+ForeGround_Coral_Fish_003;604;1446;600;600;0.5;0.5
+ForeGround_Coral_Fish_004;2;1446;600;600;0.5;0.5
+ForeGround_Coral_Fish_005;2;844;600;600;0.5;0.5
+ForeGround_Coral_Fish_006;2;242;600;600;0.5;0.5
+ForeGround_Coral_Fish_007;604;1446;600;600;0.5;0.5

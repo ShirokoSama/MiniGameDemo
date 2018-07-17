@@ -26,7 +26,7 @@ public class MapObjectJsonConvert : MonoBehaviour {
         {
             JSONClass mapNode = SaveNode(mapObject.GetComponent<MapObject>().type.GetHashCode(), index, GetPureName(mapObject.name),
                 mapObject.transform.position.x * 100.0f, mapObject.transform.position.y * 100.0f,
-                mapObject.transform.eulerAngles.z, mapObject.transform.localScale.x, mapObject.transform.localScale.y, 
+                -mapObject.transform.eulerAngles.z, mapObject.transform.localScale.x, mapObject.transform.localScale.y, 
                 mapObject.GetComponent<MapObject>().positionEnd.x, mapObject.GetComponent<MapObject>().positionEnd.y,
                 mapObject.GetComponent<MapObject>().rotationEnd, mapObject.GetComponent<MapObject>().scaleEnd,
                 mapObject.GetComponent<MapObject>().duration, mapObject.GetComponent<MapObject>().visible, 
@@ -104,7 +104,7 @@ public class MapObjectJsonConvert : MonoBehaviour {
             mapPiece.transform.localScale = new Vector3(node["ScaleX"].AsFloat, node["ScaleY"].AsFloat, node["Scale"].AsFloat);
             mapPiece.GetComponent<MapObject>().positionEnd.x = node["PositionEnd"][0].AsFloat;
             mapPiece.GetComponent<MapObject>().positionEnd.y = node["PositionEnd"][1].AsFloat;
-            mapPiece.GetComponent<MapObject>().rotationEnd = node["RotationEnd"].AsFloat;
+            mapPiece.GetComponent<MapObject>().rotationEnd = -node["RotationEnd"].AsFloat;
             mapPiece.GetComponent<MapObject>().scaleEnd = node["ScaleEnd"].AsFloat;
             mapPiece.GetComponent<MapObject>().duration = node["Duration"].AsFloat;
             mapPiece.GetComponent<MapObject>().visible = node["Visible"].AsBool;

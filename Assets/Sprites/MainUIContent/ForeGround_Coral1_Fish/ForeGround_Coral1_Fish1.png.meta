@@ -1,18 +1,17 @@
 fileFormatVersion: 2
-guid: a5f17bbe60d108c40b0311961f48387e
+guid: aca9d58e9cfe43342abc4a6141a7009b
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ForeGround_Coral1_FishNormal2
-    21300002: ForeGround_Coral_Fish_00000
-    21300004: ForeGround_Coral_Fish_00001
-    21300006: ForeGround_Coral_Fish_00002
-    21300008: ForeGround_Coral_Fish_00003
-    21300010: ForeGround_Coral_Fish_00004
-    21300012: ForeGround_Coral_Fish_00005
-    21300014: ForeGround_Coral_Fish_00006
-    21300016: ForeGround_Coral_Fish_00007
-    21300018: ForeGround_Coral_Fish_00008
-    21300020: ForeGround_Coral_Fish_00009
+    21300000: ForeGround_Coral1_Fish1
+    21300002: ForeGround_Coral_Fish_038
+    21300004: ForeGround_Coral_Fish_039
+    21300006: ForeGround_Coral_Fish_040
+    21300008: ForeGround_Coral_Fish_041
+    21300010: ForeGround_Coral_Fish_042
+    21300012: ForeGround_Coral_Fish_043
+    21300014: ForeGround_Coral_Fish_044
+    21300016: ForeGround_Coral_Fish_045
+    21300018: ForeGround_Coral_Fish_046
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -82,7 +81,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ForeGround_Coral_Fish_00000
+      name: ForeGround_Coral_Fish_038
       rect:
         serializedVersion: 2
         x: 2
@@ -96,13 +95,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c6ae72649f2b8244e8c19bb5a4b3a48d
+      spriteID: 9c479fb2ebd8e804d8467b202036f251
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ForeGround_Coral_Fish_00001
+      name: ForeGround_Coral_Fish_039
       rect:
         serializedVersion: 2
         x: 2
@@ -116,53 +115,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 37f5943ce2c7d9542b15da453c9590cc
+      spriteID: dbca04985026e8f4dad747b6d424d337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ForeGround_Coral_Fish_00002
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 1446
-        width: 600
-        height: 600
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3dd4db42841310a48ae2af921adaa972
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForeGround_Coral_Fish_00003
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 844
-        width: 600
-        height: 600
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1ef7ad43274f65c4c990903816a7a540
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForeGround_Coral_Fish_00004
+      name: ForeGround_Coral_Fish_040
       rect:
         serializedVersion: 2
         x: 2
@@ -176,13 +135,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a1c786f9e00d94d4d9b6830004fc5726
+      spriteID: f4f32d2c268c4644d9fff42b91156597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ForeGround_Coral_Fish_00005
+      name: ForeGround_Coral_Fish_041
       rect:
         serializedVersion: 2
         x: 604
@@ -196,13 +155,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f4f215a2aaef03418bb64b373717986
+      spriteID: 3dd0dc11e00536e40affef839b283fb9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ForeGround_Coral_Fish_00006
+      name: ForeGround_Coral_Fish_042
       rect:
         serializedVersion: 2
         x: 1206
@@ -216,13 +175,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7b3fd1d626a0eb439711db9b117abbc
+      spriteID: 1452809b5cc2f3044b4fbea4a27c5fb1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ForeGround_Coral_Fish_00007
+      name: ForeGround_Coral_Fish_043
       rect:
         serializedVersion: 2
         x: 604
@@ -236,13 +195,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: faad394452e954049a3e46654bba36c7
+      spriteID: 2867ed9b6df52e942be3f5064ee8863c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ForeGround_Coral_Fish_00008
+      name: ForeGround_Coral_Fish_044
       rect:
         serializedVersion: 2
         x: 604
@@ -256,13 +215,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7af376c5510b6054bb0ac5afbc5ec097
+      spriteID: 0dd2e2e381d6d884190746c5403322ad
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ForeGround_Coral_Fish_00009
+      name: ForeGround_Coral_Fish_045
       rect:
         serializedVersion: 2
         x: 1206
@@ -276,7 +235,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ad4ec26037f8cc84c863beaef1459750
+      spriteID: 3ac033fcdbc69d146823aae2c1c6996a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForeGround_Coral_Fish_046
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 242
+        width: 600
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 493caa89964093c438c97337cd247102
       vertices: []
       indices: 
       edges: []
@@ -284,7 +263,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0bdb2b45ae963de4f818204b77630a24
+    spriteID: c31357f7d33d1b1488c74cd6cbec49a2
     vertices: []
     indices: 
     edges: []
