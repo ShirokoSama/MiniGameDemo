@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SimpleJSON;
 
 public class MapPiece {
 
@@ -58,6 +59,11 @@ public class MapPiece {
     public bool visible;
     //是否可触发
     public bool triggerable;
+    //是否可加载
+    public bool loadable;
+
+    //和最初加载的数据相比，是否有改变，将决定是否存档变化
+    private bool changed = false;
 
     public MapPiece(MapType type, int index, string fileName, Vector2 position, float rotation, Vector2 scale, bool visible, 
         Vector2 positionEnd, float rotationEnd, float scaleEnd, float duration, List<Key.KeyTrigger> triggers, int transferTrigger, ShiftCrystal.ShiftCrystalTrigger shiftTrigger)
@@ -88,11 +94,12 @@ public class MapPiece {
         scaleCountDown = 0.0f;
         this.visible = visible;
         triggerable = true;
+        loadable = true;
 
     }
 
     public void LoadArchive(Vector2 currentPosition, Vector2 targetPositionOffset, float moveCountDown, float currentRotation, float targetRotationOffset,
-        float rotationCountDown, Vector2 currentScale, float targetRatio, float scaleCountDown, bool visible, bool triggerable)
+        float rotationCountDown, Vector2 currentScale, float targetRatio, float scaleCountDown, bool visible, bool triggerable, bool loadable)
     {
         this.currentPosition = currentPosition;
         this.targetPositionOffset = targetPositionOffset;
@@ -105,6 +112,40 @@ public class MapPiece {
         this.scaleCountDown = scaleCountDown;
         this.visible = visible;
         this.triggerable = triggerable;
+        this.loadable = loadable;
+
+        changed = true;
+    }
+
+    public JSONClass GenerateArchivePiece()
+    {
+        JSONClass node = new JSONClass();
+        node.Add("Index", new JSONData(index));
+        node.Add("CurrentPosition", new JSONArray
+        {
+            new JSONData(currentPosition.x),
+            new JSONData(currentPosition.y)
+        });
+        node.Add("TargetPositionOffset", new JSONArray()
+        {
+            new JSONData(targetPositionOffset.x),
+            new JSONData(targetPositionOffset.y)
+        });
+        node.Add("MoveCountDown", new JSONData(moveCountDown));
+        node.Add("CurrentRotation", new JSONData(currentRotation));
+        node.Add("TartgetRotationOffset", new JSONData(targetRotationOffset));
+        node.Add("RotationCountDown", new JSONData(rotationCountDown));
+        node.Add("CurrentScale", new JSONArray()
+        {
+            new JSONData(currentScale.x),
+            new JSONData(currentScale.y)
+        });
+        node.Add("TargetScaleRatio", new JSONData(targetScaleRatio));
+        node.Add("ScaleCountDown", new JSONData(scaleCountDown));
+        node.Add("Visible", new JSONData(visible));
+        node.Add("Triggerable", new JSONData(triggerable));
+        node.Add("Loadable", new JSONData(loadable));
+        return node;
     }
 
     //每帧刷新的内容，主要是移动旋转缩放部分
@@ -164,18 +205,21 @@ public class MapPiece {
     {
         targetPositionOffset += offset;
         moveCountDown = duration;
+        changed = true;
     }
 
     public void SetNewRotationOffset(float offset, float duration)
     {
         targetRotationOffset += offset;
         rotationCountDown = duration;
+        changed = true;
     }
 
     public void SetNewScaleRatio(float ratio, float duration)
     {
         targetScaleRatio *= ratio;
         scaleCountDown = duration;
+        changed = true;
     }
 
 }

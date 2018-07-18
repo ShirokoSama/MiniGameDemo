@@ -150,6 +150,18 @@ public class MapManager : MonoBehaviour {
         return result;
     }
 
+    public JSONClass GenerateArchieveNode()
+    {
+        JSONArray archievePieces = new JSONArray();
+        foreach (MapPiece mapPiece in mapPieces)
+        {
+            archievePieces.Add(mapPiece.index.ToString(), mapPiece.GenerateArchivePiece());
+        }
+        JSONClass mapArchieve = new JSONClass();
+        mapArchieve.Add("ArchievePieces", archievePieces);
+        return mapArchieve;
+    }
+
     public bool NeedGenerated(Vector2 nodePosition, Vector2 scale, Vector3 cameraPosition)
     {
         float nodeX = nodePosition.x;
