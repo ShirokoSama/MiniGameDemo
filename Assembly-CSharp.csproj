@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Background\BackgroundManager.cs" />
     <Compile Include="Assets\Scripts\Camera\AutoCamera.cs" />
     <Compile Include="Assets\Scripts\Character\KunController.cs" />
+    <Compile Include="Assets\Scripts\GameController\GameController.cs" />
     <Compile Include="Assets\Scripts\Map\Key.cs" />
     <Compile Include="Assets\Scripts\Map\MapManager.cs" />
     <Compile Include="Assets\Scripts\Map\MapObject.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Assets\Scripts\UIContact\EnergyUIManager.cs" />
     <Compile Include="Assets\Scripts\UIContact\LevelHintController.cs" />
     <Compile Include="Assets\Scripts\UIContact\MonitorGraphic.cs" />
+    <Compile Include="Assets\Scripts\UIContact\PassHintController.cs" />
     <Compile Include="Assets\Scripts\UIContact\PauseButtonListener.cs" />
     <Compile Include="Assets\Scripts\UIContact\PauseMenuListener.cs" />
     <None Include="Assets\Resources\BackgroundSplit.xml" />

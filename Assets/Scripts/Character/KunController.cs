@@ -144,6 +144,7 @@ namespace HaruScene
                 energy += energyRecoverSpeed * Time.deltaTime;
             }
 
+            transform.position = new Vector2(transform.position.x, Mathf.Clamp(transform.position.y, 1.0f, 191.0f));
             if (energy <= 0.0f)
             {
                 moveState = KunMoveState.Tired;

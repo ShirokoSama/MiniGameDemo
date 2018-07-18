@@ -18,9 +18,7 @@ public class CollectionUIController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         totalCollectionCount = collectionFlowers.Length;
-        
-
-        SetCollectionCount(2);
+        SetCollectionCount(0);
 	}
 	
 	// Update is called once per frame
