@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using HaruScene;
 
 public class MonitorGraphic : Graphic, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
-    private GameObject player;
+    private KunController player;
 
     protected override void Awake()
     {
         base.Awake();
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<KunController>();
     }
 
     // a graphic class with no drawcall
@@ -19,16 +20,16 @@ public class MonitorGraphic : Graphic, IPointerDownHandler, IPointerUpHandler, I
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        player.SendMessage("PlayerTouchDown", eventData.position);
+        player.PlayerTouchDown(eventData.position);
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        player.SendMessage("PlayerTouchUp");
+        player.PlayerTouchUp();
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        player.SendMessage("PlayerDrag", eventData.position);
+        player.PlayerDrag(eventData.position);
     }
 }

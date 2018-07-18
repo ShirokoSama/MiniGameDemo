@@ -49,6 +49,7 @@ namespace HaruScene
 
         //鲲的旋转动画协程
         private Coroutine rotateCoroutine = null;
+        private bool isRotateCoroutineOn = false;
 
         // Use this for initialization
         private void Start()
@@ -114,10 +115,10 @@ namespace HaruScene
             //当鲲得到移动指令且仍有精力时
             if (isTouch && moveState != KunMoveState.Tired)
             {
-                if (rotateCoroutine != null)
+                if (isRotateCoroutineOn)
                 {
                     StopCoroutine(rotateCoroutine);
-                    rotateCoroutine = null;
+                    isRotateCoroutineOn = false;
                 }
                 Vector3 mousePostion = Camera.main.ScreenToWorldPoint(touchPosition);
                 Vector3 dir = mousePostion - character.transform.position;
@@ -133,10 +134,11 @@ namespace HaruScene
             {
                 float currentEulerZ = transform.eulerAngles.z;
                 // 这里对coroutine是否为null的设置和判断很重要，否则会每帧开一个协程
-                if (currentEulerZ != 0f && currentEulerZ != 180f && rotateCoroutine == null)
+                if (currentEulerZ != 0f && currentEulerZ != 180f && !isRotateCoroutineOn)
                 {
                     float targetEulerZ = SinkEulerZJudge(currentEulerZ);
                     rotateCoroutine = StartCoroutine(RotateAnimation(currentEulerZ, targetEulerZ, 0.3f));
+                    isRotateCoroutineOn = true;
                 }
                 transform.position += new Vector3(0.0f, -sinkSpeed * Time.deltaTime, 0.0f);
                 energy += energyRecoverSpeed * Time.deltaTime;
@@ -175,18 +177,18 @@ namespace HaruScene
                 return 0;
         }
 
-        private void PlayerTouchDown(Vector2 position)
+        public void PlayerTouchDown(Vector2 position)
         {
             isTouch = true;
             touchPosition = position;
         }
 
-        private void PlayerTouchUp()
+        public void PlayerTouchUp()
         {
             isTouch = false;
         }
 
-        private void PlayerDrag(Vector2 position)
+        public void PlayerDrag(Vector2 position)
         {
             touchPosition = position;
         }
