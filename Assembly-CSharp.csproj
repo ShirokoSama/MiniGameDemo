@@ -60,6 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Effects\Scripts\GaussShader.cs" />
+    <Compile Include="Assets\Effects\Scripts\NormalDistribution.cs" />
+    <Compile Include="Assets\Effects\Scripts\particleStatus.cs" />
+    <Compile Include="Assets\Effects\Scripts\SpriteToParticles.cs" />
     <Compile Include="Assets\Scripts\Background\BackgroundManager.cs" />
     <Compile Include="Assets\Scripts\Camera\AutoCamera.cs" />
     <Compile Include="Assets\Scripts\Character\KunController.cs" />

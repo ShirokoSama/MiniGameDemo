@@ -52,6 +52,7 @@ namespace HaruScene
             Vector3 aheadTargetPos = target.position + m_LookAheadPos + Vector3.forward * m_OffsetZ;
             Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref m_CurrentVelocity, damping);
 
+            newPos.y = Mathf.Clamp(newPos.y, 9.6f, 182.4f);
             transform.position = newPos;
 
             m_LastTargetPosition = target.position;
