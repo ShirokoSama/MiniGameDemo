@@ -83,11 +83,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  positionEnd: {x: 0, y: 0}
-  rotationEnd: 0
-  scaleEnd: 1
+  index: 0
+  childrenIndex: 
   duration: 1
   visible: 1
+  keyTriggers: []
+  transferCrystalTrigger: 0
+  shiftCrystalTrigger:
+    index: 
+    direction: 0
 --- !u!114 &114601425055149298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,6 +103,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42884d245c04a8b45b4c904bcdf63954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trigger:
+    yMin: 0
+    yMax: 0
+    direction: 0
 --- !u!212 &212859636321822162
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -131,8 +139,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 302950833
-  m_SortingLayer: 1
+  m_SortingLayerID: -1071196383
+  m_SortingLayer: 2
   m_SortingOrder: 13
   m_Sprite: {fileID: 21300008, guid: b56c98987484c5e41ac9a9f7f5aa9d5e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
