@@ -49,6 +49,20 @@ public class MapObjectJsonConvert : MonoBehaviour {
         writer.Dispose();
     }
 
+    [MenuItem("Other/Map/Get Selection Indexes")]
+    public static void GetIndexes()
+    {
+        string outputPath = Application.dataPath + @"/Resources";
+        GameObject[] objects = Selection.gameObjects;
+        string s = "";
+        foreach (GameObject mapObject in objects)
+        {
+            int index = mapObject.GetComponent<MapObject>().index;
+            s += index.ToString() + ",";
+        }
+        Debug.Log(s);
+    }
+
     public static JSONClass SaveNode(int type, int index, string fileName, float positionX, float positionY, float rotation, float scaleX, float scaleY, 
         List<int> children, float duration, bool visible, List<MapObject.KeyTrigger> keyTriggers, 
         int transferTrigger, MapObject.ShiftCrystalTrigger shiftTrigger)
@@ -195,6 +209,7 @@ public class MapObjectJsonConvert : MonoBehaviour {
         {
             GameObject mapPiece = AssetDatabase.LoadAssetAtPath<GameObject>(prefabRelativePath + "/" + node["FileName"] + ".prefab");
             mapPiece = Instantiate(mapPiece);
+            mapPiece.GetComponent<MapObject>().index = node["Index"].AsInt;
             mapPiece.GetComponent<MapObject>().type = (MapPiece.MapType)node["Type"].AsInt;
             mapPiece.transform.position = new Vector3(node["Position"][0].AsFloat / 100.0f, node["Position"][1].AsFloat / 100.0f, 0.0f);
             mapPiece.transform.eulerAngles = new Vector3(0, 0, -node["Rotation"].AsFloat);
