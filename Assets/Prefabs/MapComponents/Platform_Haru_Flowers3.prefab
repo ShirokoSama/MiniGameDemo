@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4686500542730306}
   - component: {fileID: 212095619292026980}
   - component: {fileID: 95299794668854504}
+  - component: {fileID: 114351285200890222}
   m_Layer: 0
   m_Name: Platform_Haru_Flowers3
   m_TagString: Untagged
@@ -59,6 +60,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114351285200890222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1137543480870620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae2fccd727f33e45822f1706c4c12d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  index: 0
+  childrenIndex: 
+  duration: 1
+  visible: 1
+  keyTriggers: []
+  transferCrystalTrigger: 0
+  shiftCrystalTrigger:
+    index: 
+    direction: 0
 --- !u!212 &212095619292026980
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -1,0 +1,24 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: Flower_Particles1.png (2048 x 2048)
+# $TexturePacker:SmartUpdate:01bf6e469fd3c23035799d4755aefcb9:b6216dd0cdfc27a6efa3d0433dd613e2:4c3178eb3e4953a9c776bdc7d08d97b4$
+#
+
+Flower_Particles_Haru_01;2;129;782;704;0.5;0.5
+Flower_Particles_Haru_02;906;1541;898;505;0.5;0.5
+Flower_Particles_Haru_03;852;692;690;430;0.5;0.5
+Flower_Particles_Haru_06;1806;1793;239;253;0.5;0.5
+Flower_Particles_Haru_07;1765;1253;272;231;0.5;0.5
+Flower_Particles_Haru_08;1806;1632;200;159;0.5;0.5
+Flower_Particles_Haru_09;2;1358;902;688;0.5;0.5
+Flower_Particles_Haru_16;1806;1486;141;144;0.5;0.5
+Flower_Particles_Haru_17;2;835;848;521;0.5;0.5
+Flower_Particles_Haru_18;906;1124;857;415;0.5;0.5
+Flower_Particles_Haru_19;786;226;613;464;0.5;0.5
+Flower_Particles_Haru_22;1544;688;459;387;0.5;0.5
+Flower_Particles_Haru_23;1401;405;356;281;0.5;0.5
+Flower_Particles_Haru_24;1765;1077;128;174;0.5;0.5
