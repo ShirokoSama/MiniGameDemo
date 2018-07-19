@@ -8,7 +8,7 @@ public class TransferCrystal : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player" && GetComponent<MapObject>().detail.triggerable)
+        if (other.tag == "Player" && GetComponent<MapObject>().detail.Triggerable)
         {
 
         }

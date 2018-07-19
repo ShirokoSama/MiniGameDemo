@@ -54,6 +54,15 @@ public class BackgroundManager : MonoBehaviour {
             cameraTransform.position.y * 100 - cameraSize.y / 2 - 256,
             cameraTransform.position.y * 100 + cameraSize.y / 2 + 256);
 
+        foreach (BackgroundPiece piece in collection.collection)
+        {
+            if (!piecesToLoad.Contains(piece))
+            {
+                piece.shown = false;
+            }
+        }
+        ReuseOutsight();
+
         foreach (BackgroundPiece piece in piecesToLoad)
         {
             if (piece.shown != true)
@@ -80,14 +89,6 @@ public class BackgroundManager : MonoBehaviour {
             }
         }
 
-        foreach (BackgroundPiece piece in collection.collection)
-        {
-            if (!piecesToLoad.Contains(piece))
-            {
-                piece.shown = false;
-            }
-        }
-        ReuseOutsight();
     }
 
     void ReuseOutsight()

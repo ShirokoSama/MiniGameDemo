@@ -18,7 +18,7 @@ public class Key : MonoBehaviour {
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player" && gameObject.GetComponent<MapObject>().detail.triggerable)
+        if (other.tag == "Player" && gameObject.GetComponent<MapObject>().detail.Triggerable)
         {
             foreach (KeyTrigger trigger in triggers)
             {
@@ -34,8 +34,8 @@ public class Key : MonoBehaviour {
                 }
             }
 
-            GetComponent<MapObject>().detail.visible = false;
-            GetComponent<MapObject>().detail.triggerable = false;
+            GetComponent<MapObject>().detail.Visible = false;
+            GetComponent<MapObject>().detail.Triggerable = false;
         }
     }
 }

@@ -25,7 +25,7 @@ public class ShiftCrystal : MonoBehaviour {
         int direction = 0;
         if (trigger.direction) direction = 1;
         else direction = -1;
-        if (other.tag == "Player" && GetComponent<MapObject>().detail.triggerable)
+        if (other.tag == "Player" && GetComponent<MapObject>().detail.Triggerable)
         {
             Debug.Log("OnTriggerEnter");
             List<MapPiece> mapPieces = MapManager.instance.GetBetween(trigger.yMin, trigger.yMax);

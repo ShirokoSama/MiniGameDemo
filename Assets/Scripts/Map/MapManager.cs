@@ -27,33 +27,17 @@ public class MapManager : MonoBehaviour {
     //所有以生成的地图物件
     private List<MapPiece> generatedPieces = new List<MapPiece>();
 
+    public void Init()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
     // Use this for initialization
     void Start () {
-        instance = this;
-        TextAsset text = Resources.Load<TextAsset>("Haru");
-        JSONNode mapData = JSONNode.Parse(text.text);
-        mapInfo = mapData["MapInfo"];
-        totalSize = mapInfo.Count;
-
-        foreach (JSONNode node in mapInfo.Childs)
-        {
-            List<Key.KeyTrigger> keyTriggers = new List<Key.KeyTrigger>();
-            foreach (JSONNode trigger in node["KeyTrigger"].Childs)
-            {
-                keyTriggers.Add(new Key.KeyTrigger(trigger["Index"].AsInt));
-            }
-
-            if (node["Visible"] == null)
-            {
-                node.Add("Visible", new JSONData(true));
-            }
-
-            mapPieces.Add(new MapPiece((MapPiece.MapType)node["Type"].AsInt, node["Index"].AsInt, node["FileName"], new Vector2(node["Position"][0].AsFloat, node["Position"][1].AsFloat),
-                node["Rotation"].AsFloat, new Vector2(node["ScaleX"].AsFloat, node["ScaleY"].AsFloat), node["Visible"].AsBool,
-                new Vector2(node["PositionEnd"][0].AsFloat, node["PositionEnd"][1].AsFloat), node["RotationEnd"].AsFloat, node["ScaleEnd"].AsFloat,
-                node["Duration"].AsFloat, keyTriggers, node["TransferCrystalTrigger"].AsInt,
-                new ShiftCrystal.ShiftCrystalTrigger(node["ShiftCrystalTrigger"]["yRange"][0].AsFloat, node["ShiftCrystalTrigger"]["yRange"][1].AsFloat, node["ShiftCrystalTrigger"]["Direction"].AsBool)));
-        }
+        
 	}
 	
 	// Update is called once per frame
@@ -116,14 +100,62 @@ public class MapManager : MonoBehaviour {
                         grass.transform.localScale = mapPiece.currentScale;
                     }
                     //同步可见性
-                    if (grass.GetComponent<MapObject>().visible != mapPiece.visible)
+                    if (grass.GetComponent<MapObject>().visible != mapPiece.Visible)
                     {
-                        grass.GetComponent<MapObject>().MakeVisible(mapPiece.visible);
+                        grass.GetComponent<MapObject>().MakeVisible(mapPiece.Visible);
                     }
                 }
             }
         }
 	}
+
+    public void LoadMapPieceInfo()
+    {
+        TextAsset text = Resources.Load<TextAsset>("Haru");
+        JSONNode mapData = JSONNode.Parse(text.text);
+        mapInfo = mapData["MapInfo"];
+        totalSize = mapInfo.Count;
+
+        foreach (JSONNode node in mapInfo.Childs)
+        {
+            List<Key.KeyTrigger> keyTriggers = new List<Key.KeyTrigger>();
+            foreach (JSONNode trigger in node["KeyTrigger"].Childs)
+            {
+                keyTriggers.Add(new Key.KeyTrigger(trigger["Index"].AsInt));
+            }
+
+            if (node["Visible"] == null)
+            {
+                node.Add("Visible", new JSONData(true));
+            }
+
+            MapPiece mapPiece = new MapPiece((MapPiece.MapType)node["Type"].AsInt, node["Index"].AsInt, node["FileName"], new Vector2(node["Position"][0].AsFloat, node["Position"][1].AsFloat),
+                node["Rotation"].AsFloat, new Vector2(node["ScaleX"].AsFloat, node["ScaleY"].AsFloat), node["Visible"].AsBool,
+                new Vector2(node["PositionEnd"][0].AsFloat, node["PositionEnd"][1].AsFloat), node["RotationEnd"].AsFloat, node["ScaleEnd"].AsFloat,
+                node["Duration"].AsFloat, keyTriggers, node["TransferCrystalTrigger"].AsInt,
+                new ShiftCrystal.ShiftCrystalTrigger(node["ShiftCrystalTrigger"]["yRange"][0].AsFloat, node["ShiftCrystalTrigger"]["yRange"][1].AsFloat, node["ShiftCrystalTrigger"]["Direction"].AsBool));
+            mapPieces.Add(mapPiece);
+        }
+    }
+
+    public void LoadArchieve(JSONNode mapArchieve)
+    {
+        JSONNode archievePieces = mapArchieve["ArchievePieces"];
+        foreach (MapPiece mapPiece in mapPieces)
+        {
+
+            if (archievePieces["Index" + mapPiece.index] != null)
+            {
+                JSONNode archievePiece = archievePieces["Index" + mapPiece.index];
+                mapPiece.LoadArchive(new Vector2(archievePiece["CurrentPosition"][0].AsFloat, archievePiece["CurrentPosition"][1].AsFloat),
+                    new Vector2(archievePiece["TargetPositionOffset"][0].AsFloat, archievePiece["TargetPositionOffset"][1].AsFloat),
+                    archievePiece["MoveCountDown"].AsFloat, archievePiece["CurrentRotation"].AsFloat, archievePiece["TartgetRotationOffset"].AsFloat,
+                    archievePiece["RotationCountDown"].AsFloat, new Vector2(archievePiece["CurrentScale"][0].AsFloat, archievePiece["CurrentScale"][1].AsFloat),
+                    archievePiece["TargetScaleRatio"].AsFloat, archievePiece["ScaleCountDown"].AsFloat, archievePiece["Visible"].AsBool,
+                    archievePiece["Triggerable"].AsBool, archievePiece["Loadable"].AsBool);
+            }
+        }
+    }
 
     public MapPiece Get(int index)
     {
@@ -152,10 +184,13 @@ public class MapManager : MonoBehaviour {
 
     public JSONClass GenerateArchieveNode()
     {
-        JSONArray archievePieces = new JSONArray();
+        JSONClass archievePieces = new JSONClass();
         foreach (MapPiece mapPiece in mapPieces)
         {
-            archievePieces.Add(mapPiece.index.ToString(), mapPiece.GenerateArchivePiece());
+            if (mapPiece.changed)
+            {
+                archievePieces.Add("Index" + mapPiece.index.ToString(), mapPiece.GenerateArchivePiece());
+            }
         }
         JSONClass mapArchieve = new JSONClass();
         mapArchieve.Add("ArchievePieces", archievePieces);

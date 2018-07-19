@@ -56,14 +56,41 @@ public class MapPiece {
     public float scaleCountDown;
 
     //当前可见性
-    public bool visible;
+    private bool visible = false;
+    public bool Visible
+    {
+        get { return visible; }
+        set
+        {
+            visible = value;
+            changed = true;
+        }
+    }
     //是否可触发
-    public bool triggerable;
+    private bool triggerable;
+    public bool Triggerable
+    {
+        get { return triggerable; }
+        set
+        {
+            triggerable = value;
+            changed = true;
+        }
+    }
     //是否可加载
-    public bool loadable;
+    private bool loadable;
+    public bool Loadable
+    {
+        get { return loadable; }
+        set
+        {
+            loadable = value;
+            changed = true;
+        }
+    }
 
     //和最初加载的数据相比，是否有改变，将决定是否存档变化
-    private bool changed = false;
+    public bool changed = false;
 
     public MapPiece(MapType type, int index, string fileName, Vector2 position, float rotation, Vector2 scale, bool visible, 
         Vector2 positionEnd, float rotationEnd, float scaleEnd, float duration, List<Key.KeyTrigger> triggers, int transferTrigger, ShiftCrystal.ShiftCrystalTrigger shiftTrigger)
@@ -142,9 +169,9 @@ public class MapPiece {
         });
         node.Add("TargetScaleRatio", new JSONData(targetScaleRatio));
         node.Add("ScaleCountDown", new JSONData(scaleCountDown));
-        node.Add("Visible", new JSONData(visible));
-        node.Add("Triggerable", new JSONData(triggerable));
-        node.Add("Loadable", new JSONData(loadable));
+        node.Add("Visible", new JSONData(Visible));
+        node.Add("Triggerable", new JSONData(Triggerable));
+        node.Add("Loadable", new JSONData(Loadable));
         return node;
     }
 
