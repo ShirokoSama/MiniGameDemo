@@ -105,10 +105,12 @@ public class MapObjectJsonConvert : MonoBehaviour {
         {
             JSONClass triggerClass = new JSONClass();
             JSONArray indexArray = new JSONArray();
+            Debug.Log(trigger.dPosition.x);
             foreach (int ind in trigger.index)
             {
                 indexArray.Add(new JSONData(ind));
             }
+
             triggerClass.Add("Index", indexArray);
             triggerClass.Add("dPosition", new JSONArray()
             {
@@ -124,6 +126,7 @@ public class MapObjectJsonConvert : MonoBehaviour {
             triggerClass.Add("Visible", new JSONData(trigger.visible));
             triggerClass.Add("Triggerable", new JSONData(trigger.triggerable));
             triggerClass.Add("Load", new JSONData(trigger.load));
+            keyTrigger.Add(triggerClass);
         }
         result.Add("KeyTrigger", keyTrigger);
         result.Add("TransferCrystalTrigger", new JSONData(transferTrigger));
@@ -235,23 +238,27 @@ public class MapObjectJsonConvert : MonoBehaviour {
             {
                 MapObject.KeyTrigger currentKey = new MapObject.KeyTrigger();
                 List<int> indexList = new List<int>();
-                foreach (JSONNode index in trigger["index"].AsArray)
+                foreach (JSONNode index in trigger["Index"].AsArray)
+                {
                     indexList.Add(index.AsInt);
+                }
                 currentKey.index = indexList;
                 currentKey.dPosition = new Vector2(trigger["dPosition"][0].AsFloat / 100.0f,
-                    trigger["dPosition"]["1"].AsFloat / 100.0f);
+                    trigger["dPosition"][1].AsFloat / 100.0f);
                 currentKey.dRotation = trigger["dRotation"].AsFloat;
                 currentKey.dScale = new Vector2(trigger["dScale"].AsFloat, trigger["dScale"].AsFloat);
                 currentKey.visible = trigger["Visible"].AsBool;
                 currentKey.triggerable = trigger["Triggerable"].AsBool;
                 currentKey.load = trigger["Load"].AsBool;
+                keyTriggers.Add(currentKey);
             }
+
+            mapPiece.GetComponent<MapObject>().keyTriggers = keyTriggers;
 
             mapPiece.GetComponent<MapObject>().type = (MapPiece.MapType)node["Type"].AsInt;
             mapPiece.transform.position = new Vector3(node["Position"][0].AsFloat / 100.0f, node["Position"][1].AsFloat / 100.0f, 0.0f);
             mapPiece.transform.eulerAngles = new Vector3(0, 0, -node["Rotation"].AsFloat);
             mapPiece.transform.localScale = new Vector3(node["ScaleX"].AsFloat, node["ScaleY"].AsFloat, 1.0f);
-            Debug.Log("Index:" + node["Index"] + ", ScaleX:" + node["ScaleX"]);
             mapPiece.GetComponent<MapObject>().duration = node["Duration"].AsFloat;
             mapPiece.GetComponent<MapObject>().visible = node["Visible"].AsBool;
             mapPiece.GetComponent<MapObject>().visible = node["load"].AsBool;
