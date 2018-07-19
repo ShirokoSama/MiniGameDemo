@@ -34,10 +34,10 @@ public class MapObjectJsonConvert : MonoBehaviour {
             JSONClass mapNode = SaveNode(mapObject.GetComponent<MapObject>().type.GetHashCode(), index, GetPureName(mapObject.name),
                 mapObject.transform.position.x * 100.0f, mapObject.transform.position.y * 100.0f,
                 -mapObject.transform.eulerAngles.z, mapObject.transform.localScale.x, mapObject.transform.localScale.y, 
-                mapObject.GetComponent<MapObject>().positionEnd.x, mapObject.GetComponent<MapObject>().positionEnd.y,
-                mapObject.GetComponent<MapObject>().rotationEnd, mapObject.GetComponent<MapObject>().scaleEnd,
+                mapObject.GetComponent<MapObject>().childrenIndex, 
                 mapObject.GetComponent<MapObject>().duration, mapObject.GetComponent<MapObject>().visible, 
-                new List<Key.KeyTrigger>(), 0, new ShiftCrystal.ShiftCrystalTrigger(0.0f, 0.0f, false));
+                mapObject.GetComponent<MapObject>().keyTriggers, mapObject.GetComponent<MapObject>().transferCrystalTrigger, 
+                mapObject.GetComponent<MapObject>().shiftCrystalTrigger);
             mapInfo.Add(mapNode);
             index++;
         }
@@ -50,36 +50,63 @@ public class MapObjectJsonConvert : MonoBehaviour {
     }
 
     public static JSONClass SaveNode(int type, int index, string fileName, float positionX, float positionY, float rotation, float scaleX, float scaleY, 
-        float positionEndX, float positionEndY, float rotationEnd, float scaleEnd, float duration, bool visible, List<Key.KeyTrigger> keyTriggers, 
-        int transferTrigger, ShiftCrystal.ShiftCrystalTrigger shiftTrigger)
+        List<int> children, float duration, bool visible, List<MapObject.KeyTrigger> keyTriggers, 
+        int transferTrigger, MapObject.ShiftCrystalTrigger shiftTrigger)
     {
         JSONClass result = new JSONClass();
         result.Add("Type", new JSONData(type));
         result.Add("Index", new JSONData(index));
         result.Add("FileName", new JSONData(fileName));
-        JSONArray position = new JSONArray();
-        position.Add(new JSONData(positionX));
-        position.Add(new JSONData(positionY));
-        result.Add("Position", position);
+        result.Add("Position", new JSONArray
+        {
+            new JSONData(positionX),
+            new JSONData(positionY)
+        });
         result.Add("Rotation", new JSONData(rotation));
         result.Add("ScaleX", new JSONData(scaleX));
         result.Add("ScaleY", new JSONData(scaleY));
-        JSONArray positionEnd = new JSONArray();
-        positionEnd.Add(new JSONData(positionEndX));
-        positionEnd.Add(new JSONData(positionEndY));
-        result.Add("PositionEnd", positionEnd);
-        result.Add("RotationEnd", new JSONData(rotationEnd));
-        result.Add("ScaleEnd", new JSONData(scaleEnd));
+        JSONArray childrenJSON = new JSONArray();
+        foreach (int child in children)
+        {
+            childrenJSON.Add(new JSONData(child));
+        }
+        result.Add("Children", childrenJSON);
         result.Add("Duration", new JSONData(duration));
         result.Add("Visible", new JSONData(visible));
         JSONArray keyTrigger = new JSONArray();
+        foreach (MapObject.KeyTrigger trigger in keyTriggers)
+        {
+            JSONClass triggerClass = new JSONClass();
+            JSONArray indexArray = new JSONArray();
+            foreach (int ind in trigger.index)
+            {
+                indexArray.Add(new JSONData(ind));
+            }
+            triggerClass.Add("Index", indexArray);
+            triggerClass.Add("dPosition", new JSONArray()
+            {
+                new JSONData(trigger.dPosition.x),
+                new JSONData(trigger.dPosition.y)
+            });
+            triggerClass.Add("dRotation", new JSONData(trigger.dRotation));
+            triggerClass.Add("dScale", new JSONArray()
+            {
+                new JSONData(trigger.dScale.x),
+                new JSONData(trigger.dScale.y)
+            });
+            triggerClass.Add("Visible", new JSONData(trigger.visible));
+            triggerClass.Add("Triggerable", new JSONData(trigger.triggerable));
+            triggerClass.Add("Load", new JSONData(trigger.load));
+        }
         result.Add("KeyTrigger", keyTrigger);
         result.Add("TransferCrystalTrigger", new JSONData(transferTrigger));
         JSONClass shiftTriggerNode = new JSONClass();
-        JSONArray yRange = new JSONArray();
-        yRange.Add(new JSONData(shiftTrigger.yMin));
-        yRange.Add(new JSONData(shiftTrigger.yMax));
-        shiftTriggerNode.Add("yRange", yRange);
+        JSONArray shiftIndex = new JSONArray();
+        foreach (int ind in shiftTrigger.index)
+        {
+            shiftIndex.Add(new JSONData(ind));
+        }
+        shiftTriggerNode.Add("Index", shiftIndex);
         shiftTriggerNode.Add("Direction", new JSONData(shiftTrigger.direction));
         result.Add("ShiftCrystalTrigger", shiftTriggerNode);
         return result;
@@ -173,10 +200,6 @@ public class MapObjectJsonConvert : MonoBehaviour {
             mapPiece.transform.eulerAngles = new Vector3(0, 0, -node["Rotation"].AsFloat);
             mapPiece.transform.localScale = new Vector3(node["ScaleX"].AsFloat, node["ScaleY"].AsFloat, 1.0f);
             Debug.Log("Index:" + node["Index"] + ", ScaleX:" + node["ScaleX"]);
-            mapPiece.GetComponent<MapObject>().positionEnd.x = node["PositionEnd"][0].AsFloat;
-            mapPiece.GetComponent<MapObject>().positionEnd.y = node["PositionEnd"][1].AsFloat;
-            mapPiece.GetComponent<MapObject>().rotationEnd = node["RotationEnd"].AsFloat;
-            mapPiece.GetComponent<MapObject>().scaleEnd = node["ScaleEnd"].AsFloat;
             mapPiece.GetComponent<MapObject>().duration = node["Duration"].AsFloat;
             mapPiece.GetComponent<MapObject>().visible = node["Visible"].AsBool;
             mapPiece = PrefabUtility.InstantiatePrefab(mapPiece) as GameObject;

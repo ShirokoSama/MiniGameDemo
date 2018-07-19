@@ -99,11 +99,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  positionEnd: {x: 0, y: 0}
-  rotationEnd: 0
-  scaleEnd: 1
+  index: 0
+  childrenIndex: 
   duration: 1
   visible: 1
+  keyTriggers: []
+  transferCrystalTrigger: 0
+  shiftCrystalTrigger:
+    index: 
+    direction: 0
 --- !u!212 &212639727489197096
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -139,7 +143,7 @@ SpriteRenderer:
   m_SortingLayerID: 302950833
   m_SortingLayer: 1
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300002, guid: 64bce72de353aee40b90292683589664, type: 3}
+  m_Sprite: {fileID: 21300004, guid: d1761400e2285e6489b1e35198132e22, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

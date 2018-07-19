@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShiftCrystal : MonoBehaviour {
 
+    [System.Serializable]
     public struct ShiftCrystalTrigger
     {
         public float yMin;

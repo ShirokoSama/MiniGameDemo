@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1353872008225052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.34, y: 18.94, z: 0}
+  m_LocalPosition: {x: 87.74, y: 18.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -176,11 +176,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  positionEnd: {x: 0, y: 0}
-  rotationEnd: 0
-  scaleEnd: 0
+  index: 0
+  childrenIndex: 
   duration: 1
   visible: 1
+  keyTriggers: []
+  transferCrystalTrigger: 0
+  shiftCrystalTrigger:
+    index: 
+    direction: 0
 --- !u!212 &212580310007053138
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -216,7 +220,7 @@ SpriteRenderer:
   m_SortingLayerID: 302950833
   m_SortingLayer: 1
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300002, guid: 269a1cfe51688dc46abd04c548b56e6d, type: 3}
+  m_Sprite: {fileID: 21300006, guid: 271e6cf14ce66654e958641778d07bf0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

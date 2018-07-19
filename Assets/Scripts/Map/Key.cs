@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Key : MonoBehaviour {
 
+    [System.Serializable]
     public struct KeyTrigger
     {
         public int index;
