@@ -39,6 +39,7 @@ public class MapObject : MonoBehaviour {
     public List<int> childrenIndex;
     public float duration = 1.0f;
     public bool visible = true;
+    public bool load = true;
     public List<KeyTrigger> keyTriggers;
     public int transferCrystalTrigger;
     public ShiftCrystalTrigger shiftCrystalTrigger;

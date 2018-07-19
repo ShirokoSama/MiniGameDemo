@@ -31,11 +31,11 @@ public class MapObjectJsonConvert : MonoBehaviour {
         foreach (GameObject mapObject in objects)
         {
             Debug.Log(index);
-            JSONClass mapNode = SaveNode(mapObject.GetComponent<MapObject>().type.GetHashCode(), index, GetPureName(mapObject.name),
+            JSONClass mapNode = SaveNode(mapObject.GetComponent<MapObject>().type.GetHashCode(), index, GetFileName(mapObject),
                 mapObject.transform.position.x * 100.0f, mapObject.transform.position.y * 100.0f,
                 -mapObject.transform.eulerAngles.z, mapObject.transform.localScale.x, mapObject.transform.localScale.y, 
                 mapObject.GetComponent<MapObject>().childrenIndex, 
-                mapObject.GetComponent<MapObject>().duration, mapObject.GetComponent<MapObject>().visible, 
+                mapObject.GetComponent<MapObject>().duration, mapObject.GetComponent<MapObject>().visible, mapObject.GetComponent<MapObject>().load,
                 mapObject.GetComponent<MapObject>().keyTriggers, mapObject.GetComponent<MapObject>().transferCrystalTrigger, 
                 mapObject.GetComponent<MapObject>().shiftCrystalTrigger);
             mapInfo.Add(mapNode);
@@ -47,6 +47,18 @@ public class MapObjectJsonConvert : MonoBehaviour {
         writer.Write(root.ToString());
         writer.Flush();
         writer.Dispose();
+    }
+
+    private static string GetFileName(GameObject obj)
+    {
+        Debug.Log(obj.name.Contains("Obstacle"));
+        if (obj.name.Contains("Obstacle"))
+            return obj.GetComponent<SpriteRenderer>().sprite.name;
+        if (obj.name.Contains("Flowers"))
+            return obj.GetComponent<SpriteRenderer>().sprite.name.Substring(0, obj.GetComponent<SpriteRenderer>().sprite.name.Length - 6);
+        if (obj.name.Contains("Key"))
+            return "Platform_Item_Key";
+        return "ERROR";
     }
 
     [MenuItem("Other/Map/Get Selection Indexes")]
@@ -64,7 +76,7 @@ public class MapObjectJsonConvert : MonoBehaviour {
     }
 
     public static JSONClass SaveNode(int type, int index, string fileName, float positionX, float positionY, float rotation, float scaleX, float scaleY, 
-        List<int> children, float duration, bool visible, List<MapObject.KeyTrigger> keyTriggers, 
+        List<int> children, float duration, bool visible, bool load, List<MapObject.KeyTrigger> keyTriggers, 
         int transferTrigger, MapObject.ShiftCrystalTrigger shiftTrigger)
     {
         JSONClass result = new JSONClass();
@@ -87,6 +99,7 @@ public class MapObjectJsonConvert : MonoBehaviour {
         result.Add("Children", childrenJSON);
         result.Add("Duration", new JSONData(duration));
         result.Add("Visible", new JSONData(visible));
+        result.Add("Load", new JSONData(load));
         JSONArray keyTrigger = new JSONArray();
         foreach (MapObject.KeyTrigger trigger in keyTriggers)
         {
@@ -210,6 +223,30 @@ public class MapObjectJsonConvert : MonoBehaviour {
             GameObject mapPiece = AssetDatabase.LoadAssetAtPath<GameObject>(prefabRelativePath + "/" + node["FileName"] + ".prefab");
             mapPiece = Instantiate(mapPiece);
             mapPiece.GetComponent<MapObject>().index = node["Index"].AsInt;
+
+            List<int> childrens = new List<int>();
+            foreach (JSONNode child in node["childrenIndex"].AsArray)
+                childrens.Add(child.AsInt);
+            mapPiece.GetComponent<MapObject>().childrenIndex = childrens;
+
+            List<MapObject.KeyTrigger> keyTriggers = new List<MapObject.KeyTrigger>();
+            
+            foreach (JSONNode trigger in node["KeyTrigger"].Childs)
+            {
+                MapObject.KeyTrigger currentKey = new MapObject.KeyTrigger();
+                List<int> indexList = new List<int>();
+                foreach (JSONNode index in trigger["index"].AsArray)
+                    indexList.Add(index.AsInt);
+                currentKey.index = indexList;
+                currentKey.dPosition = new Vector2(trigger["dPosition"][0].AsFloat / 100.0f,
+                    trigger["dPosition"]["1"].AsFloat / 100.0f);
+                currentKey.dRotation = trigger["dRotation"].AsFloat;
+                currentKey.dScale = new Vector2(trigger["dScale"].AsFloat, trigger["dScale"].AsFloat);
+                currentKey.visible = trigger["Visible"].AsBool;
+                currentKey.triggerable = trigger["Triggerable"].AsBool;
+                currentKey.load = trigger["Load"].AsBool;
+            }
+
             mapPiece.GetComponent<MapObject>().type = (MapPiece.MapType)node["Type"].AsInt;
             mapPiece.transform.position = new Vector3(node["Position"][0].AsFloat / 100.0f, node["Position"][1].AsFloat / 100.0f, 0.0f);
             mapPiece.transform.eulerAngles = new Vector3(0, 0, -node["Rotation"].AsFloat);
@@ -217,6 +254,7 @@ public class MapObjectJsonConvert : MonoBehaviour {
             Debug.Log("Index:" + node["Index"] + ", ScaleX:" + node["ScaleX"]);
             mapPiece.GetComponent<MapObject>().duration = node["Duration"].AsFloat;
             mapPiece.GetComponent<MapObject>().visible = node["Visible"].AsBool;
+            mapPiece.GetComponent<MapObject>().visible = node["load"].AsBool;
             mapPiece = PrefabUtility.InstantiatePrefab(mapPiece) as GameObject;
             // mapPiece.transform.parent = parentObject.transform;
         }
