@@ -82,6 +82,8 @@ public class MapObjectJsonConvert : MonoBehaviour {
     private static string GetFileName(GameObject obj)
     {
         Debug.Log(obj.name.Contains("Obstacle"));
+        if (obj.name.Contains("Flower_Particles"))
+            return obj.GetComponent<SpriteRenderer>().sprite.name;
         if (obj.name.Contains("Obstacle"))
             return obj.GetComponent<SpriteRenderer>().sprite.name;
         if (obj.name.Contains("Flowers"))
