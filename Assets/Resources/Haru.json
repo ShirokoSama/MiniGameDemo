@@ -2,7 +2,7 @@
   "MapInfo": [
     {
       "Type": "0",
-      "Index": "0",
+      "Index": "52",
       "FileName": "Platform_Haru_Flowers7",
       "Position": [ "1568", "1123" ],
       "Rotation": "-304.8888",
@@ -262,7 +262,7 @@
       "Position": [ "2548", "1337" ],
       "Rotation": "0",
       "Scale": [ "1", "1" ],
-      "Children": [],
+      "Children": [39,7,30,29,44,22,4,23,33,32,46,45,34],
       "Visible": "true",
       "Load": "true",
       "KeyTrigger": [],
@@ -441,7 +441,7 @@
           "dPosition": [ "1180", "-1830" ],
           "dRotation": "0",
           "dScale": [ "0", "0" ],
-          "Duration": "0",
+          "Duration": "1.0",
           "Visible": "true",
           "Triggerable": "false",
           "Load": "false"

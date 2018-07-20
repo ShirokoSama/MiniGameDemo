@@ -30,15 +30,46 @@ public class MapObjectJsonConvert : MonoBehaviour {
         Debug.Log(Selection.activeInstanceID);
         foreach (GameObject mapObject in objects)
         {
-            Debug.Log(index);
-            JSONClass mapNode = SaveNode(mapObject.GetComponent<MapObject>().type.GetHashCode(), index, GetFileName(mapObject),
-                mapObject.transform.position.x * 100.0f, mapObject.transform.position.y * 100.0f,
-                -mapObject.transform.eulerAngles.z, mapObject.transform.localScale.x, mapObject.transform.localScale.y, 
-                mapObject.GetComponent<MapObject>().childrenIndex, mapObject.GetComponent<MapObject>().visible, mapObject.GetComponent<MapObject>().load,
-                mapObject.GetComponent<MapObject>().keyTriggers, mapObject.GetComponent<MapObject>().transferCrystalTrigger, 
-                mapObject.GetComponent<MapObject>().shiftCrystalTrigger);
-            mapInfo.Add(mapNode);
-            index++;
+            if (mapObject.GetComponent<MapObject>().index != 0) {
+                index++;
+            }
+        }
+
+        for (int idx = 1; idx <= index; idx++)
+        {
+            foreach (GameObject mapObject in objects)
+            {
+                if (mapObject.GetComponent<MapObject>().index == idx)
+                {
+                    JSONClass mapNode = SaveNode(mapObject.GetComponent<MapObject>().type.GetHashCode(),
+                        mapObject.GetComponent<MapObject>().index, GetFileName(mapObject),
+                        mapObject.transform.position.x * 100.0f, mapObject.transform.position.y * 100.0f,
+                        -mapObject.transform.eulerAngles.z, mapObject.transform.localScale.x,
+                        mapObject.transform.localScale.y,
+                        mapObject.GetComponent<MapObject>().childrenIndex, mapObject.GetComponent<MapObject>().visible,
+                        mapObject.GetComponent<MapObject>().load,
+                        mapObject.GetComponent<MapObject>().keyTriggers,
+                        mapObject.GetComponent<MapObject>().transferCrystalTrigger,
+                        mapObject.GetComponent<MapObject>().shiftCrystalTrigger);
+                    mapInfo.Add(mapNode);
+                }
+            }
+        }
+
+        index++;
+        foreach (GameObject mapObject in objects)
+        {
+            if (mapObject.GetComponent<MapObject>().index == 0)
+            {
+                JSONClass mapNode = SaveNode(mapObject.GetComponent<MapObject>().type.GetHashCode(), index, GetFileName(mapObject),
+                    mapObject.transform.position.x * 100.0f, mapObject.transform.position.y * 100.0f,
+                    -mapObject.transform.eulerAngles.z, mapObject.transform.localScale.x, mapObject.transform.localScale.y,
+                    mapObject.GetComponent<MapObject>().childrenIndex, mapObject.GetComponent<MapObject>().visible, mapObject.GetComponent<MapObject>().load,
+                    mapObject.GetComponent<MapObject>().keyTriggers, mapObject.GetComponent<MapObject>().transferCrystalTrigger,
+                    mapObject.GetComponent<MapObject>().shiftCrystalTrigger);
+                mapInfo.Add(mapNode);
+                index++;
+            }
         }
 
         FileInfo file = new FileInfo(outputPath + "/HaruGeneratedObjects.json");

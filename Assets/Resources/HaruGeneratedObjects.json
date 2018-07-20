@@ -2,23 +2,6 @@
   "MapInfo": [
     {
       "Type": "0",
-      "Index": "0",
-      "FileName": "Platform_Haru_Flowers7",
-      "Position": [ "1568", "1123" ],
-      "Rotation": "-304.8888",
-      "Scale": [ "0.6708505", "0.6708505" ],
-      "Children": [],
-      "Visible": "true",
-      "Load": "true",
-      "KeyTrigger": [],
-      "TransferCrystalTrigger": "0",
-      "ShiftCrystalTrigger": {
-        "Index": [],
-        "Direction": "false"
-      }
-    },
-    {
-      "Type": "0",
       "Index": "1",
       "FileName": "Platform_Haru_Obstacle10",
       "Position": [ "3172", "6463" ],
@@ -262,7 +245,7 @@
       "Position": [ "2548", "1337" ],
       "Rotation": "0",
       "Scale": [ "1", "1" ],
-      "Children": [],
+      "Children": [ "39", "7", "30", "29", "44", "22", "4", "23", "33", "32", "46", "45", "34" ],
       "Visible": "true",
       "Load": "true",
       "KeyTrigger": [],
@@ -441,7 +424,7 @@
           "dPosition": [ "1180", "-1830" ],
           "dRotation": "0",
           "dScale": [ "0", "0" ],
-          "Duration": "0",
+          "Duration": "1",
           "Visible": "true",
           "Triggerable": "false",
           "Load": "false"
@@ -884,6 +867,40 @@
       "FileName": "Platform_Haru_Obstacle11",
       "Position": [ "5028", "3943" ],
       "Rotation": "-6",
+      "Scale": [ "1", "1" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "52",
+      "FileName": "Platform_Haru_Flowers7",
+      "Position": [ "1568", "1123" ],
+      "Rotation": "-304.8888",
+      "Scale": [ "0.6708505", "0.6708505" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "1",
+      "Index": "53",
+      "FileName": "Platform_Item_Key",
+      "Position": [ "6681", "3451" ],
+      "Rotation": "0",
       "Scale": [ "1", "1" ],
       "Children": [],
       "Visible": "true",
