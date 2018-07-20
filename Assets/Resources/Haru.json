@@ -2,23 +2,6 @@
   "MapInfo": [
     {
       "Type": "0",
-      "Index": "52",
-      "FileName": "Platform_Haru_Flowers7",
-      "Position": [ "1568", "1123" ],
-      "Rotation": "-304.8888",
-      "Scale": [ "0.6708505", "0.6708505" ],
-      "Children": [],
-      "Visible": "true",
-      "Load": "true",
-      "KeyTrigger": [],
-      "TransferCrystalTrigger": "0",
-      "ShiftCrystalTrigger": {
-        "Index": [],
-        "Direction": "false"
-      }
-    },
-    {
-      "Type": "0",
       "Index": "1",
       "FileName": "Platform_Haru_Obstacle10",
       "Position": [ "3172", "6463" ],
@@ -262,7 +245,7 @@
       "Position": [ "2548", "1337" ],
       "Rotation": "0",
       "Scale": [ "1", "1" ],
-      "Children": [39,7,30,29,44,22,4,23,33,32,46,45,34],
+      "Children": [ "39", "7", "30", "29", "44", "22", "4", "23", "33", "32", "46", "45", "34" ],
       "Visible": "true",
       "Load": "true",
       "KeyTrigger": [],
@@ -441,7 +424,7 @@
           "dPosition": [ "1180", "-1830" ],
           "dRotation": "0",
           "dScale": [ "0", "0" ],
-          "Duration": "1.0",
+          "Duration": "1",
           "Visible": "true",
           "Triggerable": "false",
           "Load": "false"
@@ -885,6 +868,2029 @@
       "Position": [ "5028", "3943" ],
       "Rotation": "-6",
       "Scale": [ "1", "1" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "52",
+      "FileName": "Platform_Haru_Flowers7",
+      "Position": [ "1568", "1123" ],
+      "Rotation": "-304.8888",
+      "Scale": [ "0.6708505", "0.6708505" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "53",
+      "FileName": "Platform_Haru_Flowers7",
+      "Position": [ "4003", "576" ],
+      "Rotation": "-287.6942",
+      "Scale": [ "0.5954618", "0.5954618" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "54",
+      "FileName": "Platform_Haru_Flowers7",
+      "Position": [ "7449", "843.9999" ],
+      "Rotation": "-103.8812",
+      "Scale": [ "0.6007624", "0.6007624" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "55",
+      "FileName": "Platform_Haru_Flowers7",
+      "Position": [ "8078", "522" ],
+      "Rotation": "-165.3339",
+      "Scale": [ "0.5945835", "0.5945835" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "56",
+      "FileName": "Flower_Particles_Haru_05",
+      "Position": [ "2231", "1161" ],
+      "Rotation": "0",
+      "Scale": [ "0.3744351", "0.3744351" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "57",
+      "FileName": "Platform_Haru_Flowers4",
+      "Position": [ "8219", "1681" ],
+      "Rotation": "-166.2913",
+      "Scale": [ "0.7661655", "0.7661655" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "58",
+      "FileName": "Platform_Haru_Flowers2",
+      "Position": [ "4106", "768" ],
+      "Rotation": "-82.27264",
+      "Scale": [ "0.5843837", "0.5843837" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "59",
+      "FileName": "Platform_Haru_Flowers1",
+      "Position": [ "4565", "809.9998" ],
+      "Rotation": "-266.4109",
+      "Scale": [ "0.4941428", "0.4941428" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "60",
+      "FileName": "Platform_Haru_Flowers6",
+      "Position": [ "2648", "2678" ],
+      "Rotation": "-6.78335",
+      "Scale": [ "0.8236146", "0.8236146" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "61",
+      "FileName": "Platform_Haru_Flowers4",
+      "Position": [ "4872", "1002.2" ],
+      "Rotation": "-211.5462",
+      "Scale": [ "0.6374802", "0.6374802" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "62",
+      "FileName": "Platform_Haru_Flowers2",
+      "Position": [ "2847", "2467" ],
+      "Rotation": "-236.533",
+      "Scale": [ "1", "1" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "63",
+      "FileName": "Platform_Haru_Flowers7",
+      "Position": [ "1123", "877.0001" ],
+      "Rotation": "-147.8108",
+      "Scale": [ "0.566837", "0.566837" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "64",
+      "FileName": "Platform_Haru_Flowers1",
+      "Position": [ "1572", "2435" ],
+      "Rotation": "0",
+      "Scale": [ "0.8256717", "0.8256717" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "65",
+      "FileName": "Platform_Haru_Flowers1",
+      "Position": [ "1674", "2022" ],
+      "Rotation": "-187.4171",
+      "Scale": [ "1", "1" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "66",
+      "FileName": "Platform_Haru_Flowers4",
+      "Position": [ "3770", "467" ],
+      "Rotation": "-64.8609",
+      "Scale": [ "0.6220989", "0.6220989" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "67",
+      "FileName": "Platform_Haru_Flowers7",
+      "Position": [ "7122", "1329" ],
+      "Rotation": "-26.84929",
+      "Scale": [ "0.572216", "0.572216" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "68",
+      "FileName": "Flower_Particles_Haru_11",
+      "Position": [ "9027", "1782" ],
+      "Rotation": "-331.7289",
+      "Scale": [ "0.4716288", "0.4716288" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "69",
+      "FileName": "Platform_Haru_Flowers3",
+      "Position": [ "4837.2", "117.5" ],
+      "Rotation": "-346.2298",
+      "Scale": [ "0.2187662", "0.2187662" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "70",
+      "FileName": "Platform_Haru_Flowers6",
+      "Position": [ "5369", "581" ],
+      "Rotation": "-223.4215",
+      "Scale": [ "0.6593968", "0.6593968" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "71",
+      "FileName": "Platform_Haru_Flowers5",
+      "Position": [ "5213", "502" ],
+      "Rotation": "-209.3443",
+      "Scale": [ "-0.502123", "0.502123" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "72",
+      "FileName": "Flower_Particles_Haru_13",
+      "Position": [ "8696", "1945" ],
+      "Rotation": "0",
+      "Scale": [ "0.3587135", "0.3587135" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "73",
+      "FileName": "Platform_Haru_Flowers7",
+      "Position": [ "5259", "1769" ],
+      "Rotation": "-114.6968",
+      "Scale": [ "0.7113981", "0.7113981" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "74",
+      "FileName": "Platform_Haru_Flowers2",
+      "Position": [ "7613", "989.9999" ],
+      "Rotation": "-264.2583",
+      "Scale": [ "0.7906041", "0.7906041" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "75",
+      "FileName": "Platform_Haru_Flowers1",
+      "Position": [ "6120", "1910" ],
+      "Rotation": "-211.9643",
+      "Scale": [ "1.089619", "1.089619" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "76",
+      "FileName": "Platform_Haru_Flowers6",
+      "Position": [ "7059", "751" ],
+      "Rotation": "-189.2687",
+      "Scale": [ "0.734432", "0.734432" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "77",
+      "FileName": "Platform_Haru_Flowers6",
+      "Position": [ "4591.7", "-47" ],
+      "Rotation": "-162.8073",
+      "Scale": [ "0.6775584", "0.6775584" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "78",
+      "FileName": "Platform_Haru_Flowers5",
+      "Position": [ "7237", "767" ],
+      "Rotation": "-177.2233",
+      "Scale": [ "0.6407835", "0.6407835" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "79",
+      "FileName": "Platform_Haru_Flowers4",
+      "Position": [ "7327", "1444" ],
+      "Rotation": "-332.613",
+      "Scale": [ "0.7234478", "0.7234478" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "80",
+      "FileName": "Platform_Haru_Flowers1",
+      "Position": [ "7471", "1259" ],
+      "Rotation": "-320.2445",
+      "Scale": [ "0.7634563", "0.7634563" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "81",
+      "FileName": "Platform_Haru_Flowers1",
+      "Position": [ "4438", "1685" ],
+      "Rotation": "-81.2133",
+      "Scale": [ "0.8370633", "0.8370633" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "82",
+      "FileName": "Platform_Haru_Flowers1",
+      "Position": [ "4862", "1282" ],
+      "Rotation": "-288.7653",
+      "Scale": [ "0.8050267", "0.8050267" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "83",
+      "FileName": "Platform_Haru_Flowers4",
+      "Position": [ "2421", "2172" ],
+      "Rotation": "-179.6418",
+      "Scale": [ "0.8146675", "0.8146675" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "84",
+      "FileName": "Platform_Haru_Flowers7",
+      "Position": [ "4077", "1850" ],
+      "Rotation": "-86.35491",
+      "Scale": [ "0.6218548", "0.6218548" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "85",
+      "FileName": "Platform_Haru_Flowers6",
+      "Position": [ "3740", "124" ],
+      "Rotation": "-118.1123",
+      "Scale": [ "0.6351867", "0.6351867" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "86",
+      "FileName": "Platform_Haru_Flowers4",
+      "Position": [ "4876", "625" ],
+      "Rotation": "-318.7925",
+      "Scale": [ "0.3694563", "0.3694563" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "87",
+      "FileName": "Platform_Haru_Flowers3",
+      "Position": [ "8650", "1601" ],
+      "Rotation": "-172.9021",
+      "Scale": [ "0.8510701", "0.8510701" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "88",
+      "FileName": "Platform_Haru_Flowers4",
+      "Position": [ "4684.7", "182.5" ],
+      "Rotation": "-351.2429",
+      "Scale": [ "0.1976814", "0.1976814" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "89",
+      "FileName": "Platform_Haru_Flowers5",
+      "Position": [ "4672", "910.0001" ],
+      "Rotation": "-179.531",
+      "Scale": [ "0.4740067", "0.4740067" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "90",
+      "FileName": "Platform_Haru_Flowers1",
+      "Position": [ "6520", "1129" ],
+      "Rotation": "-342.3798",
+      "Scale": [ "0.8119698", "0.8119698" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "91",
+      "FileName": "Flower_Particles_Haru_19",
+      "Position": [ "6500", "852.8" ],
+      "Rotation": "0",
+      "Scale": [ "0.2743175", "0.2743175" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "92",
+      "FileName": "Flower_Particles_Haru_18",
+      "Position": [ "8233.8", "574.1" ],
+      "Rotation": "0",
+      "Scale": [ "0.2230245", "0.2230245" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "93",
+      "FileName": "Platform_Haru_Flowers7",
+      "Position": [ "2145", "343" ],
+      "Rotation": "-97.79457",
+      "Scale": [ "0.7381879", "0.7381879" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "94",
+      "FileName": "Platform_Haru_Flowers7",
+      "Position": [ "4752", "614" ],
+      "Rotation": "-353.9183",
+      "Scale": [ "0.31386", "0.31386" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "95",
+      "FileName": "Flower_Particles_Haru_04",
+      "Position": [ "1209", "1018" ],
+      "Rotation": "0",
+      "Scale": [ "0.3537", "0.3537" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "96",
+      "FileName": "Platform_Haru_Flowers5",
+      "Position": [ "4208", "1278" ],
+      "Rotation": "-40.16327",
+      "Scale": [ "0.6017485", "0.6017485" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "97",
+      "FileName": "Platform_Haru_Flowers7",
+      "Position": [ "5084", "348" ],
+      "Rotation": "-278.4379",
+      "Scale": [ "0.4166164", "0.4166164" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "98",
+      "FileName": "Platform_Haru_Flowers5",
+      "Position": [ "6270.3", "1235.8" ],
+      "Rotation": "-351.1325",
+      "Scale": [ "0.7238608", "0.7238608" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "99",
+      "FileName": "Platform_Haru_Flowers6",
+      "Position": [ "7750.4", "757.1" ],
+      "Rotation": "-17.54114",
+      "Scale": [ "0.7216023", "0.7216023" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "100",
+      "FileName": "Platform_Haru_Flowers5",
+      "Position": [ "8291", "727" ],
+      "Rotation": "-324.493",
+      "Scale": [ "0.6462994", "0.6462994" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "101",
+      "FileName": "Platform_Haru_Flowers6",
+      "Position": [ "1351", "2191" ],
+      "Rotation": "-94.39072",
+      "Scale": [ "0.8389345", "0.8389345" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "102",
+      "FileName": "Platform_Haru_Flowers7",
+      "Position": [ "2679", "2284" ],
+      "Rotation": "-194.6091",
+      "Scale": [ "0.699193", "0.699193" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "103",
+      "FileName": "Platform_Haru_Flowers6",
+      "Position": [ "6957", "1225" ],
+      "Rotation": "-28.65927",
+      "Scale": [ "-0.853778", "0.853778" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "104",
+      "FileName": "Flower_Particles_Haru_12",
+      "Position": [ "8471", "1753" ],
+      "Rotation": "-19.57018",
+      "Scale": [ "0.3542704", "0.3542704" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "105",
+      "FileName": "Platform_Haru_Flowers1",
+      "Position": [ "5102.2", "826.2999" ],
+      "Rotation": "-6.210848",
+      "Scale": [ "0.7406433", "0.7406433" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "106",
+      "FileName": "Platform_Haru_Flowers5",
+      "Position": [ "4593", "186" ],
+      "Rotation": "-174.9781",
+      "Scale": [ "0.1877928", "0.1877928" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "107",
+      "FileName": "Platform_Haru_Flowers2",
+      "Position": [ "7816.4", "468.6004" ],
+      "Rotation": "-172.8701",
+      "Scale": [ "0.6952584", "0.6952584" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "108",
+      "FileName": "Platform_Haru_Flowers4",
+      "Position": [ "2398", "485" ],
+      "Rotation": "-279.8538",
+      "Scale": [ "0.5940604", "0.5940604" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "109",
+      "FileName": "Platform_Haru_Flowers6",
+      "Position": [ "4944.8", "699.8" ],
+      "Rotation": "-67.3856",
+      "Scale": [ "0.3460259", "0.3460259" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "110",
+      "FileName": "Platform_Haru_Flowers3",
+      "Position": [ "6743", "1169" ],
+      "Rotation": "-7.94423",
+      "Scale": [ "0.5905609", "0.5905609" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "111",
+      "FileName": "Platform_Haru_Flowers1",
+      "Position": [ "5006.1", "2225.6" ],
+      "Rotation": "-355.3691",
+      "Scale": [ "0.7608099", "0.7608099" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "112",
+      "FileName": "Platform_Haru_Flowers7",
+      "Position": [ "9206", "1999" ],
+      "Rotation": "-318.3332",
+      "Scale": [ "0.7613125", "0.7613125" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "113",
+      "FileName": "Platform_Haru_Flowers1",
+      "Position": [ "2127", "545" ],
+      "Rotation": "0",
+      "Scale": [ "0.7570285", "0.7570285" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "114",
+      "FileName": "Flower_Particles_Haru_08",
+      "Position": [ "1783", "908" ],
+      "Rotation": "0",
+      "Scale": [ "0.4709101", "0.4709101" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "115",
+      "FileName": "Flower_Particles_Haru_22",
+      "Position": [ "7909", "644" ],
+      "Rotation": "-145.0582",
+      "Scale": [ "0.413944", "0.413944" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "116",
+      "FileName": "Flower_Particles_Haru_20",
+      "Position": [ "7112", "933" ],
+      "Rotation": "0",
+      "Scale": [ "0.2306722", "0.2306722" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "117",
+      "FileName": "Platform_Haru_Flowers3",
+      "Position": [ "4276", "2201" ],
+      "Rotation": "0",
+      "Scale": [ "0.7088137", "0.7088137" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "118",
+      "FileName": "Platform_Haru_Flowers5",
+      "Position": [ "4656", "579" ],
+      "Rotation": "-11.98165",
+      "Scale": [ "0.3461943", "0.3461943" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "119",
+      "FileName": "Platform_Haru_Flowers5",
+      "Position": [ "5304", "2188" ],
+      "Rotation": "-348.296",
+      "Scale": [ "0.721755", "0.721755" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "120",
+      "FileName": "Platform_Haru_Flowers1",
+      "Position": [ "4088", "1058" ],
+      "Rotation": "-93.14042",
+      "Scale": [ "0.6015804", "0.6015804" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "121",
+      "FileName": "Platform_Haru_Flowers4",
+      "Position": [ "5299.4", "781.5" ],
+      "Rotation": "-309.8842",
+      "Scale": [ "0.5393113", "0.5393113" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "122",
+      "FileName": "Platform_Haru_Flowers1",
+      "Position": [ "6821", "723" ],
+      "Rotation": "-185.4183",
+      "Scale": [ "0.8211594", "0.8211594" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "123",
+      "FileName": "Platform_Haru_Flowers7",
+      "Position": [ "5870", "997" ],
+      "Rotation": "-74.82597",
+      "Scale": [ "0.6059437", "0.6059437" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "124",
+      "FileName": "Platform_Haru_Flowers3",
+      "Position": [ "5009", "444" ],
+      "Rotation": "-257.5369",
+      "Scale": [ "0.2943421", "0.2943421" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "125",
+      "FileName": "Platform_Haru_Flowers3",
+      "Position": [ "6543.4", "726.7" ],
+      "Rotation": "-187.919",
+      "Scale": [ "0.5446652", "0.5446652" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "126",
+      "FileName": "Platform_Haru_Flowers2",
+      "Position": [ "4406", "16" ],
+      "Rotation": "-163.8099",
+      "Scale": [ "0.7293674", "0.7293674" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "127",
+      "FileName": "Platform_Haru_Flowers3",
+      "Position": [ "5513", "2216" ],
+      "Rotation": "-354.5259",
+      "Scale": [ "0.7088137", "0.7088137" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "128",
+      "FileName": "Platform_Haru_Flowers2",
+      "Position": [ "6117", "749" ],
+      "Rotation": "-171.6904",
+      "Scale": [ "0.6873703", "0.6873703" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "129",
+      "FileName": "Platform_Haru_Flowers4",
+      "Position": [ "6330", "750" ],
+      "Rotation": "-154.6886",
+      "Scale": [ "0.5236369", "0.5236369" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "130",
+      "FileName": "Platform_Haru_Flowers2",
+      "Position": [ "8893", "2104.372" ],
+      "Rotation": "-12.16821",
+      "Scale": [ "1", "1" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "131",
+      "FileName": "Platform_Haru_Flowers5",
+      "Position": [ "9496", "1821" ],
+      "Rotation": "-290.1787",
+      "Scale": [ "0.8032266", "0.8032266" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "132",
+      "FileName": "Platform_Haru_Flowers5",
+      "Position": [ "5497", "1853" ],
+      "Rotation": "-186.0072",
+      "Scale": [ "0.6711645", "0.6711645" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "133",
+      "FileName": "Platform_Haru_Flowers2",
+      "Position": [ "3197", "1626" ],
+      "Rotation": "-352.2677",
+      "Scale": [ "0.8673871", "0.8673871" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "134",
+      "FileName": "Platform_Haru_Flowers1",
+      "Position": [ "3935.454", "2336.664" ],
+      "Rotation": "-343.1895",
+      "Scale": [ "1", "1" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "135",
+      "FileName": "Platform_Haru_Flowers4",
+      "Position": [ "3595", "2214" ],
+      "Rotation": "-33.77821",
+      "Scale": [ "0.7735214", "0.7735214" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "136",
+      "FileName": "Platform_Haru_Flowers4",
+      "Position": [ "5994", "1168" ],
+      "Rotation": "-15.39478",
+      "Scale": [ "0.6839418", "0.6839418" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "137",
+      "FileName": "Platform_Haru_Flowers4",
+      "Position": [ "5022", "1802" ],
+      "Rotation": "-206.5773",
+      "Scale": [ "0.7283535", "0.7283535" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "138",
+      "FileName": "Platform_Haru_Flowers1",
+      "Position": [ "4187", "122" ],
+      "Rotation": "-162.9796",
+      "Scale": [ "0.5327782", "0.5327782" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "139",
+      "FileName": "Flower_Particles_Haru_06",
+      "Position": [ "7657", "574" ],
+      "Rotation": "0",
+      "Scale": [ "0.5397303", "0.5397303" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "140",
+      "FileName": "Platform_Haru_Flowers1",
+      "Position": [ "4811.3", "188.4" ],
+      "Rotation": "-174.4903",
+      "Scale": [ "0.3654393", "0.3654393" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "141",
+      "FileName": "Platform_Haru_Flowers7",
+      "Position": [ "6042", "2238" ],
+      "Rotation": "-302.9153",
+      "Scale": [ "0.6242323", "0.6242323" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "142",
+      "FileName": "Flower_Particles_Haru_23",
+      "Position": [ "7436", "1104" ],
+      "Rotation": "-270.4597",
+      "Scale": [ "0.3722054", "0.3722054" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "143",
+      "FileName": "Platform_Haru_Flowers5",
+      "Position": [ "4987", "132" ],
+      "Rotation": "-193.392",
+      "Scale": [ "0.6095712", "0.6095712" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "144",
+      "FileName": "Platform_Haru_Flowers6",
+      "Position": [ "5736", "2395" ],
+      "Rotation": "-13.8611",
+      "Scale": [ "0.7783928", "0.7783928" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "145",
+      "FileName": "Platform_Haru_Flowers7",
+      "Position": [ "3925", "94" ],
+      "Rotation": "-110.1823",
+      "Scale": [ "0.5900359", "0.5900359" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "146",
+      "FileName": "Platform_Haru_Flowers5",
+      "Position": [ "2057", "2051" ],
+      "Rotation": "-213.1627",
+      "Scale": [ "1", "1" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "147",
+      "FileName": "Platform_Haru_Flowers6",
+      "Position": [ "448", "1012" ],
+      "Rotation": "-151.7151",
+      "Scale": [ "0.7192354", "0.7192354" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "148",
+      "FileName": "Platform_Haru_Flowers5",
+      "Position": [ "8564", "2156" ],
+      "Rotation": "-343.0288",
+      "Scale": [ "0.8525429", "0.8525429" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "149",
+      "FileName": "Platform_Haru_Flowers4",
+      "Position": [ "4592.002", "2209.001" ],
+      "Rotation": "-352.3229",
+      "Scale": [ "-0.6371136", "0.6371136" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "150",
+      "FileName": "Platform_Haru_Flowers2",
+      "Position": [ "5751", "1854" ],
+      "Rotation": "-164.4117",
+      "Scale": [ "0.9336976", "0.9336976" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "151",
+      "FileName": "Platform_Haru_Flowers2",
+      "Position": [ "4800", "1623" ],
+      "Rotation": "-261.3369",
+      "Scale": [ "0.8483181", "0.8483181" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "152",
+      "FileName": "Platform_Haru_Flowers7",
+      "Position": [ "4383", "1415" ],
+      "Rotation": "-345",
+      "Scale": [ "0.597576", "0.597576" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "153",
+      "FileName": "Platform_Haru_Flowers7",
+      "Position": [ "2237", "2611" ],
+      "Rotation": "-36.84257",
+      "Scale": [ "0.6310148", "0.6310148" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "154",
+      "FileName": "Platform_Haru_Flowers5",
+      "Position": [ "4791", "2115" ],
+      "Rotation": "-350.0014",
+      "Scale": [ "0.5923386", "0.5923386" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "155",
+      "FileName": "Platform_Haru_Flowers4",
+      "Position": [ "2450", "2748" ],
+      "Rotation": "-335.0838",
+      "Scale": [ "0.7492313", "0.7492313" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "156",
+      "FileName": "Platform_Haru_Flowers3",
+      "Position": [ "4564", "650" ],
+      "Rotation": "-308.2378",
+      "Scale": [ "0.4085905", "0.4085905" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "157",
+      "FileName": "Flower_Particles_Haru_06",
+      "Position": [ "8139", "810.0001" ],
+      "Rotation": "-289.5232",
+      "Scale": [ "0.498672", "0.498672" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "158",
+      "FileName": "Platform_Haru_Flowers5",
+      "Position": [ "3701", "315.9999" ],
+      "Rotation": "-63.60655",
+      "Scale": [ "0.6135159", "0.6135159" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "159",
+      "FileName": "Platform_Haru_Flowers5",
+      "Position": [ "2078", "2522.3" ],
+      "Rotation": "0",
+      "Scale": [ "0.8002262", "0.8002262" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "160",
+      "FileName": "Platform_Haru_Flowers3",
+      "Position": [ "3751.1", "1886.6" ],
+      "Rotation": "-181.9894",
+      "Scale": [ "0.642459", "0.642459" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "161",
+      "FileName": "Platform_Haru_Flowers3",
+      "Position": [ "4803", "-2" ],
+      "Rotation": "-182.4747",
+      "Scale": [ "0.5361358", "0.5361358" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "162",
+      "FileName": "Flower_Particles_Haru_09",
+      "Position": [ "1624", "2210" ],
+      "Rotation": "0",
+      "Scale": [ "0.231019", "0.231019" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "163",
+      "FileName": "Platform_Haru_Flowers5",
+      "Position": [ "5838", "822" ],
+      "Rotation": "-115.3899",
+      "Scale": [ "0.7221737", "0.7221737" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "164",
+      "FileName": "Platform_Haru_Flowers4",
+      "Position": [ "7933", "784" ],
+      "Rotation": "0",
+      "Scale": [ "0.6728268", "0.6728268" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "165",
+      "FileName": "Platform_Haru_Flowers2",
+      "Position": [ "8188", "2057" ],
+      "Rotation": "-46.86515",
+      "Scale": [ "1", "1" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "166",
+      "FileName": "Flower_Particles_Haru_15",
+      "Position": [ "8222", "1857" ],
+      "Rotation": "0",
+      "Scale": [ "0.706809", "0.706809" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "167",
+      "FileName": "Platform_Haru_Flowers1",
+      "Position": [ "9098", "1606" ],
+      "Rotation": "-195.4928",
+      "Scale": [ "1", "1" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "168",
+      "FileName": "Platform_Haru_Flowers2",
+      "Position": [ "1841", "2437" ],
+      "Rotation": "-21.92131",
+      "Scale": [ "0.787276", "0.787276" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "169",
+      "FileName": "Platform_Haru_Flowers1",
+      "Position": [ "5083", "529" ],
+      "Rotation": "-179.2028",
+      "Scale": [ "0.4560443", "0.4560443" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "170",
+      "FileName": "Flower_Particles_Haru_23",
+      "Position": [ "3945", "847.9999" ],
+      "Rotation": "0",
+      "Scale": [ "0.389782", "0.389782" ],
       "Children": [],
       "Visible": "true",
       "Load": "true",
