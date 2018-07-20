@@ -115,8 +115,8 @@ public class MapObjectJsonConvert : MonoBehaviour {
             triggerClass.Add("Index", indexArray);
             triggerClass.Add("dPosition", new JSONArray()
             {
-                new JSONData(trigger.dPosition.x),
-                new JSONData(trigger.dPosition.y)
+                new JSONData(trigger.dPosition.x * 100.0f),
+                new JSONData(trigger.dPosition.y * 100.0f)
             });
             triggerClass.Add("dRotation", new JSONData(trigger.dRotation));
             triggerClass.Add("dScale", new JSONArray()
@@ -124,6 +124,7 @@ public class MapObjectJsonConvert : MonoBehaviour {
                 new JSONData(trigger.dScale.x),
                 new JSONData(trigger.dScale.y)
             });
+            triggerClass.Add("Duration", new JSONData(trigger.duration)); ;
             triggerClass.Add("Visible", new JSONData(trigger.visible));
             triggerClass.Add("Triggerable", new JSONData(trigger.triggerable));
             triggerClass.Add("Load", new JSONData(trigger.load));
@@ -252,6 +253,7 @@ public class MapObjectJsonConvert : MonoBehaviour {
                     trigger["dPosition"][1].AsFloat / 100.0f);
                 currentKey.dRotation = trigger["dRotation"].AsFloat;
                 currentKey.dScale = new Vector2(trigger["dScale"].AsFloat, trigger["dScale"].AsFloat);
+                currentKey.duration = trigger["Duration"].AsFloat;
                 currentKey.visible = trigger["Visible"].AsBool;
                 currentKey.triggerable = trigger["Triggerable"].AsBool;
                 currentKey.load = trigger["Load"].AsBool;
