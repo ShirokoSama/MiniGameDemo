@@ -35,9 +35,11 @@ public class MapObject : MonoBehaviour {
     }
 
     public MapPiece.MapType type = MapPiece.MapType.FixObject;
+    public Vector2 position;
+    public float rotation;
+    public Vector2 scale;
     public int index;
     public List<int> childrenIndex;
-    public float duration = 1.0f;
     public bool visible = true;
     public bool load = true;
     public List<KeyTrigger> keyTriggers;
