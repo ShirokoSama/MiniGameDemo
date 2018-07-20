@@ -83,10 +83,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
+  position: {x: 0, y: 0}
+  rotation: 0
+  scale: {x: 0, y: 0}
   index: 0
   childrenIndex: 
-  duration: 1
   visible: 1
+  load: 1
   keyTriggers: []
   transferCrystalTrigger: 0
   shiftCrystalTrigger:
@@ -104,8 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger:
-    yMin: 0
-    yMax: 0
+    index: 
     direction: 0
 --- !u!212 &212859636321822162
 SpriteRenderer:

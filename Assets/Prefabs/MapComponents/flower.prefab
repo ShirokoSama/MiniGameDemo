@@ -92,11 +92,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  positionEnd: {x: 0, y: 0}
-  rotationEnd: 0
-  scaleEnd: 1
-  duration: 1
+  position: {x: 0, y: 0}
+  rotation: 0
+  scale: {x: 0, y: 0}
+  index: 0
+  childrenIndex: 
   visible: 1
+  load: 1
+  keyTriggers: []
+  transferCrystalTrigger: 0
+  shiftCrystalTrigger:
+    index: 
+    direction: 0
 --- !u!212 &212021059093583790
 SpriteRenderer:
   m_ObjectHideFlags: 1

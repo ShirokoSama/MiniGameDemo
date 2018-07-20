@@ -85,10 +85,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  position: {x: 0, y: 0}
+  rotation: 0
+  scale: {x: 0, y: 0}
   index: 0
   childrenIndex: 
-  duration: 1
   visible: 1
+  load: 1
   keyTriggers: []
   transferCrystalTrigger: 0
   shiftCrystalTrigger:
