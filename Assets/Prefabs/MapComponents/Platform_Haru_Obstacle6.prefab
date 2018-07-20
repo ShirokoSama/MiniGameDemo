@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212580310007053138}
   - component: {fileID: 60675337495444184}
   - component: {fileID: 114661055265856620}
+  - component: {fileID: 114063256348018228}
   m_Layer: 0
   m_Name: Platform_Haru_Obstacle6
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1353872008225052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 128.23, y: 20.91, z: 0}
+  m_LocalPosition: {x: 322.75, y: 36.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -164,6 +165,23 @@ PolygonCollider2D:
       - {x: -0.905, y: 1.37}
       - {x: -0.905, y: 1.67}
       - {x: -0.945, y: 1.76}
+--- !u!114 &114063256348018228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1353872008225052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f6d3c6e4250e84192f5b34ce9e71bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _glowColor: {r: 1, g: 1, b: 1, a: 1}
+  _glowBrightness: 1.32
+  _outlineWidth: 1
+  _alphaThreshold: 0.137
+  _drawOutside: 1
+  _enableInstancing: 0
 --- !u!114 &114661055265856620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -176,10 +194,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  position: {x: 0, y: 0}
+  rotation: 0
+  scale: {x: 0, y: 0}
   index: 0
   childrenIndex: 
-  duration: 1
   visible: 1
+  load: 1
   keyTriggers: []
   transferCrystalTrigger: 0
   shiftCrystalTrigger:
@@ -200,7 +221,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2496576de41594046a23a540e071dcc7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
