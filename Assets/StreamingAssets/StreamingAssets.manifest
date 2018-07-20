@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 1971475902
+CRC: 3194652226
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -1939,4 +1939,239 @@ AssetBundleManifest:
       Dependencies: {}
     Info_645:
       Name: background/backgroundsplit-16-37.normal
+      Dependencies: {}
+    Info_646:
+      Name: mapcomponents/flower_particles_haru_01.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles1.normal
+    Info_647:
+      Name: mapcomponents/flower_particles_haru_02.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles1.normal
+    Info_648:
+      Name: mapcomponents/flower_particles_haru_03.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles1.normal
+    Info_649:
+      Name: mapcomponents/flower_particles_haru_04.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles2.normal
+    Info_650:
+      Name: mapcomponents/flower_particles_haru_05.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles2.normal
+    Info_651:
+      Name: mapcomponents/flower_particles_haru_06.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles1.normal
+    Info_652:
+      Name: mapcomponents/flower_particles_haru_07.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles1.normal
+    Info_653:
+      Name: mapcomponents/flower_particles_haru_08.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles1.normal
+    Info_654:
+      Name: mapcomponents/flower_particles_haru_09.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles1.normal
+    Info_655:
+      Name: mapcomponents/flower_particles_haru_10.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles2.normal
+    Info_656:
+      Name: mapcomponents/flower_particles_haru_11.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles2.normal
+    Info_657:
+      Name: mapcomponents/flower_particles_haru_12.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles2.normal
+    Info_658:
+      Name: mapcomponents/flower_particles_haru_13.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles2.normal
+    Info_659:
+      Name: mapcomponents/flower_particles_haru_14.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles2.normal
+    Info_660:
+      Name: mapcomponents/flower_particles_haru_15.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles2.normal
+    Info_661:
+      Name: mapcomponents/flower_particles_haru_16.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles1.normal
+    Info_662:
+      Name: mapcomponents/flower_particles_haru_17.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles1.normal
+    Info_663:
+      Name: mapcomponents/flower_particles_haru_18.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles1.normal
+    Info_664:
+      Name: mapcomponents/flower_particles_haru_19.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles1.normal
+    Info_665:
+      Name: mapcomponents/flower_particles_haru_20.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles2.normal
+    Info_666:
+      Name: mapcomponents/flower_particles_haru_21.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles2.normal
+    Info_667:
+      Name: mapcomponents/flower_particles_haru_22.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles1.normal
+    Info_668:
+      Name: mapcomponents/flower_particles_haru_23.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles1.normal
+    Info_669:
+      Name: mapcomponents/flower_particles_haru_24.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/flower_particles1.normal
+    Info_670:
+      Name: mapcomponents/platform_haru_flowers1.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/platform_haru_flowers1.normal
+    Info_671:
+      Name: mapcomponents/platform_haru_flowers2.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/platform_haru_flowers2.normal
+    Info_672:
+      Name: mapcomponents/platform_haru_flowers3.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/platform_haru_flowers.normal
+    Info_673:
+      Name: mapcomponents/platform_haru_flowers4.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/platform_haru_flowers4.normal
+    Info_674:
+      Name: mapcomponents/platform_haru_flowers5.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/platform_haru_flowers5.normal
+    Info_675:
+      Name: mapcomponents/platform_haru_flowers6.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/platform_haru_flowers6.normal
+    Info_676:
+      Name: mapcomponents/platform_haru_flowers7.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/platform_haru_flowers71.normal
+        Dependency_1: mapcomponentssprite/platform_haru_flowers72.normal
+    Info_677:
+      Name: mapcomponents/platform_haru_obstacle1.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/platform_haru_obstacle2.normal
+    Info_678:
+      Name: mapcomponents/platform_haru_obstacle10.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/platform_haru_obstacle3.normal
+    Info_679:
+      Name: mapcomponents/platform_haru_obstacle11.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/platform_haru_obstacle2.normal
+    Info_680:
+      Name: mapcomponents/platform_haru_obstacle2.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/platform_haru_obstacle2.normal
+    Info_681:
+      Name: mapcomponents/platform_haru_obstacle3.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/platform_haru_obstacle3.normal
+    Info_682:
+      Name: mapcomponents/platform_haru_obstacle4.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/platform_haru_obstacle1.normal
+    Info_683:
+      Name: mapcomponents/platform_haru_obstacle5.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/platform_haru_obstacle1.normal
+    Info_684:
+      Name: mapcomponents/platform_haru_obstacle6.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/platform_haru_obstacle2.normal
+    Info_685:
+      Name: mapcomponents/platform_haru_obstacle7.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/platform_haru_obstacle1.normal
+    Info_686:
+      Name: mapcomponents/platform_haru_obstacle8.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/platform_haru_obstacle1.normal
+    Info_687:
+      Name: mapcomponents/platform_haru_obstacle9.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/platform_haru_obstacle1.normal
+    Info_688:
+      Name: mapcomponents/platform_item_flower.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/props.normal
+    Info_689:
+      Name: mapcomponents/platform_item_key.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/props.normal
+    Info_690:
+      Name: mapcomponents/platform_item_shiftleft.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/props.normal
+    Info_691:
+      Name: mapcomponents/platform_item_shiftright.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/props.normal
+    Info_692:
+      Name: mapcomponents/platform_item_transfer.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/props.normal
+    Info_693:
+      Name: mapcomponents/platform_item_urchin.normal
+      Dependencies:
+        Dependency_0: mapcomponentssprite/props.normal
+    Info_694:
+      Name: mapcomponentssprite/platform_haru_flowers1.normal
+      Dependencies: {}
+    Info_695:
+      Name: mapcomponentssprite/platform_haru_flowers2.normal
+      Dependencies: {}
+    Info_696:
+      Name: mapcomponentssprite/platform_haru_flowers.normal
+      Dependencies: {}
+    Info_697:
+      Name: mapcomponentssprite/platform_haru_flowers4.normal
+      Dependencies: {}
+    Info_698:
+      Name: mapcomponentssprite/platform_haru_flowers5.normal
+      Dependencies: {}
+    Info_699:
+      Name: mapcomponentssprite/platform_haru_flowers6.normal
+      Dependencies: {}
+    Info_700:
+      Name: mapcomponentssprite/platform_haru_flowers71.normal
+      Dependencies: {}
+    Info_701:
+      Name: mapcomponentssprite/platform_haru_flowers72.normal
+      Dependencies: {}
+    Info_702:
+      Name: mapcomponentssprite/flower_particles1.normal
+      Dependencies: {}
+    Info_703:
+      Name: mapcomponentssprite/flower_particles2.normal
+      Dependencies: {}
+    Info_704:
+      Name: mapcomponentssprite/platform_haru_obstacle1.normal
+      Dependencies: {}
+    Info_705:
+      Name: mapcomponentssprite/platform_haru_obstacle2.normal
+      Dependencies: {}
+    Info_706:
+      Name: mapcomponentssprite/platform_haru_obstacle3.normal
+      Dependencies: {}
+    Info_707:
+      Name: mapcomponentssprite/props.normal
       Dependencies: {}

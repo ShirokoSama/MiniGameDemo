@@ -1,0 +1,31 @@
+ManifestFileVersion: 0
+CRC: 478787700
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6775762d8a7d2414085bc7632c06f51a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3881a43c65936756741c86ae061a955b
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4ae2fccd727f33e45822f1706c4c12d4, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Prefabs/MapComponents/Flower_Particles_Haru_07.prefab
+Dependencies:
+- E:/NormalFiles/unity/GuMiniGame/UnityProject/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/flower_particles1.normal

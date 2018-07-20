@@ -26,6 +26,10 @@ public class MapManager : MonoBehaviour {
     private List<MapPiece> mapPieces = new List<MapPiece>();
     //所有以生成的地图物件
     private List<MapPiece> generatedPieces = new List<MapPiece>();
+    //AB清单文件
+    AssetBundleManifest manifest;
+    //临时加载的缓存中间AB
+    List<AssetBundle> tempBundles = new List<AssetBundle>();
 
     public void Init()
     {
@@ -33,6 +37,11 @@ public class MapManager : MonoBehaviour {
         {
             instance = this;
         }
+
+        var bundle = AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/StreamingAssets");
+        manifest = bundle.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
+        bundle.Unload(false);
+        bundle = null;
     }
 
     // Use this for initialization
@@ -57,7 +66,17 @@ public class MapManager : MonoBehaviour {
             {
                 if (!generatedPieces.Contains(mapPiece))
                 {
-                    GameObject grass = AssetDatabase.LoadAssetAtPath<GameObject>(prefabRelativePath + "/" + mapPiece.fileName + ".prefab");
+                    var bundle = LoadAssetBundle("mapcomponents/" + mapPiece.fileName.ToLower() + ".normal");
+                    if (bundle == null)
+                    {
+                        Debug.Log("Fail To Load Bundle!");
+                        return;
+                    }
+                    GameObject grass = bundle.LoadAsset<GameObject>(mapPiece.fileName + ".prefab");
+                    bundle.Unload(false);
+                    bundle = null;
+                    ClearTempBundles();
+                    //GameObject grass = AssetDatabase.LoadAssetAtPath<GameObject>(prefabRelativePath + "/" + mapPiece.fileName + ".prefab");
                     grass.transform.position = new Vector3(piecePosX / 100.0f, piecePosY / 100.0f, 0.0f);
                     grass = Instantiate(grass);
                     grass.transform.eulerAngles = new Vector3(0.0f, 0.0f, -mapPiece.currentRotation);
@@ -250,5 +269,52 @@ public class MapManager : MonoBehaviour {
         float radius = Mathf.Sqrt(maxGrassSize.x * maxGrassSize.x * scale.x * scale.x + maxGrassSize.y * maxGrassSize.y * scale.y * scale.y) / 2.0f;
         return (Mathf.Abs(cameraPosition.x * 100.0f - nodeX) < radius + cameraSize.x / 2) && 
             (Mathf.Abs(cameraPosition.y * 100.0f - nodeY) < radius + cameraSize.y / 2);
+    }
+
+    public AssetBundle LoadAssetBundle(string bundlePath)
+    {
+        if (manifest == null)
+        {
+            return null;
+        }
+
+        var file = new List<string>();
+        GetDependecies(bundlePath, file);
+
+        for (int i = 0; i < file.Count; i++)
+        {
+            tempBundles.Add(AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/" + file[i]));
+        }
+        return AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/" + bundlePath);
+    }
+
+    public void ClearTempBundles()
+    {
+        foreach (AssetBundle bundle in tempBundles)
+        {
+            bundle.Unload(false);
+        }
+        tempBundles.Clear();
+    }
+
+    public void GetDependecies(string bundleName, List<string> dependenciesList)
+    {
+        if (manifest == null)
+        {
+            return;
+        }
+
+        var dep = manifest.GetAllDependencies(bundleName);
+        if (dep.Length == 0)
+        {
+            return;
+        }
+        
+        for (int i = 0, count = dep.Length; i < count; i++)
+        {
+            var item = dep[i];
+            this.GetDependecies(item, dependenciesList);
+            dependenciesList.Add(item);
+        }
     }
 }

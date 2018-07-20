@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 2021254493
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 070579d1ae7ea331b4bb4f2b605524cb
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b474380d27eb4bc856799e9c585c4864
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Sprites/MainUIContent/Platform_Haru_Flowers/Platform_Haru_Flowers4.png
+Dependencies: []

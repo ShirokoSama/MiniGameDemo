@@ -1,0 +1,35 @@
+ManifestFileVersion: 0
+CRC: 47169380
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f6ba4ee27d92ca09d196d53a63e1b707
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 8ac069f9ede9b24032aee9184ecff1d4
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 60
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 42884d245c04a8b45b4c904bcdf63954, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4ae2fccd727f33e45822f1706c4c12d4, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Prefabs/MapComponents/Platform_Item_ShiftLeft.prefab
+Dependencies:
+- E:/NormalFiles/unity/GuMiniGame/UnityProject/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/props.normal
