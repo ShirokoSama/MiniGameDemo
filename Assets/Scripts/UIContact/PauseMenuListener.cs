@@ -58,16 +58,19 @@ public class PauseMenuListener : MonoBehaviour {
 
     public void OnResumeClicked()
     {
+        AudioManager.instance.PlayButton();
         MenuOff(resumeFlower);
     }
 
     public void OnRestartClicked()
     {
+        AudioManager.instance.PlayButton();
         MenuOff(restartFlower);
     }
 
     public void OnMusicClicked()
     {
+        AudioManager.instance.PlayButton();
         SwitchMusic();
         if (isMusicOn)
         {

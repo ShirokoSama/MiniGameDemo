@@ -40,10 +40,13 @@ public class GameController : MonoBehaviour {
         mapManager.Init();
         collectionUIController = (CollectionUIController)FindObjectOfType<CollectionUIController>();
         collectionUIController.Init();
+        AudioManager audioManager = FindObjectOfType<AudioManager>();
+        audioManager.Init();
 
         MapManager.instance.LoadMapPieceInfo();
         ResolveArchieve();
         mainUICamera.enabled = false;
+        AudioManager.instance.PlayHaru();
         Time.timeScale = 0.0f;
     }
 
@@ -88,6 +91,7 @@ public class GameController : MonoBehaviour {
         if (collectionCount >= totalCollection)
         {
             passHint.Show();
+            AudioManager.instance.PlayLevelComplete();
         }
     }
 
@@ -142,6 +146,7 @@ public class GameController : MonoBehaviour {
         Time.timeScale = 1.0f;
         hintTransform.localPosition = new Vector2(-1280.0f, 0.0f);
         mainUICamera.enabled = true;
+        AudioManager.instance.PlayStart();
     }
 
 }
