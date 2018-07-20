@@ -20,7 +20,14 @@ public class MonitorGraphic : Graphic, IPointerDownHandler, IPointerUpHandler, I
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        player.PlayerTouchDown(eventData.position);
+        //if (GameController.instance.gameState == GameController.State.Play)
+        //{
+            player.PlayerTouchDown(eventData.position);
+        //}
+        if (GameController.instance.gameState == GameController.State.TapToStart)
+        {
+            GameController.instance.TapStart();
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)

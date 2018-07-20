@@ -7,32 +7,35 @@ public class ShiftCrystal : MonoBehaviour {
     [System.Serializable]
     public struct ShiftCrystalTrigger
     {
-        public float yMin;
-        public float yMax;
+        public List<int> index;
         public bool direction;
-
-        public ShiftCrystalTrigger(float yMin, float yMax, bool dir)
+        public ShiftCrystalTrigger(List<int> index, bool direction)
         {
-            this.yMin = yMin;
-            this.yMax = yMax;
-            this.direction = dir;
+            this.index = index;
+            this.direction = direction;
         }
     }
 
     public ShiftCrystalTrigger trigger;
+    private MapObject mapObject;
+
+    private void Start()
+    {
+        mapObject = GetComponent<MapObject>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         int direction = 0;
         if (trigger.direction) direction = 1;
         else direction = -1;
-        if (other.tag == "Player" && GetComponent<MapObject>().detail.Triggerable)
+        if (other.tag == "Player" && mapObject.detail.Triggerable)
         {
             Debug.Log("OnTriggerEnter");
-            List<MapPiece> mapPieces = MapManager.instance.GetBetween(trigger.yMin, trigger.yMax);
-            foreach (MapPiece mapPiece in mapPieces)
+            foreach (int index in trigger.index)
             {
-                mapPiece.SetNewMoveOffset(new Vector2(1080 * direction, 0.0f), GetComponent<MapObject>().detail.duration);
+                MapPiece piece = MapManager.instance.Get(index);
+                piece.SetNewMoveOffset(new Vector2(10.8f * direction, 0.0f), mapObject.detail.duration);
             }
         }
     }

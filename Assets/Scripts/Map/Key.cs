@@ -7,36 +7,55 @@ public class Key : MonoBehaviour {
     [System.Serializable]
     public struct KeyTrigger
     {
-        public int index;
-
-        public KeyTrigger(int index)
+        public List<int> index;
+        public Vector2 dPosition;
+        public float dRotation;
+        public Vector2 dScale;
+        public float duration;
+        public bool visible;
+        public bool triggerable;
+        public bool load;
+        public KeyTrigger(List<int> index, Vector2 dPosition, float dRotation, Vector2 dScale, float duration, bool visible = true, bool triggerable = true, bool load = true)
         {
             this.index = index;
+            this.dPosition = dPosition;
+            this.dRotation = dRotation;
+            this.dScale = dScale;
+            this.duration = duration;
+            this.visible = visible;
+            this.triggerable = triggerable;
+            this.load = load;
         }
     }
 
     public List<KeyTrigger> triggers;
-    
+    private MapObject mapObject;
+
+    private void Start()
+    {
+        mapObject = GetComponent<MapObject>();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player" && gameObject.GetComponent<MapObject>().detail.Triggerable)
+        if (other.tag == "Player" && mapObject.detail.Triggerable)
         {
             foreach (KeyTrigger trigger in triggers)
             {
-                MapPiece piece = MapManager.instance.Get(trigger.index);
-                if (piece != null)
+                foreach (int index in trigger.index)
                 {
-                    Vector2 positionOffset = piece.endPosition - piece.originalPosition;
-                    piece.SetNewMoveOffset(positionOffset, piece.duration);
-                    float rotationOffset = piece.endRotation - piece.originalRotation;
-                    piece.SetNewRotationOffset(rotationOffset, piece.duration);
-                    float scaleRatio = piece.endScale / piece.originalScale.x;
-                    piece.SetNewScaleRatio(scaleRatio, piece.duration);
+                    MapPiece piece = MapManager.instance.Get(index);
+                    piece.SetNewMoveOffset(trigger.dPosition, trigger.duration);
+                    piece.SetNewRotationOffset(trigger.dRotation, trigger.duration);
+                    piece.SetNewScaleRatio(trigger.dScale, trigger.duration);
+                    piece.Visible = trigger.visible;
+                    piece.Triggerable = trigger.triggerable;
+                    piece.Loadable = trigger.load;
                 }
             }
 
-            GetComponent<MapObject>().detail.Visible = false;
-            GetComponent<MapObject>().detail.Triggerable = false;
+            mapObject.detail.Visible = false;
+            mapObject.detail.Triggerable = false;
         }
     }
 }
