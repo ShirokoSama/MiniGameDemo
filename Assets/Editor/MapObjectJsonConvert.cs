@@ -277,7 +277,7 @@ public class MapObjectJsonConvert : MonoBehaviour {
             mapPiece.transform.eulerAngles = new Vector3(0, 0, -node["Rotation"].AsFloat);
             mapPiece.transform.localScale = new Vector3(node["Scale"][0].AsFloat, node["Scale"][1].AsFloat, 1.0f);
             mapPiece.GetComponent<MapObject>().visible = node["Visible"].AsBool;
-            mapPiece.GetComponent<MapObject>().visible = node["load"].AsBool;
+            mapPiece.GetComponent<MapObject>().load = node["Load"].AsBool;
             mapPiece = PrefabUtility.InstantiatePrefab(mapPiece) as GameObject;
             // mapPiece.transform.parent = parentObject.transform;
         }
