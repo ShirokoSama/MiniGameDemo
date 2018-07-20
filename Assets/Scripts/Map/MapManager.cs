@@ -130,7 +130,7 @@ public class MapManager : MonoBehaviour {
             }
 
             MapPiece mapPiece = new MapPiece((MapPiece.MapType)node["Type"].AsInt, node["Index"].AsInt, node["FileName"], new Vector2(node["Position"][0].AsFloat, node["Position"][1].AsFloat),
-                node["Rotation"].AsFloat, new Vector2(node["ScaleX"].AsFloat, node["ScaleY"].AsFloat), node["Visible"].AsBool,
+                node["Rotation"].AsFloat, new Vector2(node["Scale"][0].AsFloat, node["Scale"][1].AsFloat), node["Visible"].AsBool,
                 new Vector2(node["PositionEnd"][0].AsFloat, node["PositionEnd"][1].AsFloat), node["RotationEnd"].AsFloat, node["ScaleEnd"].AsFloat,
                 node["Duration"].AsFloat, keyTriggers, node["TransferCrystalTrigger"].AsInt,
                 new ShiftCrystal.ShiftCrystalTrigger(node["ShiftCrystalTrigger"]["yRange"][0].AsFloat, node["ShiftCrystalTrigger"]["yRange"][1].AsFloat, node["ShiftCrystalTrigger"]["Direction"].AsBool));
