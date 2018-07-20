@@ -23,14 +23,12 @@ public class MapPiece {
     public Vector2 originalPosition;
     public float originalRotation;
     public Vector2 originalScale;
-    public bool originalVisible;
-    public Vector2 endPosition;
-    public float endRotation;
-    public float endScale = 1.0f;
+    public List<int> children;
     public float duration = 0.0f;
+    public bool originalVisible;
     public List<Key.KeyTrigger> triggers = null;
     public int transferCrystalTrigger = 0;
-    public ShiftCrystal.ShiftCrystalTrigger shiftCrystalTrigger = new ShiftCrystal.ShiftCrystalTrigger(0.0f, 0.0f, false);
+    public ShiftCrystal.ShiftCrystalTrigger shiftCrystalTrigger = new ShiftCrystal.ShiftCrystalTrigger(new List<int>(), true);
 
     //存档中会保存以下状态，同时也是管理对应地图部分的状态（不管游戏对象有没有生成），
     //会根据这里记录的当前位置等决定要不要生成或者移动到视野内，因此根据CountDown如果触发了移动等每帧都会先修改这个然后MapManager发现位置出现偏差再移动
@@ -51,7 +49,7 @@ public class MapPiece {
     //当前缩放
     public Vector2 currentScale;
     //目标缩放与当前缩放的比例
-    public float targetScaleRatio;
+    public Vector2 targetScaleOffset;
     //几秒后达到目标缩放
     public float scaleCountDown;
 
@@ -77,6 +75,8 @@ public class MapPiece {
             changed = true;
         }
     }
+    //几秒后切换触发状态
+    public float triggerableCountDown;
     //是否可加载
     private bool loadable;
     public bool Loadable
@@ -93,7 +93,8 @@ public class MapPiece {
     public bool changed = false;
 
     public MapPiece(MapType type, int index, string fileName, Vector2 position, float rotation, Vector2 scale, bool visible, 
-        Vector2 positionEnd, float rotationEnd, float scaleEnd, float duration, List<Key.KeyTrigger> triggers, int transferTrigger, ShiftCrystal.ShiftCrystalTrigger shiftTrigger)
+        List<int> children, float duration, List<Key.KeyTrigger> triggers, int transferTrigger, ShiftCrystal.ShiftCrystalTrigger shiftTrigger, 
+        bool triggerable, bool load)
     {
         this.type = type;
         this.index = index;
@@ -102,9 +103,7 @@ public class MapPiece {
         this.originalRotation = rotation;
         this.originalScale = scale;
         this.originalVisible = visible;
-        this.endPosition = positionEnd;
-        this.endRotation = rotationEnd;
-        this.endScale = scaleEnd;
+        this.children = children;
         this.duration = duration;
         this.triggers = triggers;
         this.transferCrystalTrigger = transferTrigger;
@@ -117,16 +116,17 @@ public class MapPiece {
         targetRotationOffset = 0.0f;
         rotationCountDown = 0.0f;
         currentScale = originalScale;
-        targetScaleRatio = 1.0f;
+        targetScaleOffset = new Vector2(0.0f, 0.0f);
         scaleCountDown = 0.0f;
         this.visible = visible;
-        triggerable = true;
-        loadable = true;
+        this.triggerable = triggerable;
+        triggerableCountDown = 0.0f;
+        loadable = load;
 
     }
 
     public void LoadArchive(Vector2 currentPosition, Vector2 targetPositionOffset, float moveCountDown, float currentRotation, float targetRotationOffset,
-        float rotationCountDown, Vector2 currentScale, float targetRatio, float scaleCountDown, bool visible, bool triggerable, bool loadable)
+        float rotationCountDown, Vector2 currentScale, Vector2 targetScaleOffset, float scaleCountDown, bool visible, bool triggerable,float triggerableCountDown, bool loadable)
     {
         this.currentPosition = currentPosition;
         this.targetPositionOffset = targetPositionOffset;
@@ -135,10 +135,11 @@ public class MapPiece {
         this.targetRotationOffset = targetRotationOffset;
         this.rotationCountDown = rotationCountDown;
         this.currentScale = currentScale;
-        this.targetScaleRatio = targetRatio;
+        this.targetScaleOffset = targetScaleOffset;
         this.scaleCountDown = scaleCountDown;
         this.visible = visible;
         this.triggerable = triggerable;
+        this.triggerableCountDown = triggerableCountDown;
         this.loadable = loadable;
 
         changed = true;
@@ -146,32 +147,43 @@ public class MapPiece {
 
     public JSONClass GenerateArchivePiece()
     {
-        JSONClass node = new JSONClass();
-        node.Add("Index", new JSONData(index));
-        node.Add("CurrentPosition", new JSONArray
+        JSONClass node = new JSONClass
         {
-            new JSONData(currentPosition.x),
-            new JSONData(currentPosition.y)
-        });
-        node.Add("TargetPositionOffset", new JSONArray()
-        {
-            new JSONData(targetPositionOffset.x),
-            new JSONData(targetPositionOffset.y)
-        });
-        node.Add("MoveCountDown", new JSONData(moveCountDown));
-        node.Add("CurrentRotation", new JSONData(currentRotation));
-        node.Add("TartgetRotationOffset", new JSONData(targetRotationOffset));
-        node.Add("RotationCountDown", new JSONData(rotationCountDown));
-        node.Add("CurrentScale", new JSONArray()
-        {
-            new JSONData(currentScale.x),
-            new JSONData(currentScale.y)
-        });
-        node.Add("TargetScaleRatio", new JSONData(targetScaleRatio));
-        node.Add("ScaleCountDown", new JSONData(scaleCountDown));
-        node.Add("Visible", new JSONData(Visible));
-        node.Add("Triggerable", new JSONData(Triggerable));
-        node.Add("Loadable", new JSONData(Loadable));
+            { "Index", new JSONData(index) },
+            { "CurrentPosition", new JSONArray
+                {
+                    new JSONData(currentPosition.x),
+                    new JSONData(currentPosition.y)
+                }
+            },
+            { "TargetPositionOffset", new JSONArray()
+                {
+                    new JSONData(targetPositionOffset.x),
+                    new JSONData(targetPositionOffset.y)
+                }
+            },
+            { "MoveCountDown", new JSONData(moveCountDown) },
+            { "CurrentRotation", new JSONData(currentRotation) },
+            { "TartgetRotationOffset", new JSONData(targetRotationOffset) },
+            { "RotationCountDown", new JSONData(rotationCountDown) },
+            { "CurrentScale", new JSONArray()
+                {
+                    new JSONData(currentScale.x),
+                    new JSONData(currentScale.y)
+                }
+            },
+            { "TargetScaleOffset", new JSONArray()
+                {
+                    new JSONData(targetScaleOffset.x),
+                    new JSONData(targetScaleOffset.y)
+                }
+            },
+            { "ScaleCountDown", new JSONData(scaleCountDown) },
+            { "Visible", new JSONData(Visible) },
+            { "Triggerable", new JSONData(Triggerable) },
+            { "TriggerableCountDown", new JSONData(triggerableCountDown) },
+            { "Loadable", new JSONData(Loadable) }
+        };
         return node;
     }
 
@@ -179,6 +191,7 @@ public class MapPiece {
     public void RefreshPerFrame()
     {
         if (moveCountDown > 0.0f) {
+            Debug.Log("Move");
             if (moveCountDown <= Time.deltaTime)
             {
                 currentPosition += targetPositionOffset;
@@ -214,16 +227,28 @@ public class MapPiece {
         {
             if (scaleCountDown < Time.deltaTime)
             {
-                currentScale *= targetScaleRatio;
-                targetScaleRatio = 1.0f;
+                currentScale += targetScaleOffset;
+                targetScaleOffset = Vector2.zero;
                 scaleCountDown = 0.0f;
             }
             else
             {
-                float ratio = Mathf.Lerp(1.0f, targetScaleRatio, Time.deltaTime / scaleCountDown);
-                currentScale *= ratio;
-                targetScaleRatio /= ratio;
+                Vector2 offset = targetScaleOffset * Time.deltaTime / scaleCountDown;
+                currentScale += offset;
+                targetScaleOffset -= offset;
                 scaleCountDown -= Time.deltaTime;
+            }
+        }
+        if (triggerableCountDown > 0.0f)
+        {
+            if (triggerableCountDown < Time.deltaTime)
+            {
+                SwitchTriggerable();
+                triggerableCountDown = 0.0f;
+            }
+            else
+            {
+                triggerableCountDown -= Time.deltaTime;
             }
         }
     }
@@ -233,6 +258,11 @@ public class MapPiece {
         targetPositionOffset += offset;
         moveCountDown = duration;
         changed = true;
+        foreach (int childIndex in children)
+        {
+            MapPiece piece = MapManager.instance.Get(childIndex);
+            piece.SetNewMoveOffset(offset, duration);
+        }
     }
 
     public void SetNewRotationOffset(float offset, float duration)
@@ -242,11 +272,29 @@ public class MapPiece {
         changed = true;
     }
 
-    public void SetNewScaleRatio(float ratio, float duration)
+    public void SetNewScaleRatio(Vector2 offset, float duration)
     {
-        targetScaleRatio *= ratio;
+        targetScaleOffset += offset;
         scaleCountDown = duration;
         changed = true;
+    }
+
+    public void TriggerBreak(float time)
+    {
+        SwitchTriggerable();
+        triggerableCountDown = time;
+    }
+
+    public void SwitchTriggerable()
+    {
+        if (Triggerable)
+        {
+            Triggerable = false;
+        }
+        else
+        {
+            Triggerable = true;
+        }
     }
 
 }

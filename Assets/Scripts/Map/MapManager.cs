@@ -121,19 +121,64 @@ public class MapManager : MonoBehaviour {
             List<Key.KeyTrigger> keyTriggers = new List<Key.KeyTrigger>();
             foreach (JSONNode trigger in node["KeyTrigger"].Childs)
             {
-                keyTriggers.Add(new Key.KeyTrigger(trigger["Index"].AsInt));
+                List<int> indexList = new List<int>();
+                foreach (JSONNode indexNode in trigger["Index"].Childs)
+                {
+                    indexList.Add(indexNode.AsInt);
+                }
+                //设置默认值
+                if (trigger["dPosition"][0] == null)
+                {
+                    trigger.Add("dPosition", new JSONArray()
+                    {
+                        new JSONData(0.0f),
+                        new JSONData(0.0f)
+                    });
+                }
+                if (trigger["dRotation"] == null)
+                {
+                    trigger.Add("dRotation", new JSONData(0.0f));
+                }
+                if (trigger["dScale"][0] == null)
+                {
+                    trigger.Add("dScale", new JSONArray
+                    {
+                        new JSONData(0.0f),
+                        new JSONData(0.0f)
+                    });
+                }
+                Key.KeyTrigger keyTrigger = new Key.KeyTrigger(indexList, new Vector2(trigger["dPosition"][0].AsFloat, trigger["dPosition"][1].AsFloat),
+                    trigger["dRotation"].AsFloat, new Vector2(trigger["dScale"][0].AsFloat, trigger["dScale"][1].AsFloat),
+                    trigger["Duration"].AsFloat, trigger["Visible"].AsBool, trigger["Triggerable"].AsBool, trigger["Load"].AsBool);
+                keyTriggers.Add(keyTrigger);
+            }
+
+            List<int> children = new List<int>();
+            foreach (JSONNode child in node["Children"].Childs)
+            {
+                children.Add(child.AsInt);
+            }
+
+            List<int> shiftIndex = new List<int>();
+            foreach (JSONNode child in node["ShiftCrystalTrigger"]["Index"].Childs)
+            {
+                shiftIndex.Add(child.AsInt);
             }
 
             if (node["Visible"] == null)
             {
                 node.Add("Visible", new JSONData(true));
             }
+            if (node["Triggerable"] == null)
+            {
+                node.Add("Triggerable", new JSONData(true));
+            }
 
             MapPiece mapPiece = new MapPiece((MapPiece.MapType)node["Type"].AsInt, node["Index"].AsInt, node["FileName"], new Vector2(node["Position"][0].AsFloat, node["Position"][1].AsFloat),
                 node["Rotation"].AsFloat, new Vector2(node["Scale"][0].AsFloat, node["Scale"][1].AsFloat), node["Visible"].AsBool,
-                new Vector2(node["PositionEnd"][0].AsFloat, node["PositionEnd"][1].AsFloat), node["RotationEnd"].AsFloat, node["ScaleEnd"].AsFloat,
-                node["Duration"].AsFloat, keyTriggers, node["TransferCrystalTrigger"].AsInt,
-                new ShiftCrystal.ShiftCrystalTrigger(node["ShiftCrystalTrigger"]["yRange"][0].AsFloat, node["ShiftCrystalTrigger"]["yRange"][1].AsFloat, node["ShiftCrystalTrigger"]["Direction"].AsBool));
+                children, node["Duration"].AsFloat, keyTriggers, node["TransferCrystalTrigger"].AsInt,
+                new ShiftCrystal.ShiftCrystalTrigger(shiftIndex, node["ShiftCrystalTrigger"]["Direction"].AsBool), 
+                node["Triggerable"].AsBool, node["Load"].AsBool);
             mapPieces.Add(mapPiece);
         }
     }
@@ -151,8 +196,9 @@ public class MapManager : MonoBehaviour {
                     new Vector2(archievePiece["TargetPositionOffset"][0].AsFloat, archievePiece["TargetPositionOffset"][1].AsFloat),
                     archievePiece["MoveCountDown"].AsFloat, archievePiece["CurrentRotation"].AsFloat, archievePiece["TartgetRotationOffset"].AsFloat,
                     archievePiece["RotationCountDown"].AsFloat, new Vector2(archievePiece["CurrentScale"][0].AsFloat, archievePiece["CurrentScale"][1].AsFloat),
-                    archievePiece["TargetScaleRatio"].AsFloat, archievePiece["ScaleCountDown"].AsFloat, archievePiece["Visible"].AsBool,
-                    archievePiece["Triggerable"].AsBool, archievePiece["Loadable"].AsBool);
+                    new Vector2(archievePiece["TargetScaleOffset"][0].AsFloat, archievePiece["TargetScaleOffset"][1].AsFloat), 
+                    archievePiece["ScaleCountDown"].AsFloat, archievePiece["Visible"].AsBool,
+                    archievePiece["Triggerable"].AsBool,archievePiece["TriggerableCountDown"].AsFloat, archievePiece["Loadable"].AsBool);
             }
         }
     }

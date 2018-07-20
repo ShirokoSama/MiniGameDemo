@@ -69,7 +69,7 @@ namespace HaruScene
         }
 
         // Update is called once per frame
-        private void Update()
+        private void FixedUpdate()
         {
             /*
              * 仅适用于触控类似于摇杆

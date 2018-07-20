@@ -7,15 +7,28 @@ using SimpleJSON;
 
 public class GameController : MonoBehaviour {
 
+    public enum State
+    {
+        TapToStart = 0,
+        Play = 1,
+        Pause = 2
+    }
+
     public static GameController instance;
-    public CollectionUIController collectionUIcontroller;
+    [HideInInspector]
+    public State gameState = State.TapToStart;
+    public List<GaussShader> gaussShaders;
+    public CollectionUIController collectionUIController;
     public PassHintController passHint;
     public Transform kunTransform;
     public Transform cameraTransform;
+    public RectTransform hintTransform;
+    public Camera mainUICamera;
     public const int totalCollection = 4;
 
     private string archievePath;
     private int collectionCount = 0;
+
 
     private void Awake()
     {
@@ -25,11 +38,39 @@ public class GameController : MonoBehaviour {
         archievePath = Application.persistentDataPath + "/Archieve";
         MapManager mapManager = (MapManager)FindObjectOfType<MapManager>();
         mapManager.Init();
-        collectionUIcontroller = (CollectionUIController)FindObjectOfType<CollectionUIController>();
-        collectionUIcontroller.Init();
+        collectionUIController = (CollectionUIController)FindObjectOfType<CollectionUIController>();
+        collectionUIController.Init();
 
         MapManager.instance.LoadMapPieceInfo();
         ResolveArchieve();
+        mainUICamera.enabled = false;
+        Time.timeScale = 0.0f;
+    }
+
+    private void Update()
+    {
+        //if (gameState == State.TapToStart)
+        //{
+        //    foreach (GaussShader shader in gaussShaders)
+        //    {
+        //        if (targetBlurSize > shader.BlurSpreadSize)
+        //        {
+        //            shader.BlurSpreadSize += 0.03f;
+        //            if (targetBlurSize < shader.BlurSpreadSize)
+        //            {
+        //                targetBlurSize = 3.0f;
+        //            }
+        //        }
+        //        else
+        //        {
+        //            shader.BlurSpreadSize -= blurTransformSpeed * Time.deltaTime;
+        //            if (targetBlurSize > shader.BlurSpreadSize)
+        //            {
+        //                targetBlurSize = 10.0f;
+        //            }
+        //        }
+        //    }
+        //}
     }
 
     private void OnApplicationFocus(bool focus)
@@ -43,7 +84,7 @@ public class GameController : MonoBehaviour {
     public void CollectFlower()
     {
         collectionCount++;
-        collectionUIcontroller.Collect();
+        collectionUIController.Collect();
         if (collectionCount >= totalCollection)
         {
             passHint.Show();
@@ -57,7 +98,7 @@ public class GameController : MonoBehaviour {
             Directory.CreateDirectory(archievePath);
         }
         StreamWriter writer = File.CreateText(archievePath + "/Archieve.json");
-        writer.Write(makeArchieveNode().ToString());
+        writer.Write(MakeArchieveNode().ToString());
         writer.Flush();
         writer.Close();
     }
@@ -69,7 +110,7 @@ public class GameController : MonoBehaviour {
             StreamReader reader = File.OpenText(archievePath + "/Archieve.json");
             JSONNode archieve = JSON.Parse(reader.ReadToEnd());
             collectionCount = archieve["CollectionCount"].AsInt;
-            collectionUIcontroller.SetCollectionCount(collectionCount);
+            collectionUIController.SetCollectionCount(collectionCount);
 
             kunTransform.position = new Vector2(archieve["KunPosition"][0].AsFloat, archieve["KunPosition"][1].AsFloat);
             cameraTransform.position = new Vector3(archieve["KunPosition"][0].AsFloat, archieve["KunPosition"][1].AsFloat, cameraTransform.position.z);
@@ -77,7 +118,7 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    public JSONClass makeArchieveNode()
+    public JSONClass MakeArchieveNode()
     {
         JSONClass archieve = new JSONClass();
         archieve.Add("Time", new JSONData(DateTime.Now.ToLocalTime().ToString()));
@@ -90,4 +131,17 @@ public class GameController : MonoBehaviour {
         archieve.Add("MapChangeInfo", MapManager.instance.GenerateArchieveNode());
         return archieve;
     }
+
+    public void TapStart()
+    {
+        gameState = State.Play;
+        foreach (GaussShader  shader in gaussShaders)
+        {
+            shader.enabled = false;
+        }
+        Time.timeScale = 1.0f;
+        hintTransform.localPosition = new Vector2(-1280.0f, 0.0f);
+        mainUICamera.enabled = true;
+    }
+
 }
