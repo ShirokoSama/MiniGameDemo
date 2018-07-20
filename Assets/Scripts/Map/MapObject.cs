@@ -12,15 +12,17 @@ public class MapObject : MonoBehaviour {
         public Vector2 dPosition;
         public float dRotation;
         public Vector2 dScale;
+        public float duration;
         public bool visible;
         public bool triggerable;
         public bool load;
-        KeyTrigger(List<int> index, Vector2 dPosition, float dRotation, Vector2 dScale, bool visible = true, bool triggerable = true, bool load = true)
+        KeyTrigger(List<int> index, Vector2 dPosition, float dRotation, Vector2 dScale, float duration, bool visible = true, bool triggerable = true, bool load = true)
         {
             this.index = index;
             this.dPosition = dPosition;
             this.dRotation = dRotation;
             this.dScale = dScale;
+            this.duration = duration;
             this.visible = visible;
             this.triggerable = triggerable;
             this.load = load;
@@ -35,9 +37,11 @@ public class MapObject : MonoBehaviour {
     }
 
     public MapPiece.MapType type = MapPiece.MapType.FixObject;
+    public Vector2 position;
+    public float rotation;
+    public Vector2 scale;
     public int index;
     public List<int> childrenIndex;
-    public float duration = 1.0f;
     public bool visible = true;
     public bool load = true;
     public List<KeyTrigger> keyTriggers;
