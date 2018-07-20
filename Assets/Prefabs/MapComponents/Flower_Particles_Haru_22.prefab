@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1367295641901010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 338.29, y: 6.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,10 +53,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  position: {x: 0, y: 0}
+  rotation: 0
+  scale: {x: 0, y: 0}
   index: 0
   childrenIndex: 
-  duration: 1
   visible: 1
+  load: 1
   keyTriggers: []
   transferCrystalTrigger: 0
   shiftCrystalTrigger:
