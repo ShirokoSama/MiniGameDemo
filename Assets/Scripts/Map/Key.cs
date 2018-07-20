@@ -40,6 +40,7 @@ public class Key : MonoBehaviour {
     {
         if (other.tag == "Player" && mapObject.detail.Triggerable)
         {
+            AudioManager.instance.PlayGetKeyItem();
             foreach (KeyTrigger trigger in triggers)
             {
                 foreach (int index in trigger.index)
