@@ -31,12 +31,12 @@ public class ShiftCrystal : MonoBehaviour {
         else direction = -1;
         if (other.tag == "Player" && mapObject.detail.Triggerable)
         {
-            Debug.Log("OnTriggerEnter");
             foreach (int index in trigger.index)
             {
                 MapPiece piece = MapManager.instance.Get(index);
                 piece.SetNewMoveOffset(new Vector2(10.8f * direction, 0.0f), mapObject.detail.duration);
             }
+            mapObject.detail.TriggerBreak(5.0f);
         }
     }
 }

@@ -88,6 +88,11 @@ public class GameController : MonoBehaviour {
     {
         collectionCount++;
         collectionUIController.Collect();
+    }
+
+    public void ReachPassHeight()
+    {
+
         if (collectionCount >= totalCollection)
         {
             passHint.Show();
