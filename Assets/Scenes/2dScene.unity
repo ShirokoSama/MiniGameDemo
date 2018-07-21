@@ -121,13 +121,34 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 6318227}
+  - component: {fileID: 6318226}
   m_Layer: 0
-  m_Name: AudioManager
+  m_Name: AudioController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6318226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 6318225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6ee08dc3abe7724e84fb52b58a7f3c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonClip: {fileID: 8300000, guid: 3b4cf76e45bedea48a53ff8687b35e09, type: 3}
+  failClip: {fileID: 8300000, guid: 8f8dd3cf2a7b5bd48a7bb8c1a0f2a93e, type: 3}
+  getItemClip: {fileID: 8300000, guid: dbce48517e462124ba3ff39209096346, type: 3}
+  getKeyItemClip: {fileID: 8300000, guid: 3a95a170d71f5bf43bf25b27243fddcb, type: 3}
+  haruClip: {fileID: 8300000, guid: a640d600d5f6a9940b9c15d104280a40, type: 3}
+  levelCompleteClip: {fileID: 8300000, guid: ea5c427bb23060d44b5fb840fa92b8ff, type: 3}
+  settigClip: {fileID: 8300000, guid: 3b650ce06e51b1d4ca8626a2cda74798, type: 3}
+  startClip: {fileID: 8300000, guid: f9ad88af9b248a44a9d9cf4f6060e347, type: 3}
+  BGMVolume: 0.05
 --- !u!4 &6318227
 Transform:
   m_ObjectHideFlags: 0

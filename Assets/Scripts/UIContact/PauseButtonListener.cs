@@ -11,7 +11,7 @@ public class PauseButtonListener : MonoBehaviour {
 
 	public void ButtonClick()
     {
-        AudioManager.instance.PlaySetting();
+        AudioController.instance.PlaySetting();
         PauseMenuListener.instance.MenuOn();
     }
 }

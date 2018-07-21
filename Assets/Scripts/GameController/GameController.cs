@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using SimpleJSON;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using SimpleJSON;
+using TooSimpleFramework;
 
 public class GameController : MonoBehaviour {
 
@@ -40,13 +40,14 @@ public class GameController : MonoBehaviour {
         mapManager.Init();
         collectionUIController = (CollectionUIController)FindObjectOfType<CollectionUIController>();
         collectionUIController.Init();
-        AudioManager audioManager = FindObjectOfType<AudioManager>();
-        audioManager.Init();
+        Framework.Instance.Initialize();
+        AudioController audioController = FindObjectOfType<AudioController>();
+        audioController.Init();
 
         MapManager.instance.LoadMapPieceInfo();
         ResolveArchieve();
         mainUICamera.enabled = false;
-        AudioManager.instance.PlayHaru();
+        AudioController.instance.PlayHaru();
         Time.timeScale = 0.0f;
     }
 
@@ -96,7 +97,7 @@ public class GameController : MonoBehaviour {
         if (collectionCount >= totalCollection)
         {
             passHint.Show();
-            AudioManager.instance.PlayLevelComplete();
+            AudioController.instance.PlayLevelComplete();
         }
     }
 
@@ -151,7 +152,7 @@ public class GameController : MonoBehaviour {
         Time.timeScale = 1.0f;
         hintTransform.localPosition = new Vector2(-1280.0f, 0.0f);
         mainUICamera.enabled = true;
-        AudioManager.instance.PlayStart();
+        AudioController.instance.PlayStart();
     }
 
 }

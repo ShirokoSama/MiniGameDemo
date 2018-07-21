@@ -1,4 +1,5 @@
 ﻿using System;
+using Unity.Jobs;
 using UnityEngine;
 
 public class SpriteToParticles : MonoBehaviour {
@@ -21,7 +22,20 @@ public class SpriteToParticles : MonoBehaviour {
     // reference of player
     public GameObject Character;
     private Transform m_transform;
-    
+
+    // 这么写是错的
+    //struct ParticleEmitJob : IJob
+    //{
+    //    public ParticleSystem jobParticleSys;
+    //    public ParticleSystem.Particle[] jobParticleArr;
+    //    public int jobParticleNum;
+    //    public void Execute()
+    //    {
+    //        jobParticleSys.Emit(jobParticleNum);
+    //        jobParticleSys.SetParticles(jobParticleArr, jobParticleArr.Length);
+    //    }
+    //}
+
     // Use this for initialization
     void Start () {
         m_transform = GetComponent<Transform>();

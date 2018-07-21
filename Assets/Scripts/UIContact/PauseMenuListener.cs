@@ -58,19 +58,19 @@ public class PauseMenuListener : MonoBehaviour {
 
     public void OnResumeClicked()
     {
-        AudioManager.instance.PlayButton();
+        AudioController.instance.PlayButton();
         MenuOff(resumeFlower);
     }
 
     public void OnRestartClicked()
     {
-        AudioManager.instance.PlayButton();
+        AudioController.instance.PlayButton();
         MenuOff(restartFlower);
     }
 
     public void OnMusicClicked()
     {
-        AudioManager.instance.PlayButton();
+        AudioController.instance.PlayButton();
         SwitchMusic();
         if (isMusicOn)
         {
@@ -166,10 +166,12 @@ public class PauseMenuListener : MonoBehaviour {
         if (isMusicOn)
         {
             isMusicOn = false;
+            AudioController.instance.MuteMusicOn();
         }
         else
         {
             isMusicOn = true;
+            AudioController.instance.MuteMusicOff();
         }
     }
 }
