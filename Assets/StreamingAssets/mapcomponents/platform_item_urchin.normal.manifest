@@ -3,7 +3,7 @@ CRC: 1589797303
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: aa7f7aef34525eb95f74be5b52bcfaa9
+    Hash: f91a4e890b08a6e95f7e596792338b70
   TypeTreeHash:
     serializedVersion: 2
     Hash: 14a16ab5e83879db07ba3fd7afc75d2b
@@ -30,4 +30,4 @@ ClassTypes:
 Assets:
 - Assets/Prefabs/MapComponents/Platform_Item_Urchin.prefab
 Dependencies:
-- E:/NormalFiles/unity/GuMiniGame/UnityProject/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/props.normal
+- E:/MyProjects/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/props.normal

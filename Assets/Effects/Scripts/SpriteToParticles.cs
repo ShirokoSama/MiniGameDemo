@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpriteToParticles : MonoBehaviour {
@@ -11,18 +9,29 @@ public class SpriteToParticles : MonoBehaviour {
     public Texture2D texture; // 2D 图像
     public int sampleStep = 1; // 粒子数量
     public int particleNumPerPixel = 1;
-    private NormalDistribution normalGenerator; // 高斯分布生成器
+    private readonly NormalDistribution normalGenerator; // 高斯分布生成器
     public float Opacity = 1;  // 控制粒子的透明度
     public float scale = 1;
     public float particleScale = 1;
-    private float t = 0;
+    private float interval;
+
+    private readonly Vector3 eulerLeft2Right = new Vector3(-180, -90, 90);
+    private readonly Vector3 eulerRight2Left = new Vector3(-180, 90, 90);
+
+    // reference of player
+    public GameObject Character;
+    private Transform m_transform;
     
     // Use this for initialization
     void Start () {
+        m_transform = GetComponent<Transform>();
+        m_transform.position = new Vector3(
+            Character.transform.position.x - 15f,
+            Character.transform.position.y, 0);
+        interval = UnityEngine.Random.Range(10f, 20f);
+
         particleSys = GetComponent<ParticleSystem>();
         Color[] pix = texture.GetPixels();
-        t = particleSys.main.duration;
-        var em = particleSys.emission;
 
         particleNum = ((texture.width-1) / sampleStep + 1) * ((texture.height - 1) / sampleStep + 1);
         particleArr = new ParticleSystem.Particle[particleNum];
@@ -35,7 +44,7 @@ public class SpriteToParticles : MonoBehaviour {
             {
                 if (i % sampleStep != 0) continue;
                 if (j % sampleStep != 0) continue;
-                particleArr[index].position = new Vector3((j - (float)texture.width / 2) * scale, 0f, (i - (float)texture.width / 2) * scale);
+                particleArr[index].position = new Vector3((j - (float)texture.width / 2) * scale * 2, 0f, (i - (float)texture.height / 2) * scale * 2);
                 Color tmpColor = pix[i * texture.width + j];
                 tmpColor.a = tmpColor.a * Opacity;
                 particleArr[index].startColor = tmpColor;
@@ -49,8 +58,27 @@ public class SpriteToParticles : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-	    //t -= 0.02f;
-     //   particleSys.Simulate(t, true, true);
-     //   Debug.Log(t);
+        interval -= Time.deltaTime;
+        if (interval <= 0)
+        {
+            interval = UnityEngine.Random.Range(10f, 20f);
+            if (UnityEngine.Random.value < 0.5f)
+            {
+                m_transform.position = new Vector3(
+                    Character.transform.position.x - 15f,
+                    Character.transform.position.y, UnityEngine.Random.Range(-10f, 10f));
+                m_transform.eulerAngles = eulerLeft2Right;
+            }
+            else
+            {
+                m_transform.position = new Vector3(
+                                    Character.transform.position.x + 15f,
+                                    Character.transform.position.y, UnityEngine.Random.Range(-10f, 10f));
+                m_transform.eulerAngles = eulerRight2Left;
+            }
+            particleSys.Emit(particleNum);
+            particleSys.SetParticles(particleArr, particleArr.Length);
+        }
     }
+
 }

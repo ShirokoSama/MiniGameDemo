@@ -3,7 +3,7 @@ CRC: 3480774553
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f845ee3f7ad607baa71be979c85324ce
+    Hash: 7d8b9452b69d5fb0c3f90de08d24d0a6
   TypeTreeHash:
     serializedVersion: 2
     Hash: 8ac069f9ede9b24032aee9184ecff1d4
@@ -32,4 +32,4 @@ ClassTypes:
 Assets:
 - Assets/Prefabs/MapComponents/Platform_Item_ShiftRight.prefab
 Dependencies:
-- E:/NormalFiles/unity/GuMiniGame/UnityProject/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/props.normal
+- E:/MyProjects/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/props.normal

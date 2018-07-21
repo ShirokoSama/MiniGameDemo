@@ -205,7 +205,7 @@ MonoBehaviour:
   _outlineWidth: 3
   _alphaThreshold: 0.5
   _drawOutside: 1
-  _enableInstancing: 0
+  _enableInstancing: 1
 --- !u!212 &212580310007053138
 SpriteRenderer:
   m_ObjectHideFlags: 1

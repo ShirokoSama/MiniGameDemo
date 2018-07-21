@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 702311667
+CRC: 2096247708
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c2af63598316f1d7f7780d30b72f1076
+    Hash: ad1ac358d91c02f77f7a0c288d90684f
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 14a16ab5e83879db07ba3fd7afc75d2b
+    Hash: 34ac53fdc1739b25f649345107ca6e06
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -15,10 +15,14 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
 - Class: 60
   Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: e8f6d3c6e4250e84192f5b34ce9e71bc, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 4ae2fccd727f33e45822f1706c4c12d4, type: 3}
 - Class: 115
@@ -29,5 +33,4 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - Assets/Prefabs/MapComponents/Platform_Haru_Obstacle1.prefab
-Dependencies:
-- E:/NormalFiles/unity/GuMiniGame/UnityProject/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/platform_haru_obstacle2.normal
+Dependencies: []

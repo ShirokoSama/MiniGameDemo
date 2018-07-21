@@ -125,7 +125,7 @@ MonoBehaviour:
   _outlineWidth: 3
   _alphaThreshold: 0.5
   _drawOutside: 1
-  _enableInstancing: 0
+  _enableInstancing: 1
 --- !u!114 &114580629432719102
 MonoBehaviour:
   m_ObjectHideFlags: 1

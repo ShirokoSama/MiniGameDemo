@@ -3,7 +3,7 @@ CRC: 1913573748
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c9854c99faee3385f18cc6a15042ed13
+    Hash: 991559de89b66d68e78b7687b0768cdc
   TypeTreeHash:
     serializedVersion: 2
     Hash: 3881a43c65936756741c86ae061a955b
@@ -28,4 +28,4 @@ ClassTypes:
 Assets:
 - Assets/Prefabs/MapComponents/Flower_Particles_Haru_18.prefab
 Dependencies:
-- E:/NormalFiles/unity/GuMiniGame/UnityProject/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/flower_particles1.normal
+- E:/MyProjects/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/flower_particles1.normal

@@ -3,7 +3,7 @@ CRC: 468230399
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 475396b4c0d1cc2b9fc14c11a842bfd2
+    Hash: cc6a1ece8a4443c6f80b9f63d3601d28
   TypeTreeHash:
     serializedVersion: 2
     Hash: 8d805c6cc0a81e2279f458ce7eaa14ee
@@ -34,4 +34,4 @@ ClassTypes:
 Assets:
 - Assets/Prefabs/MapComponents/Platform_Haru_Flowers4.prefab
 Dependencies:
-- E:/NormalFiles/unity/GuMiniGame/UnityProject/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/platform_haru_flowers4.normal
+- E:/MyProjects/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/platform_haru_flowers4.normal

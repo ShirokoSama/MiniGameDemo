@@ -3,7 +3,7 @@ CRC: 1047042649
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 245103b83daa965d35c58a7edc15513c
+    Hash: 1c6a3db26a0a15aa8e03c8c36d81742d
   TypeTreeHash:
     serializedVersion: 2
     Hash: 14a16ab5e83879db07ba3fd7afc75d2b
@@ -30,4 +30,4 @@ ClassTypes:
 Assets:
 - Assets/Prefabs/MapComponents/Platform_Item_Flower.prefab
 Dependencies:
-- E:/NormalFiles/unity/GuMiniGame/UnityProject/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/props.normal
+- E:/MyProjects/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/props.normal

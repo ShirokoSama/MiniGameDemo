@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 789300140
+CRC: 579621769
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 332cbd048f017533110ecdff8a905970
+    Hash: 0c1139660177c5953151c7cab90a6595
   TypeTreeHash:
     serializedVersion: 2
     Hash: e7285a684c53fe535bc8e9e0869a1cde
@@ -32,4 +32,4 @@ ClassTypes:
 Assets:
 - Assets/Prefabs/MapComponents/Platform_Item_Key.prefab
 Dependencies:
-- E:/NormalFiles/unity/GuMiniGame/UnityProject/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/props.normal
+- E:/MyProjects/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/props.normal
