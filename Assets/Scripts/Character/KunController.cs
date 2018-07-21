@@ -155,6 +155,12 @@ namespace HaruScene
             energyUIManager.SetUIEnergy(energy);
         }
 
+        private void Update()
+        {
+            if (transform.position.y >= 75.0f)
+            GameController.instance.ReachPassHeight();
+        }
+
         private IEnumerator RotateAnimation(float startEuler, float endEuler, float costTime)
         {
             float degree = 0f;

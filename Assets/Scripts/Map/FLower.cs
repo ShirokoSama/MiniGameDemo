@@ -15,6 +15,7 @@ public class FLower : MonoBehaviour {
     {
         if (collision.tag == "Player" && mapObject.detail.Triggerable)
         {
+            AudioManager.instance.PlayGetKeyItem();
             GameController.instance.CollectFlower();
             mapObject.detail.Visible = false;
             mapObject.detail.Triggerable = false;

@@ -30,6 +30,8 @@ public class MapManager : MonoBehaviour {
     AssetBundleManifest manifest;
     //临时加载的缓存中间AB
     List<AssetBundle> tempBundles = new List<AssetBundle>();
+    //缓存部分AB
+    Dictionary<string, AssetBundle> cachedBundles = new Dictionary<string, AssetBundle>();
 
     public void Init()
     {
@@ -62,7 +64,7 @@ public class MapManager : MonoBehaviour {
             piecePosX = piecePosX + xCount * mapSize.x;
             if (piecePosX < cameraTransform.position.x * 100.0f - cameraSize.x / 2 - maxGrassSize.x / 2) piecePosX += mapSize.x;
 
-            if (NeedGenerated(new Vector2(piecePosX, piecePosY), mapPiece.currentScale, cameraTransform.position))
+            if (NeedGenerated(new Vector2(piecePosX, piecePosY), mapPiece, cameraTransform.position))
             {
                 if (!generatedPieces.Contains(mapPiece))
                 {
@@ -73,9 +75,9 @@ public class MapManager : MonoBehaviour {
                         return;
                     }
                     GameObject grass = bundle.LoadAsset<GameObject>(mapPiece.fileName + ".prefab");
-                    bundle.Unload(false);
-                    bundle = null;
-                    ClearTempBundles();
+                    //bundle.Unload(false);
+                    //bundle = null;
+                    //ClearTempBundles();
                     //GameObject grass = AssetDatabase.LoadAssetAtPath<GameObject>(prefabRelativePath + "/" + mapPiece.fileName + ".prefab");
                     grass.transform.position = new Vector3(piecePosX / 100.0f, piecePosY / 100.0f, 0.0f);
                     grass = Instantiate(grass);
@@ -262,11 +264,20 @@ public class MapManager : MonoBehaviour {
         return mapArchieve;
     }
 
-    public bool NeedGenerated(Vector2 nodePosition, Vector2 scale, Vector3 cameraPosition)
+    public bool NeedGenerated(Vector2 nodePosition, MapPiece mapPiece, Vector3 cameraPosition)
     {
         float nodeX = nodePosition.x;
         float nodeY = nodePosition.y;
-        float radius = Mathf.Sqrt(maxGrassSize.x * maxGrassSize.x * scale.x * scale.x + maxGrassSize.y * maxGrassSize.y * scale.y * scale.y) / 2.0f;
+        Vector2 maxSize = new Vector2();
+        if (mapPiece.fileName.Contains("Obstacle"))
+        {
+            maxSize = maxGrassSize;
+        }
+        else
+        {
+            maxSize = new Vector2(900.0f, 700.0f);
+        }
+        float radius = Mathf.Sqrt(maxSize.x * maxSize.x * mapPiece.currentScale.x * mapPiece.currentScale.x + maxSize.y * maxSize.y * mapPiece.currentScale.y * mapPiece.currentScale.y) / 2.0f;
         return (Mathf.Abs(cameraPosition.x * 100.0f - nodeX) < radius + cameraSize.x / 2) && 
             (Mathf.Abs(cameraPosition.y * 100.0f - nodeY) < radius + cameraSize.y / 2);
     }
@@ -283,9 +294,19 @@ public class MapManager : MonoBehaviour {
 
         for (int i = 0; i < file.Count; i++)
         {
-            tempBundles.Add(AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/" + file[i]));
+            if (!cachedBundles.ContainsKey(file[i]))
+            {
+                AssetBundle bundle = AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/" + file[i]);
+                cachedBundles.Add(file[i], bundle);
+            }
         }
-        return AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/" + bundlePath);
+        if (!cachedBundles.ContainsKey(bundlePath))
+        {
+            AssetBundle bundle = AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/" + bundlePath);
+            cachedBundles.Add(bundlePath, bundle);
+            return bundle;
+        }
+        return cachedBundles[bundlePath];
     }
 
     public void ClearTempBundles()
