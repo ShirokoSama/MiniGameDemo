@@ -39,7 +39,7 @@ namespace TooSimpleFramework
         }
 
 
-        void OnDestroy()
+        public void OnDestroy()
         {
             TimerManager.Instance.Dispose();
             AudioManager.Instance.Dispose();

@@ -25,7 +25,6 @@ public class AudioController : MonoBehaviour {
         {
             instance = this;
         }
-        Framework.Instance.Initialize();
         m_audioManager = AudioManager.Instance;
         m_audioManager.BGMVolume = BGMVolume;
     }
@@ -80,6 +79,11 @@ public class AudioController : MonoBehaviour {
     {
         m_audioManager.BGMVolume = BGMVolume;
         m_audioManager.SNDVolume = 1;
+    }
+
+    public void OnDestroy()
+    {
+        Destroy(GameObject.Find("AudioManager"));
     }
 
 }

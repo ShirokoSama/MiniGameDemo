@@ -163,6 +163,7 @@ public class GameController : MonoBehaviour {
         {
             File.Delete(archievePath + "/Archieve.json");
         }
+        AudioController.instance.OnDestroy();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
