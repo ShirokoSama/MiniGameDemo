@@ -10,7 +10,6 @@ Debug
 x64
 Temp
 Library
-Plugins
 Assets/AssetBundleBrowser
 *.csproj
 Assets/AssetBundleBrowser.meta
