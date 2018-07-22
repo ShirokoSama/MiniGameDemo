@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3267284296
+CRC: 1671723380
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c7dafb7f583fd5a436c68a046a25cfc6
+    Hash: 6f1c6aaafefa8799a49b027499130a5a
   TypeTreeHash:
     serializedVersion: 2
     Hash: 8d805c6cc0a81e2279f458ce7eaa14ee
@@ -34,5 +34,5 @@ ClassTypes:
 Assets:
 - Assets/Prefabs/MapComponents/Platform_Haru_Flowers7.prefab
 Dependencies:
-- E:/MyProjects/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/platform_haru_flowers72.normal
-- E:/MyProjects/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/platform_haru_flowers71.normal
+- E:/NormalFiles/unity/GuMiniGame/UnityProject/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/platform_haru_flowers71.normal
+- E:/NormalFiles/unity/GuMiniGame/UnityProject/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/platform_haru_flowers72.normal

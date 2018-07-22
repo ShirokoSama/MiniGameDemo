@@ -134,6 +134,7 @@ public class BackgroundManager : MonoBehaviour {
         Sprite sprite = Sprite.Create(bgTexture, new Rect(0, 0, bgTexture.width, bgTexture.height), new Vector2(0.5f, 0.5f));
         GameObject backgroundObject = availableBackground.Pop();
         backgroundObject.GetComponent<SpriteRenderer>().sprite = sprite;
+        bgTexture = null;
 
         float initPosX = piece.initialX / 100.0f;
         int xCount = Mathf.FloorToInt(cameraTransform.position.x * 100 / backgroundWidth);
@@ -143,6 +144,7 @@ public class BackgroundManager : MonoBehaviour {
         backgroundObject.transform.position = new Vector3(initPosX, piece.initialY / 100.0f, 0);
         bundle.Unload(false);
         piece.shown = true;
+        Resources.UnloadUnusedAssets();
     }
 }
 

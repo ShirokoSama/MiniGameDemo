@@ -28,8 +28,6 @@ public class MapManager : MonoBehaviour {
     private List<MapPiece> generatedPieces = new List<MapPiece>();
     //AB清单文件
     AssetBundleManifest manifest;
-    //临时加载的缓存中间AB
-    List<AssetBundle> tempBundles = new List<AssetBundle>();
     //缓存部分AB
     Dictionary<string, AssetBundle> cachedBundles = new Dictionary<string, AssetBundle>();
 
@@ -309,13 +307,13 @@ public class MapManager : MonoBehaviour {
         return cachedBundles[bundlePath];
     }
 
-    public void ClearTempBundles()
+    public void ClearCachedBundles()
     {
-        foreach (AssetBundle bundle in tempBundles)
+        foreach (AssetBundle bundle in cachedBundles.Values)
         {
             bundle.Unload(false);
         }
-        tempBundles.Clear();
+        cachedBundles.Clear();
     }
 
     public void GetDependecies(string bundleName, List<string> dependenciesList)

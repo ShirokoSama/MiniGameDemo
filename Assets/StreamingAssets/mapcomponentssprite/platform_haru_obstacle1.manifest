@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 1295544004
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 04a07c2660ec2dd03e36ad8964919fad
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b474380d27eb4bc856799e9c585c4864
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Sprites/Grass/Platform_Haru_Obstacle/Platform_Haru_Obstacle1.png
+Dependencies: []

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TooSimpleFramework;
 
 public class GameController : MonoBehaviour {
@@ -153,6 +154,16 @@ public class GameController : MonoBehaviour {
         hintTransform.localPosition = new Vector2(-1280.0f, 0.0f);
         mainUICamera.enabled = true;
         AudioController.instance.PlayStart();
+    }
+
+    public void Restart()
+    {
+        MapManager.instance.ClearCachedBundles();
+        if (File.Exists(archievePath + "/Archieve.json"))
+        {
+            File.Delete(archievePath + "/Archieve.json");
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }

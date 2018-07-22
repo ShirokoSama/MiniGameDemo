@@ -66,6 +66,7 @@ public class PauseMenuListener : MonoBehaviour {
     {
         AudioController.instance.PlayButton();
         MenuOff(restartFlower);
+        GameController.instance.Restart();
     }
 
     public void OnMusicClicked()
