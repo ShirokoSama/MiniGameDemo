@@ -168,11 +168,13 @@ public class PauseMenuListener : MonoBehaviour {
         {
             isMusicOn = false;
             AudioController.instance.MuteMusicOn();
+            Debug.Log("mute on");
         }
         else
         {
             isMusicOn = true;
             AudioController.instance.MuteMusicOff();
+            Debug.Log("mute off");
         }
     }
 }

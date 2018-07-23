@@ -149,6 +149,7 @@ MonoBehaviour:
   settigClip: {fileID: 8300000, guid: 3b650ce06e51b1d4ca8626a2cda74798, type: 3}
   startClip: {fileID: 8300000, guid: f9ad88af9b248a44a9d9cf4f6060e347, type: 3}
   BGMVolume: 0.05
+  SNDVolume: 0.2
 --- !u!4 &6318227
 Transform:
   m_ObjectHideFlags: 0

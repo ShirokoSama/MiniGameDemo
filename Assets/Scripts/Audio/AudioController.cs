@@ -16,6 +16,7 @@ public class AudioController : MonoBehaviour {
     public AudioClip startClip;
 
     public float BGMVolume = 0.5f;
+    public float SNDVolume = 0.5f;
 
     private AudioManager m_audioManager;
 
@@ -27,6 +28,7 @@ public class AudioController : MonoBehaviour {
         }
         m_audioManager = AudioManager.Instance;
         m_audioManager.BGMVolume = BGMVolume;
+        m_audioManager.SNDVolume = SNDVolume;
     }
 
     public void PlayButton()
@@ -78,7 +80,7 @@ public class AudioController : MonoBehaviour {
     public void MuteMusicOff()
     {
         m_audioManager.BGMVolume = BGMVolume;
-        m_audioManager.SNDVolume = 1;
+        m_audioManager.SNDVolume = SNDVolume;
     }
 
     public void OnDestroy()
