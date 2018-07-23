@@ -18,7 +18,6 @@ public class CollectionUIController : MonoBehaviour {
     public void Init()
     {
         totalCollectionCount = collectionFlowers.Length;
-        SetCollectionCount(0);
     }
 
     // Use this for initialization
@@ -27,8 +26,20 @@ public class CollectionUIController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+	    for (int i = 0; i < totalCollectionCount; i++)
+	    {
+	        string s = i.ToString();
+	        if (collectionFlowers[i].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Fill"))
+	            Debug.Log(s + ": Fill");
+            if (collectionFlowers[i].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("UnFill"))
+                Debug.Log(s + ": UnFill");
+	        if (collectionFlowers[i].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Fill"))
+	            Debug.Log(s + ": Fill");
+	        if (collectionFlowers[i].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("UnFill"))
+	            Debug.Log(s + ": UnFill");
+        }
+    }
 
     public void SetCollectionCount(int collectionCount)
     {
@@ -43,6 +54,12 @@ public class CollectionUIController : MonoBehaviour {
         else
         {
             this.currentCollectionCount = collectionCount;
+        }
+        Debug.Log(this.currentCollectionCount);
+        for (int i = 0; i < totalCollectionCount; i++)
+        {
+            collectionFlowers[i].GetComponent<Animator>().ResetTrigger("Fill");
+            collectionFlowers[i].GetComponent<Animator>().ResetTrigger("UnFill");
         }
 
         for (int i = 0; i < this.currentCollectionCount; i++)
