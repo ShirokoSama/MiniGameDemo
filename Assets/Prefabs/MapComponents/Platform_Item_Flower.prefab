@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212021059093583790}
   - component: {fileID: 60541299464044914}
   - component: {fileID: 114263562813854796}
+  - component: {fileID: 114170473286353824}
   m_Layer: 0
   m_Name: Platform_Item_Flower
   m_TagString: Untagged
@@ -80,6 +81,17 @@ PolygonCollider2D:
       - {x: 0.945, y: -0.525}
       - {x: 1.035, y: -0.13499999}
       - {x: 0.835, y: 0.225}
+--- !u!114 &114170473286353824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1562550014062658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f3d0137a9cbfbe4780b8c9e8283ae00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114263562813854796
 MonoBehaviour:
   m_ObjectHideFlags: 1

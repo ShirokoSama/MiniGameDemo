@@ -23,7 +23,7 @@ public class TransferCrystal : MonoBehaviour {
             }
             mapObject.detail.TriggerBreak(5.0f);
 
-            other.transform.position = piece.currentPosition;
+            other.transform.position = piece.currentPosition / 100.0f;
             GameController.instance.cameraTransform.position = new Vector3(piece.currentPosition.x, piece.currentPosition.y, GameController.instance.cameraTransform.position.z);
         }
     }

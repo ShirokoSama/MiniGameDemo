@@ -123,10 +123,13 @@ public class BackgroundManager : MonoBehaviour {
     IEnumerator LoadBackgroundAsync(BackgroundPiece piece)
     {
         piece.loading = true;
-        var bundle = AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/background/backgroundsplit-" + piece.x + "-" + piece.y + ".normal");
+        var bundleRequest = AssetBundle.LoadFromFileAsync(Application.streamingAssetsPath + "/background/backgroundsplit-" + piece.x + "-" + piece.y + ".normal");
+        yield return bundleRequest;
+        var bundle = bundleRequest.assetBundle;
         if (bundle == null)
         {
             Debug.Log("Fail to Load Bundle");
+            yield break;
         }
         var bgTextureRequest = bundle.LoadAssetAsync<Texture2D>(piece.resName);
         yield return bgTextureRequest;
