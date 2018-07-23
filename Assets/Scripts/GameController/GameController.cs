@@ -120,12 +120,20 @@ public class GameController : MonoBehaviour {
         {
             StreamReader reader = File.OpenText(archievePath + "/Archieve.json");
             JSONNode archieve = JSON.Parse(reader.ReadToEnd());
+            if (archieve["CollectionCount"] == null)
+            {
+                archieve.Add("CollectionCount", new JSONData(0));
+            }
             collectionCount = archieve["CollectionCount"].AsInt;
             collectionUIController.SetCollectionCount(collectionCount);
 
             kunTransform.position = new Vector2(archieve["KunPosition"][0].AsFloat, archieve["KunPosition"][1].AsFloat);
             cameraTransform.position = new Vector3(archieve["KunPosition"][0].AsFloat, archieve["KunPosition"][1].AsFloat, cameraTransform.position.z);
             MapManager.instance.LoadArchieve(archieve["MapChangeInfo"]);
+        }
+        else
+        {
+            collectionUIController.SetCollectionCount(collectionCount);
         }
     }
 

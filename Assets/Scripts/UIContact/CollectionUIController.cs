@@ -59,7 +59,7 @@ public class CollectionUIController : MonoBehaviour {
         for (int i = 0; i < totalCollectionCount; i++)
         {
             collectionFlowers[i].GetComponent<Animator>().ResetTrigger("Fill");
-            collectionFlowers[i].GetComponent<Animator>().ResetTrigger("UnFill");
+            collectionFlowers[i].GetComponent<Animator>().ResetTrigger("Unfill");
         }
 
         for (int i = 0; i < this.currentCollectionCount; i++)
