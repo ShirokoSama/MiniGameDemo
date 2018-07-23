@@ -4,8 +4,6 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: Platform_Haru_Obstacle3
     21300002: Platform_Haru_Obstacle10
-    21300004: Platform_Haru_Obstacle11
-    21300006: Platform_Haru_Obstacle6
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -79,9 +77,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 851
-        width: 1458
-        height: 582
+        y: 559
+        width: 1442
+        height: 570
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -89,19 +87,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db1c5ae15e4c31a4ebb80b315bf91f4c
+      spriteID: 74202b78ac003cc499bc6684e47d971e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Platform_Haru_Obstacle11
+      name: Platform_Haru_Obstacle3
       rect:
         serializedVersion: 2
         x: 2
-        y: 1435
-        width: 1656
-        height: 611
+        y: 1131
+        width: 1639
+        height: 915
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -109,27 +107,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3405e26109510b54b833a91ec9fc7649
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Platform_Haru_Obstacle6
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 281
-        width: 1377
-        height: 568
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9bae376e9fec73f4791e26673531656d
+      spriteID: 8ac979d82cb18d94f974bb1c583b4e7e
       vertices: []
       indices: 
       edges: []
@@ -137,12 +115,12 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 91761a271749668409feb8d64f23af70
+    spriteID: b4fac516e473e8f4abd2ebd6fa29e682
     vertices: []
     indices: 
     edges: []
     weights: []
   spritePackingTag: 
   userData: 
-  assetBundleName: mapcomponentssprite/platform_haru_obstacle3
-  assetBundleVariant: normal
+  assetBundleName: 
+  assetBundleVariant: 

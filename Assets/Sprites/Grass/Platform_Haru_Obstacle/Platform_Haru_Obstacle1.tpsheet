@@ -5,8 +5,11 @@
 # http://www.codeandweb.com/texturepacker/unity
 #
 # Sprite sheet: Platform_Haru_Obstacle1.png (2048 x 2048)
-# $TexturePacker:SmartUpdate:5753181558ddee3cd1ea32e77252934d:b33d0015b1df2373a7e22b563ef2097f:1ed42728efeb3ccf97db1697a8d8fe0b$
+# $TexturePacker:SmartUpdate:4dd0293b059d481b4f81b19698a9645c:64be7a8838d5cae811fea8e85df9e65a:1ed42728efeb3ccf97db1697a8d8fe0b$
 #
 
-Platform_Haru_Obstacle4;2;251;1795;1021;0.5;0.5
-Platform_Haru_Obstacle8;2;1274;2040;772;0.5;0.5
+Platform_Haru_Obstacle1;1390;116;465;214;0.5;0.5
+Platform_Haru_Obstacle4;2;332;1876;946;0.5;0.5
+Platform_Haru_Obstacle5;719;81;669;249;0.5;0.5
+Platform_Haru_Obstacle7;2;4;715;326;0.5;0.5
+Platform_Haru_Obstacle8;2;1280;2040;766;0.5;0.5
