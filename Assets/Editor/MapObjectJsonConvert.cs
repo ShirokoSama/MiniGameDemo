@@ -90,6 +90,12 @@ public class MapObjectJsonConvert : MonoBehaviour {
             return obj.GetComponent<SpriteRenderer>().sprite.name.Substring(0, obj.GetComponent<SpriteRenderer>().sprite.name.Length - 6);
         if (obj.name.Contains("Key"))
             return "Platform_Item_Key";
+        if (obj.name.Contains("Platform_Item_Flower"))
+            return "Platform_Item_Flower";
+        if (obj.name.Contains("Platform_Item_Transfer"))
+            return "Platform_Item_Transfer";
+        if (obj.name.Contains("Platform_Item_ShiftRight"))
+            return "Platform_Item_ShiftRight";
         return "ERROR";
     }
 
