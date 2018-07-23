@@ -34,7 +34,7 @@ public class ShiftCrystal : MonoBehaviour {
             foreach (int index in trigger.index)
             {
                 MapPiece piece = MapManager.instance.Get(index);
-                piece.SetNewMoveOffset(new Vector2(10.8f * direction, 0.0f), mapObject.detail.duration);
+                piece.SetNewMoveOffset(new Vector2(1080f * direction, 0.0f), 5.0f);
             }
             mapObject.detail.TriggerBreak(5.0f);
         }
