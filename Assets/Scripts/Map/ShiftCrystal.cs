@@ -37,6 +37,7 @@ public class ShiftCrystal : MonoBehaviour {
                 piece.SetNewMoveOffset(new Vector2(1080f * direction, 0.0f), 5.0f);
             }
             mapObject.detail.TriggerBreak(5.0f);
+            AudioController.instance.PlayGetItem();
         }
     }
 }

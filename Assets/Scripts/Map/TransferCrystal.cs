@@ -25,6 +25,7 @@ public class TransferCrystal : MonoBehaviour {
 
             other.transform.position = piece.currentPosition / 100.0f;
             GameController.instance.cameraTransform.position = new Vector3(piece.currentPosition.x / 100.0f, piece.currentPosition.y / 100.0f, GameController.instance.cameraTransform.position.z);
+            AudioController.instance.PlayGetItem();
         }
     }
 }
