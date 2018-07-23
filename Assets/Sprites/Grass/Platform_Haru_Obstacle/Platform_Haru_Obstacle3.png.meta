@@ -4,6 +4,8 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: Platform_Haru_Obstacle3
     21300002: Platform_Haru_Obstacle10
+    21300004: Platform_Haru_Obstacle11
+    21300006: Platform_Haru_Obstacle6
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -69,50 +71,6 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -121,9 +79,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 629
-        width: 1414
-        height: 536
+        y: 851
+        width: 1458
+        height: 582
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,19 +89,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a8d9cc50b2713ef418ecf10160cd7143
+      spriteID: db1c5ae15e4c31a4ebb80b315bf91f4c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Platform_Haru_Obstacle3
+      name: Platform_Haru_Obstacle11
       rect:
         serializedVersion: 2
         x: 2
-        y: 1167
-        width: 1579
-        height: 879
+        y: 1435
+        width: 1656
+        height: 611
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,7 +109,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0cfb684967ddd1d4382de769d86b0dbe
+      spriteID: 3405e26109510b54b833a91ec9fc7649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform_Haru_Obstacle6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 281
+        width: 1377
+        height: 568
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bae376e9fec73f4791e26673531656d
       vertices: []
       indices: 
       edges: []
@@ -159,7 +137,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: b1992a8f8366729418438f1e97ad4b53
+    spriteID: 91761a271749668409feb8d64f23af70
     vertices: []
     indices: 
     edges: []

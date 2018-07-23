@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1982842818
+CRC: 1549533139
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 7b4a54698ed9399c0107b62ce587e761
+    Hash: 97e58862d940445e633b7e62904fbe7e
   TypeTreeHash:
     serializedVersion: 2
     Hash: d7a474b5c2c67400b68ed5a34df69c3c
@@ -31,4 +31,4 @@ Assets:
 - Assets/Prefabs/MapComponents/Platform_Haru_Obstacle5.prefab
 Dependencies:
 - E:/NormalFiles/unity/GuMiniGame/UnityProject/MiniGameDemo/Assets/StreamingAssets/material/glow.normal
-- E:/NormalFiles/unity/GuMiniGame/UnityProject/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/platform_haru_obstacle1.normal
+- E:/NormalFiles/unity/GuMiniGame/UnityProject/MiniGameDemo/Assets/StreamingAssets/mapcomponentssprite/platform_haru_obstacle2.normal

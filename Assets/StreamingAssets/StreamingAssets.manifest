@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 2672855498
+CRC: 2619710719
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -2079,7 +2079,7 @@ AssetBundleManifest:
       Name: mapcomponents/platform_haru_obstacle11.normal
       Dependencies:
         Dependency_0: material/glow.normal
-        Dependency_1: mapcomponentssprite/platform_haru_obstacle2.normal
+        Dependency_1: mapcomponentssprite/platform_haru_obstacle3.normal
     Info_680:
       Name: mapcomponents/platform_haru_obstacle2.normal
       Dependencies:
@@ -2089,7 +2089,7 @@ AssetBundleManifest:
       Name: mapcomponents/platform_haru_obstacle3.normal
       Dependencies:
         Dependency_0: material/glow.normal
-        Dependency_1: mapcomponentssprite/platform_haru_obstacle3.normal
+        Dependency_1: mapcomponentssprite/platform_haru_obstacle2.normal
     Info_682:
       Name: mapcomponents/platform_haru_obstacle4.normal
       Dependencies:
@@ -2099,17 +2099,17 @@ AssetBundleManifest:
       Name: mapcomponents/platform_haru_obstacle5.normal
       Dependencies:
         Dependency_0: material/glow.normal
-        Dependency_1: mapcomponentssprite/platform_haru_obstacle1.normal
+        Dependency_1: mapcomponentssprite/platform_haru_obstacle2.normal
     Info_684:
       Name: mapcomponents/platform_haru_obstacle6.normal
       Dependencies:
         Dependency_0: material/glow.normal
-        Dependency_1: mapcomponentssprite/platform_haru_obstacle2.normal
+        Dependency_1: mapcomponentssprite/platform_haru_obstacle3.normal
     Info_685:
       Name: mapcomponents/platform_haru_obstacle7.normal
       Dependencies:
         Dependency_0: material/glow.normal
-        Dependency_1: mapcomponentssprite/platform_haru_obstacle1.normal
+        Dependency_1: mapcomponentssprite/platform_haru_obstacle2.normal
     Info_686:
       Name: mapcomponents/platform_haru_obstacle8.normal
       Dependencies:
@@ -2119,7 +2119,7 @@ AssetBundleManifest:
       Name: mapcomponents/platform_haru_obstacle9.normal
       Dependencies:
         Dependency_0: material/glow.normal
-        Dependency_1: mapcomponentssprite/platform_haru_obstacle1.normal
+        Dependency_1: mapcomponentssprite/platform_haru_obstacle2.normal
     Info_688:
       Name: mapcomponents/platform_item_flower.normal
       Dependencies:
@@ -2184,8 +2184,8 @@ AssetBundleManifest:
       Name: mapcomponentssprite/platform_haru_obstacle1.normal
       Dependencies: {}
     Info_707:
-      Name: mapcomponentssprite/platform_haru_obstacle2.normal
+      Name: mapcomponentssprite/platform_haru_obstacle3.normal
       Dependencies: {}
     Info_708:
-      Name: mapcomponentssprite/platform_haru_obstacle3.normal
+      Name: mapcomponentssprite/platform_haru_obstacle2.normal
       Dependencies: {}
