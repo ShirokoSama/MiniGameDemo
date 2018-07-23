@@ -5668,7 +5668,7 @@
       "KeyTrigger": [],
       "TransferCrystalTrigger": "0",
       "ShiftCrystalTrigger": {
-        "Index": [ "21", "41", "1", "37" ],
+        "Index": [ "21", "41", "1", "37", "335", "339", "340" ],
         "Direction": "true"
       }
     },
@@ -5692,10 +5692,10 @@
     {
       "Type": "0",
       "Index": "335",
-      "FileName": "Platform_Item_Flower",
-      "Position": [ "5794.345", "7462.509" ],
-      "Rotation": "0",
-      "Scale": [ "1", "1" ],
+      "FileName": "Platform_Haru_Obstacle10",
+      "Position": [ "5388", "6469" ],
+      "Rotation": "-308.8666",
+      "Scale": [ "0.8771603", "0.8771603" ],
       "Children": [],
       "Visible": "true",
       "Load": "true",
@@ -5710,7 +5710,7 @@
       "Type": "0",
       "Index": "336",
       "FileName": "Platform_Item_Flower",
-      "Position": [ "2305.32", "3275.296" ],
+      "Position": [ "5794.345", "7462.509" ],
       "Rotation": "0",
       "Scale": [ "1", "1" ],
       "Children": [],
@@ -5734,6 +5734,85 @@
       "Visible": "true",
       "Load": "true",
       "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "338",
+      "FileName": "Platform_Item_Flower",
+      "Position": [ "2305.32", "3275.296" ],
+      "Rotation": "0",
+      "Scale": [ "1", "1" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "339",
+      "FileName": "Platform_Haru_Obstacle8",
+      "Position": [ "8023", "6565" ],
+      "Rotation": "0",
+      "Scale": [ "1", "1" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "0",
+      "Index": "340",
+      "FileName": "Platform_Haru_Obstacle4",
+      "Position": [ "426", "6534" ],
+      "Rotation": "-53.22729",
+      "Scale": [ "1", "1" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [],
+      "TransferCrystalTrigger": "0",
+      "ShiftCrystalTrigger": {
+        "Index": [],
+        "Direction": "false"
+      }
+    },
+    {
+      "Type": "1",
+      "Index": "341",
+      "FileName": "Platform_Item_Key",
+      "Position": [ "5776.178", "6771.928" ],
+      "Rotation": "0",
+      "Scale": [ "1", "1" ],
+      "Children": [],
+      "Visible": "true",
+      "Load": "true",
+      "KeyTrigger": [
+        {
+          "Index": [ "335" ],
+          "dPosition": [ "0", "0" ],
+          "dRotation": "0",
+          "dScale": [ "0", "0" ],
+          "Duration": "0",
+          "Visible": "true",
+          "Triggerable": "false",
+          "Load": "false"
+        }
+      ],
       "TransferCrystalTrigger": "0",
       "ShiftCrystalTrigger": {
         "Index": [],

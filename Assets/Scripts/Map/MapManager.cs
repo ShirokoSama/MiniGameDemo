@@ -62,6 +62,14 @@ public class MapManager : MonoBehaviour {
             piecePosX = piecePosX + xCount * mapSize.x;
             if (piecePosX < cameraTransform.position.x * 100.0f - cameraSize.x / 2 - maxGrassSize.x / 2) piecePosX += mapSize.x;
 
+            if (!mapPiece.Loadable)
+            {
+                if (generatedPieces.Contains(mapPiece))
+                {
+                    Destroy(mapPiece.gameObject);
+                    generatedPieces.Remove(mapPiece);
+                }
+            }
             if (NeedGenerated(new Vector2(piecePosX, piecePosY), mapPiece, cameraTransform.position))
             {
                 if (!generatedPieces.Contains(mapPiece))
@@ -277,7 +285,7 @@ public class MapManager : MonoBehaviour {
         }
         float radius = Mathf.Sqrt(maxSize.x * maxSize.x * mapPiece.currentScale.x * mapPiece.currentScale.x + maxSize.y * maxSize.y * mapPiece.currentScale.y * mapPiece.currentScale.y) / 2.0f;
         return (Mathf.Abs(cameraPosition.x * 100.0f - nodeX) < radius + cameraSize.x / 2) && 
-            (Mathf.Abs(cameraPosition.y * 100.0f - nodeY) < radius + cameraSize.y / 2);
+            (Mathf.Abs(cameraPosition.y * 100.0f - nodeY) < radius + cameraSize.y / 2) && mapPiece.Loadable;
     }
 
     public AssetBundle LoadAssetBundle(string bundlePath)
