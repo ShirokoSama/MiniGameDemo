@@ -11,7 +11,14 @@ public class PauseButtonListener : MonoBehaviour {
 
 	public void ButtonClick()
     {
-        AudioController.instance.PlaySetting();
-        PauseMenuListener.instance.MenuOn();
+        if (GameController.instance.gameState == GameController.State.Play)
+        {
+            AudioController.instance.PlaySetting();
+            PauseMenuListener.instance.MenuOn();
+        }
+        else
+        {
+            GameController.instance.TapStart();
+        }
     }
 }
