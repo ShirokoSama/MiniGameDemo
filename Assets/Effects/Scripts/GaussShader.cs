@@ -61,6 +61,12 @@ public class GaussShader : MonoBehaviour {
         }
     }
 
+    public void UpdateBlurSpread(float BlurSpread)
+    {
+        BlurSpreadSize = BlurSpread;
+        ChangeValue2 = BlurSpread;
+    }
+
     //-------------------------------------【OnRenderImage()函数】------------------------------------    
     // 说明：此函数在当完成所有渲染图片后被调用，用来渲染图片后期效果  
     //--------------------------------------------------------------------------------------------------------  

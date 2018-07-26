@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour {
     public List<GaussShader> gaussShaders;
     public CollectionUIController collectionUIController;
     public PassHintController passHint;
+    public GameStartController gameStartController;
     public Transform kunTransform;
     public Transform cameraTransform;
     public RectTransform hintTransform;
@@ -29,7 +30,6 @@ public class GameController : MonoBehaviour {
 
     private string archievePath;
     private int collectionCount = 0;
-
 
     private void Awake()
     {
@@ -58,22 +58,7 @@ public class GameController : MonoBehaviour {
         //{
         //    foreach (GaussShader shader in gaussShaders)
         //    {
-        //        if (targetBlurSize > shader.BlurSpreadSize)
-        //        {
-        //            shader.BlurSpreadSize += 0.03f;
-        //            if (targetBlurSize < shader.BlurSpreadSize)
-        //            {
-        //                targetBlurSize = 3.0f;
-        //            }
-        //        }
-        //        else
-        //        {
-        //            shader.BlurSpreadSize -= blurTransformSpeed * Time.deltaTime;
-        //            if (targetBlurSize > shader.BlurSpreadSize)
-        //            {
-        //                targetBlurSize = 10.0f;
-        //            }
-        //        }
+        //        if
         //    }
         //}
     }
@@ -154,12 +139,9 @@ public class GameController : MonoBehaviour {
     public void TapStart()
     {
         gameState = State.Play;
-        foreach (GaussShader  shader in gaussShaders)
-        {
-            shader.enabled = false;
-        }
+        gameStartController.gameStart();
         Time.timeScale = 1.0f;
-        hintTransform.localPosition = new Vector2(-1280.0f, 0.0f);
+        // hintTransform.localPosition = new Vector2(-1280.0f, 0.0f);
         mainUICamera.enabled = true;
         AudioController.instance.PlayStart();
     }
