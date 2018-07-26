@@ -5,58 +5,59 @@ using UnityEngine;
 
 public class GameStartController : MonoBehaviour
 {
-    private CanvasGroup canvasGroup;
-    public List<GaussShader> gaussShaders;
+    private CanvasGroup startHintCanvasGroup;
+    private GaussianBlur gaussianBlurEffect;
+    private Camera mainUICamera;
+    private float targetAlpha;
+    private bool startFade;
 
-    private float TargetAlpha = 1.0f;
-    private float duration = 1.0f;
-    private bool StartFade = false;
+    public readonly float duration = 1.0f;
     
     // Use this for initialization
     void Start ()
 	{
-	    canvasGroup = this.GetComponent<CanvasGroup>();
-	    StartFade = false;
+        startHintCanvasGroup = GameObject.Find("StartHint").GetComponent<CanvasGroup>();
+        gaussianBlurEffect = this.GetComponent<GaussianBlur>();
+        mainUICamera = this.GetComponent<Camera>();
+        mainUICamera.cullingMask = 0; // cullingMask = nothing
+        targetAlpha = 0.0f;
+	    startFade = false;
     }
 
-    public void gameStart()
+    public void GameStart()
     {
-        TargetAlpha = 0.0f;
-        StartFade = true;
+        startFade = true;
+        mainUICamera.cullingMask = 1 << 5; // cullingMask = UI
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (StartFade) { 
-	        if (this.canvasGroup.alpha != TargetAlpha)
+        if (startFade) { 
+	        if (this.startHintCanvasGroup.alpha != targetAlpha)
 	        {
-	            if (Mathf.Abs(TargetAlpha - this.canvasGroup.alpha) <= 0.01f)
-	                this.canvasGroup.alpha = TargetAlpha;
+	            if (Mathf.Abs(targetAlpha - this.startHintCanvasGroup.alpha) <= 0.01f)
+	                this.startHintCanvasGroup.alpha = targetAlpha;
                 else { 
-	                this.canvasGroup.alpha -= 0.03f;
+	                this.startHintCanvasGroup.alpha -= 0.03f;
                     
 	            }
             }
-	        foreach (var shader in gaussShaders)
-	        {
-	            if (shader.enabled)
-	                if (shader.BlurSpreadSize != 0.0f)
-	                {
-                        Debug.Log(shader.BlurSpreadSize);
-	                    if (Mathf.Abs(shader.BlurSpreadSize - 0.0f) <= 0.01f)
-	                        shader.UpdateBlurSpread(0.0f);
-                        else
-	                        shader.UpdateBlurSpread(shader.BlurSpreadSize - 0.03f);
-
-	                    Debug.Log(shader.BlurSpreadSize);
-                    }
-	                else
-	                {
-	                    shader.enabled = false;
-	                    StartFade = false;
-	                    this.enabled = false;
-	                }
-	        }
+            if (gaussianBlurEffect.enabled)
+            {
+                if (gaussianBlurEffect.BlurSpreadSize != 0.0f)
+                {
+                    if (Mathf.Abs(gaussianBlurEffect.BlurSpreadSize - 0.0f) <= 0.01f)
+                        gaussianBlurEffect.UpdateBlurSpread(0.0f);
+                    else
+                        gaussianBlurEffect.UpdateBlurSpread(gaussianBlurEffect.BlurSpreadSize - 0.03f);
+                }
+                else
+                {
+                    gaussianBlurEffect.enabled = false;
+                    startFade = false;
+                    this.enabled = false;
+                }
+            }
         }
     }
 }

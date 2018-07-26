@@ -18,14 +18,13 @@ public class GameController : MonoBehaviour {
     public static GameController instance;
     [HideInInspector]
     public State gameState = State.TapToStart;
-    public List<GaussShader> gaussShaders;
+    public List<GaussianBlur> gaussShaders;
     public CollectionUIController collectionUIController;
     public PassHintController passHint;
     public GameStartController gameStartController;
     public Transform kunTransform;
     public Transform cameraTransform;
     public RectTransform hintTransform;
-    public Camera mainUICamera;
     public const int totalCollection = 4;
 
     private string archievePath;
@@ -47,7 +46,6 @@ public class GameController : MonoBehaviour {
 
         MapManager.instance.LoadMapPieceInfo();
         ResolveArchieve();
-        mainUICamera.enabled = false;
         AudioController.instance.PlayHaru();
         Time.timeScale = 0.0f;
     }
@@ -139,10 +137,9 @@ public class GameController : MonoBehaviour {
     public void TapStart()
     {
         gameState = State.Play;
-        gameStartController.gameStart();
+        gameStartController.GameStart();
         Time.timeScale = 1.0f;
         // hintTransform.localPosition = new Vector2(-1280.0f, 0.0f);
-        mainUICamera.enabled = true;
         AudioController.instance.PlayStart();
     }
 
