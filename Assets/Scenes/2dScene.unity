@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3378,7 +3378,7 @@ MonoBehaviour:
   energyUIManager: {fileID: 195143618}
   maxEnergy: 100
   energyFadeSpeed: 10
-  energyRecoverSpeed: 15
+  energyRecoverSpeed: 30
 --- !u!50 &1754721181
 Rigidbody2D:
   serializedVersion: 4
@@ -3780,7 +3780,7 @@ MonoBehaviour:
   - {fileID: 0}
   collectionUIController: {fileID: 403263681}
   passHint: {fileID: 2057895134}
-  gameStartController: {fileID: 337682591}
+  gameStartController: {fileID: 0}
   kunTransform: {fileID: 1754721176}
   cameraTransform: {fileID: 282840814}
   hintTransform: {fileID: 1270516971}

@@ -191,7 +191,6 @@ public class MapPiece {
     public void RefreshPerFrame()
     {
         if (moveCountDown > 0.0f) {
-            Debug.Log("Move");
             if (moveCountDown <= Time.deltaTime)
             {
                 currentPosition += targetPositionOffset;
