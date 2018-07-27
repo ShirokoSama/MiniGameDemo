@@ -58,9 +58,7 @@ public class MapManager : MonoBehaviour {
             //判断是否需要生成以及生成
             float piecePosX = mapPiece.currentPosition.x;
             float piecePosY = mapPiece.currentPosition.y;
-            int xCount = Mathf.FloorToInt((cameraTransform.position.x * 100.0f - cameraSize.x / 2 - maxGrassSize.x / 2) / mapSize.x);
-            piecePosX = piecePosX + xCount * mapSize.x;
-            if (piecePosX < cameraTransform.position.x * 100.0f - cameraSize.x / 2 - maxGrassSize.x / 2) piecePosX += mapSize.x;
+            piecePosX = expandToRange(piecePosX, mapSize.x, cameraTransform.position.x * 100.0f);
 
             if (!mapPiece.Loadable)
             {
@@ -70,9 +68,9 @@ public class MapManager : MonoBehaviour {
                     generatedPieces.Remove(mapPiece);
                 }
             }
-            if (NeedGenerated(new Vector2(piecePosX, piecePosY), mapPiece, cameraTransform.position))
+            if (!generatedPieces.Contains(mapPiece))
             {
-                if (!generatedPieces.Contains(mapPiece))
+                if (NeedGenerated(new Vector2(piecePosX, piecePosY), mapPiece, cameraTransform.position))
                 {
                     var bundle = LoadAssetBundle("mapcomponents/" + mapPiece.fileName.ToLower() + ".normal");
                     if (bundle == null)
@@ -107,30 +105,30 @@ public class MapManager : MonoBehaviour {
                     generatedPieces.Add(mapPiece);
                     mapPiece.gameObject = grass;
                 }
-                else
+            }
+            else
+            {
+                GameObject grass = mapPiece.gameObject;
+                //同步位置
+                if (Mathf.Abs(grass.transform.position.x * 100.0f - piecePosX) > 1.0f ||
+                    Mathf.Abs(grass.transform.position.y * 100.0f - piecePosY) > 1.0f)
                 {
-                    GameObject grass = mapPiece.gameObject;
-                    //同步位置
-                    if (Mathf.Abs(grass.transform.position.x * 100.0f - piecePosX) > 1.0f ||
-                        Mathf.Abs(grass.transform.position.y * 100.0f - piecePosY) > 1.0f)
-                    {
-                        grass.transform.position = new Vector3(piecePosX / 100.0f, piecePosY / 100.0f);
-                    }
-                    //同步旋转
-                    if (Mathf.Abs(grass.transform.eulerAngles.z + mapPiece.currentRotation) > 0.1f)
-                    {
-                        grass.transform.eulerAngles = new Vector3(0.0f, 0.0f, -mapPiece.currentRotation);
-                    }
-                    //同步缩放
-                    if (Mathf.Abs(grass.transform.localScale.x - mapPiece.currentScale.x) > 0.001f)
-                    {
-                        grass.transform.localScale = mapPiece.currentScale;
-                    }
-                    //同步可见性
-                    if (grass.GetComponent<MapObject>().visible != mapPiece.Visible)
-                    {
-                        grass.GetComponent<MapObject>().MakeVisible(mapPiece.Visible);
-                    }
+                    grass.transform.position = new Vector3(piecePosX * 0.01f, piecePosY * 0.01f);
+                }
+                //同步旋转
+                if (Mathf.Abs(grass.transform.eulerAngles.z + mapPiece.currentRotation) > 0.1f)
+                {
+                    grass.transform.eulerAngles = new Vector3(0.0f, 0.0f, -mapPiece.currentRotation);
+                }
+                //同步缩放
+                if (Mathf.Abs(grass.transform.localScale.x - mapPiece.currentScale.x) > 0.001f)
+                {
+                    grass.transform.localScale = mapPiece.currentScale;
+                }
+                //同步可见性
+                if (grass.GetComponent<MapObject>().visible != mapPiece.Visible)
+                {
+                    grass.GetComponent<MapObject>().MakeVisible(mapPiece.Visible);
                 }
             }
         }
@@ -342,6 +340,24 @@ public class MapManager : MonoBehaviour {
             var item = dep[i];
             this.GetDependecies(item, dependenciesList);
             dependenciesList.Add(item);
+        }
+    }
+
+    public float expandToRange(float originalValue, float width, float referenceValue)
+    {
+        int count = Mathf.FloorToInt(referenceValue / width);
+        float expandValue = originalValue + width * count;
+        if (referenceValue - expandValue > width * 0.5f)
+        {
+            return expandValue + width;
+        }
+        else if (expandValue - referenceValue > width * 0.5f)
+        {
+            return expandValue - width;
+        }
+        else
+        {
+            return expandValue;
         }
     }
 }
