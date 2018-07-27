@@ -96,11 +96,11 @@
     <None Include="Assets\Effects\Shaders\MultiplyBlendShader.shader" />
     <None Include="Assets\Effects\ThirdParty\KinoBloom\LICENSE.txt" />
     <None Include="Assets\Effects\Shaders\GaussShader.shader" />
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>H:/workspace/MiniGameDemo/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>H:/workspace/MiniGameDemo/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>H:/workspace/MiniGameDemo/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>G:/Program Files/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
