@@ -10,14 +10,18 @@ using UnityEditor.Experimental.UIElements.GraphView;
 using System.Xml.Serialization;
 using System.Xml;
 using System.IO;
+using TooSimpleFramework.Utils;
+using UnityEditor.Graphs;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// 用于将选定的游戏对象存至MapTest.json
 /// 或将MapTest.json保存的游戏对象（须在Prefabs/MapComponents中有预设体)直接到处至场景，作为选中游戏对象的子物体
 /// </summary>
-public class MapObjectJsonConvert : MonoBehaviour {
-    
-	[MenuItem("Other/Map/Save Slection To JSON")]
+public class MapObjectJsonConvert : MonoBehaviour
+{
+
+    [MenuItem("Other/Map/Save Slection To JSON")]
     public static void SaveSelectionToJSON()
     {
         string outputPath = Application.dataPath + @"/Resources";
@@ -25,50 +29,29 @@ public class MapObjectJsonConvert : MonoBehaviour {
         JSONArray mapInfo = new JSONArray();
         root.Add("MapInfo", mapInfo);
 
-        GameObject[] objects = Selection.gameObjects; 
+        GameObject[] objects = Selection.gameObjects;
         int index = 0;
         Debug.Log(Selection.activeInstanceID);
         foreach (GameObject mapObject in objects)
         {
-            if (mapObject.GetComponent<MapObject>().index != 0) {
-                index++;
-            }
-        }
-
-        for (int idx = 1; idx <= index; idx++)
-        {
-            foreach (GameObject mapObject in objects)
+            if (mapObject.GetComponent<MapObject>() != null)
             {
-                if (mapObject.GetComponent<MapObject>().index == idx)
-                {
-                    JSONClass mapNode = SaveNode(mapObject.GetComponent<MapObject>().type.GetHashCode(),
-                        mapObject.GetComponent<MapObject>().index, GetFileName(mapObject),
-                        mapObject.transform.position.x * 100.0f, mapObject.transform.position.y * 100.0f,
-                        -mapObject.transform.eulerAngles.z, mapObject.transform.localScale.x,
-                        mapObject.transform.localScale.y,
-                        mapObject.GetComponent<MapObject>().childrenIndex, mapObject.GetComponent<MapObject>().visible,
-                        mapObject.GetComponent<MapObject>().load,
-                        mapObject.GetComponent<MapObject>().keyTriggers,
-                        mapObject.GetComponent<MapObject>().transferCrystalTrigger,
-                        mapObject.GetComponent<MapObject>().shiftCrystalTrigger);
-                    mapInfo.Add(mapNode);
-                }
+                index++;
+                mapObject.GetComponent<MapObject>().index = index;
             }
         }
 
-        index++;
         foreach (GameObject mapObject in objects)
         {
-            if (mapObject.GetComponent<MapObject>().index == 0)
+            if (mapObject.GetComponent<MapObject>() != null)
             {
-                JSONClass mapNode = SaveNode(mapObject.GetComponent<MapObject>().type.GetHashCode(), index, GetFileName(mapObject),
+                JSONClass mapNode = SaveNode(mapObject.GetComponent<MapObject>().type.GetHashCode(), mapObject.GetComponent<MapObject>().index, GetFileName(mapObject),
                     mapObject.transform.position.x * 100.0f, mapObject.transform.position.y * 100.0f,
                     -mapObject.transform.eulerAngles.z, mapObject.transform.localScale.x, mapObject.transform.localScale.y,
                     mapObject.GetComponent<MapObject>().childrenIndex, mapObject.GetComponent<MapObject>().visible, mapObject.GetComponent<MapObject>().load,
-                    mapObject.GetComponent<MapObject>().keyTriggers, mapObject.GetComponent<MapObject>().transferCrystalTrigger,
+                    mapObject.GetComponent<MapObject>().keyTriggers, mapObject.GetComponent<MapObject>().transferCrystalTriggerObject,
                     mapObject.GetComponent<MapObject>().shiftCrystalTrigger);
                 mapInfo.Add(mapNode);
-                index++;
             }
         }
 
@@ -113,9 +96,9 @@ public class MapObjectJsonConvert : MonoBehaviour {
         Debug.Log(s);
     }
 
-    public static JSONClass SaveNode(int type, int index, string fileName, float positionX, float positionY, float rotation, float scaleX, float scaleY, 
-        List<int> children, bool visible, bool load, List<MapObject.KeyTrigger> keyTriggers, 
-        int transferTrigger, MapObject.ShiftCrystalTrigger shiftTrigger)
+    public static JSONClass SaveNode(int type, int index, string fileName, float positionX, float positionY, float rotation, float scaleX, float scaleY,
+        List<int> children, bool visible, bool load, List<MapObject.KeyTrigger> keyTriggers,
+        MapObject transferTrigger, MapObject.ShiftCrystalTrigger shiftTrigger)
     {
         JSONClass result = new JSONClass();
         result.Add("Type", new JSONData(type));
@@ -146,9 +129,9 @@ public class MapObjectJsonConvert : MonoBehaviour {
             JSONClass triggerClass = new JSONClass();
             JSONArray indexArray = new JSONArray();
             Debug.Log(trigger.dPosition.x);
-            foreach (int ind in trigger.index)
+            foreach (MapObject obj in trigger.objects)
             {
-                indexArray.Add(new JSONData(ind));
+                indexArray.Add(new JSONData(obj.index));
             }
 
             triggerClass.Add("Index", indexArray);
@@ -170,12 +153,12 @@ public class MapObjectJsonConvert : MonoBehaviour {
             keyTrigger.Add(triggerClass);
         }
         result.Add("KeyTrigger", keyTrigger);
-        result.Add("TransferCrystalTrigger", new JSONData(transferTrigger));
+        result.Add("TransferCrystalTrigger", new JSONData(transferTrigger.index));
         JSONClass shiftTriggerNode = new JSONClass();
         JSONArray shiftIndex = new JSONArray();
-        foreach (int ind in shiftTrigger.index)
+        foreach (MapObject obj in shiftTrigger.objects)
         {
-            shiftIndex.Add(new JSONData(ind));
+            shiftIndex.Add(new JSONData(obj.index));
         }
         shiftTriggerNode.Add("Index", shiftIndex);
         shiftTriggerNode.Add("Direction", new JSONData(shiftTrigger.direction));
@@ -230,7 +213,7 @@ public class MapObjectJsonConvert : MonoBehaviour {
                     if (i == 16) posx += 224 + 256;
                     else posx += 512;
                 }
-                obj.transform.position = new Vector3(posx/100.0f , posy / 100.0f, 0f);
+                obj.transform.position = new Vector3(posx / 100.0f, posy / 100.0f, 0f);
                 Debug.Log(obj.transform.position);
                 obj = PrefabUtility.InstantiatePrefab(obj) as GameObject;
                 bundle.Unload(false);
@@ -296,6 +279,7 @@ public class MapObjectJsonConvert : MonoBehaviour {
                 currentKey.visible = trigger["Visible"].AsBool;
                 currentKey.triggerable = trigger["Triggerable"].AsBool;
                 currentKey.load = trigger["Load"].AsBool;
+                currentKey.objects = new List<MapObject>();
                 keyTriggers.Add(currentKey);
             }
 
@@ -310,6 +294,7 @@ public class MapObjectJsonConvert : MonoBehaviour {
             }
 
             shiftTrigger.index = indexList;
+            shiftTrigger.objects = new List<MapObject>();
             shiftTrigger.direction = node["ShiftCrystalTrigger"]["Direction"].AsBool;
             mapPiece.GetComponent<MapObject>().shiftCrystalTrigger = shiftTrigger;
 
@@ -319,9 +304,61 @@ public class MapObjectJsonConvert : MonoBehaviour {
             mapPiece.transform.localScale = new Vector3(node["Scale"][0].AsFloat, node["Scale"][1].AsFloat, 1.0f);
             mapPiece.GetComponent<MapObject>().visible = node["Visible"].AsBool;
             mapPiece.GetComponent<MapObject>().load = node["Load"].AsBool;
+            mapPiece.GetComponent<MapObject>().transferCrystalTriggerObject = new MapObject();
             mapPiece = PrefabUtility.InstantiatePrefab(mapPiece) as GameObject;
             // mapPiece.transform.parent = parentObject.transform;
         }
+        GameObject[] objects = (GameObject[])Resources.FindObjectsOfTypeAll(typeof(GameObject));
+        foreach (var obj in objects)
+        {
+            if (SceneManager.GetActiveScene() == obj.scene)
+            {
+                if (obj.GetComponent<MapObject>() != null)
+                {
+                    MapObject o = obj.GetComponent<MapObject>();
+                    foreach (var keyTrigger in o.keyTriggers)
+                    {
+                        foreach (int idx in keyTrigger.index)
+                        {
+                            MapObject targetMapObject = new MapObject();
+                            foreach (var obj2 in objects)
+                            {
+                                if (obj2.GetComponent<MapObject>() != null && obj2.GetComponent<MapObject>().index == idx)
+                                {
+                                    targetMapObject = obj2.GetComponent<MapObject>();
+                                }
+                            }
+                            keyTrigger.objects.Add(targetMapObject);
+                        }
+                    }
+
+                    foreach (int idx in o.shiftCrystalTrigger.index)
+                    {
+                        MapObject targetMapObject = new MapObject();
+                        foreach (var obj2 in objects)
+                        {
+                            if (obj2.GetComponent<MapObject>() != null && obj2.GetComponent<MapObject>().index == idx)
+                                targetMapObject = obj2.GetComponent<MapObject>();
+                        }
+                        o.shiftCrystalTrigger.objects.Add(targetMapObject);
+                    }
+
+                    if (o.transferCrystalTrigger != 0)
+                    {
+                        MapObject targetMapObject = new MapObject();
+                        foreach (var obj2 in objects)
+                        {
+                            if (obj2.GetComponent<MapObject>() != null && obj2.GetComponent<MapObject>().index == o.transferCrystalTrigger)
+                                targetMapObject = obj2.GetComponent<MapObject>();
+                        }
+
+                        o.transferCrystalTriggerObject = targetMapObject;
+                    }
+                }
+            }
+        }
     }
 
+
 }
+
