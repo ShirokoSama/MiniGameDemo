@@ -188,10 +188,10 @@ public class MapPiece {
     }
 
     //每帧刷新的内容，主要是移动旋转缩放部分
+    private float deltaTime = 0.0f;
     public void RefreshPerFrame()
     {
         if (moveCountDown > 0.0f) {
-            Debug.Log("Move");
             if (moveCountDown <= Time.deltaTime)
             {
                 currentPosition += targetPositionOffset;

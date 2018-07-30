@@ -18,7 +18,6 @@ public class GameController : MonoBehaviour {
     public static GameController instance;
     [HideInInspector]
     public State gameState = State.TapToStart;
-    public List<GaussShader> gaussShaders;
     public CollectionUIController collectionUIController;
     public PassHintController passHint;
     public GameStartController gameStartController;
@@ -54,13 +53,6 @@ public class GameController : MonoBehaviour {
 
     private void Update()
     {
-        //if (gameState == State.TapToStart)
-        //{
-        //    foreach (GaussShader shader in gaussShaders)
-        //    {
-        //        if
-        //    }
-        //}
     }
 
     private void OnApplicationFocus(bool focus)
