@@ -148,8 +148,8 @@ MonoBehaviour:
   levelCompleteClip: {fileID: 8300000, guid: ea5c427bb23060d44b5fb840fa92b8ff, type: 3}
   settigClip: {fileID: 8300000, guid: 3b650ce06e51b1d4ca8626a2cda74798, type: 3}
   startClip: {fileID: 8300000, guid: f9ad88af9b248a44a9d9cf4f6060e347, type: 3}
-  BGMVolume: 0.05
-  SNDVolume: 0.2
+  BGMVolume: 0.2
+  SNDVolume: 0.1
 --- !u!4 &6318227
 Transform:
   m_ObjectHideFlags: 0
@@ -584,7 +584,6 @@ GameObject:
   - component: {fileID: 282840813}
   - component: {fileID: 282840811}
   - component: {fileID: 282840812}
-  - component: {fileID: 282840815}
   - component: {fileID: 282840816}
   m_Layer: 0
   m_Name: Main Camera
@@ -665,21 +664,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &282840815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 282840810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f58d755b60e80749a05d3ff66762bc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurShader: {fileID: 4800000, guid: 2a62913de425286408435494a7946008, type: 3}
-  DownSampleNum: 2
-  BlurSpreadSize: 0
-  BlurIterations: 3
 --- !u!114 &282840816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -916,6 +900,7 @@ GameObject:
   - component: {fileID: 337682590}
   - component: {fileID: 337682589}
   - component: {fileID: 337682588}
+  - component: {fileID: 337682591}
   m_Layer: 0
   m_Name: UICamera
   m_TagString: Untagged
@@ -948,9 +933,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurShader: {fileID: 4800000, guid: 2a62913de425286408435494a7946008, type: 3}
-  DownSampleNum: 2
-  BlurSpreadSize: 3
-  BlurIterations: 3
+  DownSampleNum: 1
+  BlurSpreadSize: 6
+  BlurIterations: 1
 --- !u!124 &337682589
 Behaviour:
   m_ObjectHideFlags: 0
@@ -994,6 +979,17 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &337682591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 337682586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd0bd8f9382f4ab4fa919c24eb572bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &387967691
 GameObject:
   m_ObjectHideFlags: 0
@@ -2356,7 +2352,6 @@ GameObject:
   - component: {fileID: 1190809521}
   - component: {fileID: 1190809518}
   - component: {fileID: 1190809520}
-  - component: {fileID: 1190809519}
   m_Layer: 0
   m_Name: UIMenuCamera
   m_TagString: Untagged
@@ -2400,21 +2395,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &1190809519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1190809517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f58d755b60e80749a05d3ff66762bc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurShader: {fileID: 4800000, guid: 2a62913de425286408435494a7946008, type: 3}
-  DownSampleNum: 2
-  BlurSpreadSize: 3
-  BlurIterations: 3
 --- !u!124 &1190809520
 Behaviour:
   m_ObjectHideFlags: 0
@@ -2537,6 +2517,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1270516971}
+  - component: {fileID: 1270516973}
   m_Layer: 5
   m_Name: StartHint
   m_TagString: Untagged
@@ -2563,6 +2544,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1080, y: 1920}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1270516973
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1270516970}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1339108636
 GameObject:
   m_ObjectHideFlags: 0
@@ -3386,7 +3378,7 @@ MonoBehaviour:
   energyUIManager: {fileID: 195143618}
   maxEnergy: 100
   energyFadeSpeed: 10
-  energyRecoverSpeed: 15
+  energyRecoverSpeed: 30
 --- !u!50 &1754721181
 Rigidbody2D:
   serializedVersion: 4
@@ -3783,15 +3775,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameState: 0
   gaussShaders:
-  - {fileID: 282840815}
-  - {fileID: 337682588}
-  - {fileID: 1190809519}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   collectionUIController: {fileID: 403263681}
   passHint: {fileID: 2057895134}
+  gameStartController: {fileID: 337682591}
   kunTransform: {fileID: 1754721176}
   cameraTransform: {fileID: 282840814}
   hintTransform: {fileID: 1270516971}
-  mainUICamera: {fileID: 337682590}
 --- !u!4 &1837687047
 Transform:
   m_ObjectHideFlags: 0

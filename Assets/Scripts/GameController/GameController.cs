@@ -18,18 +18,17 @@ public class GameController : MonoBehaviour {
     public static GameController instance;
     [HideInInspector]
     public State gameState = State.TapToStart;
-    public List<GaussShader> gaussShaders;
+    public List<GaussianBlur> gaussShaders;
     public CollectionUIController collectionUIController;
     public PassHintController passHint;
+    public GameStartController gameStartController;
     public Transform kunTransform;
     public Transform cameraTransform;
     public RectTransform hintTransform;
-    public Camera mainUICamera;
     public const int totalCollection = 4;
 
     private string archievePath;
     private int collectionCount = 0;
-
 
     private void Awake()
     {
@@ -47,7 +46,6 @@ public class GameController : MonoBehaviour {
 
         MapManager.instance.LoadMapPieceInfo();
         ResolveArchieve();
-        mainUICamera.enabled = false;
         AudioController.instance.PlayHaru();
         Time.timeScale = 0.0f;
     }
@@ -58,22 +56,7 @@ public class GameController : MonoBehaviour {
         //{
         //    foreach (GaussShader shader in gaussShaders)
         //    {
-        //        if (targetBlurSize > shader.BlurSpreadSize)
-        //        {
-        //            shader.BlurSpreadSize += 0.03f;
-        //            if (targetBlurSize < shader.BlurSpreadSize)
-        //            {
-        //                targetBlurSize = 3.0f;
-        //            }
-        //        }
-        //        else
-        //        {
-        //            shader.BlurSpreadSize -= blurTransformSpeed * Time.deltaTime;
-        //            if (targetBlurSize > shader.BlurSpreadSize)
-        //            {
-        //                targetBlurSize = 10.0f;
-        //            }
-        //        }
+        //        if
         //    }
         //}
     }
@@ -154,13 +137,9 @@ public class GameController : MonoBehaviour {
     public void TapStart()
     {
         gameState = State.Play;
-        foreach (GaussShader  shader in gaussShaders)
-        {
-            shader.enabled = false;
-        }
+        gameStartController.GameStart();
         Time.timeScale = 1.0f;
-        hintTransform.localPosition = new Vector2(-1280.0f, 0.0f);
-        mainUICamera.enabled = true;
+        // hintTransform.localPosition = new Vector2(-1280.0f, 0.0f);
         AudioController.instance.PlayStart();
     }
 

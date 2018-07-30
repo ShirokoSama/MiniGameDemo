@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GaussShader : MonoBehaviour {
+public class GaussianBlur : MonoBehaviour {
 
     #region Variables  
 
-    private string ShaderName = "Gassian Blur Effect";
+    private readonly string ShaderName = "Gassian Blur Effect";
 
     public Shader CurShader;
     private Material CurMaterial;
@@ -24,15 +24,17 @@ public class GaussShader : MonoBehaviour {
 
     #endregion
 
-    #region MaterialGetAndSet  
-    Material material
+    #region MaterialGetAndSet
+    Material Material
     {
         get
         {
             if (CurMaterial == null)
             {
-                CurMaterial = new Material(CurShader);
-                CurMaterial.hideFlags = HideFlags.HideAndDontSave;
+                CurMaterial = new Material(CurShader)
+                {
+                    hideFlags = HideFlags.HideAndDontSave
+                };
             }
             return CurMaterial;
         }
@@ -61,6 +63,12 @@ public class GaussShader : MonoBehaviour {
         }
     }
 
+    public void UpdateBlurSpread(float BlurSpread)
+    {
+        BlurSpreadSize = BlurSpread;
+        ChangeValue2 = BlurSpread;
+    }
+
     //-------------------------------------【OnRenderImage()函数】------------------------------------    
     // 说明：此函数在当完成所有渲染图片后被调用，用来渲染图片后期效果  
     //--------------------------------------------------------------------------------------------------------  
@@ -73,7 +81,7 @@ public class GaussShader : MonoBehaviour {
             //根据向下采样的次数确定宽度系数。用于控制降采样后相邻像素的间隔  
             float widthMod = 1.0f / (1.0f * (1 << DownSampleNum));
             //Shader的降采样参数赋值  
-            material.SetFloat("_DownSampleValue", BlurSpreadSize * widthMod);
+            Material.SetFloat("_DownSampleValue", BlurSpreadSize * widthMod);
             //设置渲染模式：双线性  
             sourceTexture.filterMode = FilterMode.Bilinear;
             //通过右移，准备长、宽参数值  
@@ -86,7 +94,7 @@ public class GaussShader : MonoBehaviour {
             //设置渲染模式：双线性  
             renderBuffer.filterMode = FilterMode.Bilinear;
             //拷贝sourceTexture中的渲染数据到renderBuffer,并仅绘制指定的pass0的纹理数据  
-            Graphics.Blit(sourceTexture, renderBuffer, material, 0);
+            Graphics.Blit(sourceTexture, renderBuffer, Material, 0);
 
             //【2】根据BlurIterations（迭代次数），来进行指定次数的迭代操作  
             for (int i = 0; i < BlurIterations; i++)
@@ -95,13 +103,13 @@ public class GaussShader : MonoBehaviour {
                 //迭代偏移量参数  
                 float iterationOffs = (i * 1.0f);
                 //Shader的降采样参数赋值  
-                material.SetFloat("_DownSampleValue", BlurSpreadSize * widthMod + iterationOffs);
+                Material.SetFloat("_DownSampleValue", BlurSpreadSize * widthMod + iterationOffs);
 
                 // 【2.2】处理Shader的通道1，垂直方向模糊处理 || Pass1,for vertical blur  
                 // 定义一个临时渲染的缓存tempBuffer  
                 RenderTexture tempBuffer = RenderTexture.GetTemporary(renderWidth, renderHeight, 0, sourceTexture.format);
                 // 拷贝renderBuffer中的渲染数据到tempBuffer,并仅绘制指定的pass1的纹理数据  
-                Graphics.Blit(renderBuffer, tempBuffer, material, 1);
+                Graphics.Blit(renderBuffer, tempBuffer, Material, 1);
                 //  清空renderBuffer  
                 RenderTexture.ReleaseTemporary(renderBuffer);
                 // 将tempBuffer赋给renderBuffer，此时renderBuffer里面pass0和pass1的数据已经准备好  

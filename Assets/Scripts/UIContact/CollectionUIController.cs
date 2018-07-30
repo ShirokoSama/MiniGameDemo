@@ -55,7 +55,6 @@ public class CollectionUIController : MonoBehaviour {
         {
             this.currentCollectionCount = collectionCount;
         }
-        Debug.Log(this.currentCollectionCount);
         for (int i = 0; i < totalCollectionCount; i++)
         {
             collectionFlowers[i].GetComponent<Animator>().ResetTrigger("Fill");
